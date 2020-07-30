@@ -45,6 +45,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
+            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.groupBoxStudentAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -52,7 +54,11 @@
             // 
             // groupBoxStudentAdd
             // 
+            this.groupBoxStudentAdd.AutoSize = true;
             this.groupBoxStudentAdd.BackColor = System.Drawing.Color.White;
+            this.groupBoxStudentAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBoxStudentAdd.Controls.Add(this.button_WOC2);
+            this.groupBoxStudentAdd.Controls.Add(this.button_WOC1);
             this.groupBoxStudentAdd.Controls.Add(this.comboBox3);
             this.groupBoxStudentAdd.Controls.Add(this.comboBox2);
             this.groupBoxStudentAdd.Controls.Add(this.comboBox1);
@@ -69,9 +75,9 @@
             this.groupBoxStudentAdd.Controls.Add(this.textBox2);
             this.groupBoxStudentAdd.Controls.Add(this.textBox1);
             this.groupBoxStudentAdd.Cursor = System.Windows.Forms.Cursors.Default;
-            this.groupBoxStudentAdd.Location = new System.Drawing.Point(48, 36);
+            this.groupBoxStudentAdd.Location = new System.Drawing.Point(52, 16);
             this.groupBoxStudentAdd.Name = "groupBoxStudentAdd";
-            this.groupBoxStudentAdd.Size = new System.Drawing.Size(701, 370);
+            this.groupBoxStudentAdd.Size = new System.Drawing.Size(676, 449);
             this.groupBoxStudentAdd.TabIndex = 0;
             this.groupBoxStudentAdd.TabStop = false;
             this.groupBoxStudentAdd.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -169,7 +175,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-25, -16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(261, 404);
+            this.pictureBox1.Size = new System.Drawing.Size(261, 445);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -218,21 +224,59 @@
             this.comboBox3.Size = new System.Drawing.Size(156, 21);
             this.comboBox3.TabIndex = 17;
             // 
+            // button_WOC2
+            // 
+            this.button_WOC2.BorderColor = System.Drawing.Color.Orange;
+            this.button_WOC2.ButtonColor = System.Drawing.Color.White;
+            this.button_WOC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC2.ForeColor = System.Drawing.Color.Transparent;
+            this.button_WOC2.Location = new System.Drawing.Point(472, 316);
+            this.button_WOC2.Name = "button_WOC2";
+            this.button_WOC2.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.button_WOC2.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.button_WOC2.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.button_WOC2.Size = new System.Drawing.Size(97, 48);
+            this.button_WOC2.TabIndex = 19;
+            this.button_WOC2.Text = "الغاء";
+            this.button_WOC2.TextColor = System.Drawing.Color.Black;
+            this.button_WOC2.UseVisualStyleBackColor = true;
+            // 
+            // button_WOC1
+            // 
+            this.button_WOC1.BorderColor = System.Drawing.Color.Orange;
+            this.button_WOC1.ButtonColor = System.Drawing.Color.White;
+            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC1.ForeColor = System.Drawing.Color.Transparent;
+            this.button_WOC1.Location = new System.Drawing.Point(325, 316);
+            this.button_WOC1.Name = "button_WOC1";
+            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.button_WOC1.Size = new System.Drawing.Size(89, 48);
+            this.button_WOC1.TabIndex = 18;
+            this.button_WOC1.Text = "حسنا";
+            this.button_WOC1.TextColor = System.Drawing.Color.Black;
+            this.button_WOC1.UseVisualStyleBackColor = true;
+            // 
             // FrmStudentAdd
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.groupBoxStudentAdd);
             this.Name = "FrmStudentAdd";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(777, 458);
+            this.Size = new System.Drawing.Size(795, 468);
             this.groupBoxStudentAdd.ResumeLayout(false);
             this.groupBoxStudentAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -254,5 +298,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ePOSOne.btnProduct.Button_WOC button_WOC2;
+        private ePOSOne.btnProduct.Button_WOC button_WOC1;
     }
 }

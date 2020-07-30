@@ -51,7 +51,8 @@ namespace ArmyProject.PL
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-            fluentDesignFormContainer1.Controls.Add(new Frm_Dashboard() { Dock = DockStyle.Fill});
+            //fluentDesignFormContainer1.Controls.Add(new Frm_Dashboard() { Dock = DockStyle.Fill});
+            //fluentDesignFormContainer1.Controls.Add(new Frm_Dashboard() { Dock = DockStyle.Fill });
         }
 
         private void accordionControlElement5_Click(object sender, EventArgs e)
@@ -68,13 +69,19 @@ namespace ArmyProject.PL
         //Button Add Student
         private void accordionControlElement_AddStudent_Click(object sender, EventArgs e)
         {
-
+            //fluentDesignFormContainer1.Controls.Remove(new Frm_Dashboard() { Dock = DockStyle.Fill });
+            fluentDesignFormContainer1.Controls.Add(new FrmStudentAdd() { Dock = DockStyle.Fill });
         }
 
         private void accordionControlElementLogin_Click(object sender, EventArgs e)
         {
             Frm_Login frm = new Frm_Login();
             frm.ShowDialog();
+        }
+
+        private void fluentDesignFormContainer1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

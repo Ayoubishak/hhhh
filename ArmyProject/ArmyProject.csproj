@@ -94,6 +94,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BL\CLS_Login.cs" />
+    <Compile Include="Button_WOC.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="Degree_TBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -118,6 +121,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FrmStudentAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FrmStudentAdd.Designer.cs">
+      <DependentUpon>FrmStudentAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Frm_Dashboard.cs">
       <SubType>UserControl</SubType>
@@ -166,6 +175,9 @@
     <Compile Include="Users_TBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PL\FrmStudentAdd.resx">
+      <DependentUpon>FrmStudentAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>

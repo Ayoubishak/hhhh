@@ -78,6 +78,7 @@
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
             this.fluentDesignFormContainer1.Size = new System.Drawing.Size(521, 417);
             this.fluentDesignFormContainer1.TabIndex = 0;
+            this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
             // 
             // fluentFormDefaultManager1
             // 
@@ -183,6 +184,7 @@
             this.accordionControlElement_AddStudent,
             this.accordionControlElement23,
             this.accordionControlElement24});
+            this.accordionControlElementStudents.Expanded = true;
             this.accordionControlElementStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementStudents.ImageOptions.SvgImage")));
             this.accordionControlElementStudents.Name = "accordionControlElementStudents";
             this.accordionControlElementStudents.Text = "الطلاب";
