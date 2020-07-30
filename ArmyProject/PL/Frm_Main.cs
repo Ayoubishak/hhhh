@@ -21,5 +21,10 @@ namespace ArmyProject.PL
         {
             fluentDesignFormContainer1.Controls.Add(new Frm_Dashboard() { Dock = DockStyle.Fill});
         }
+
+        private void accordionControlElement5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
