@@ -28,141 +28,200 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentAdd));
             this.groupBoxStudentAdd = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBoxStudentAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxStudentAdd
             // 
-            this.groupBoxStudentAdd.Controls.Add(this.textBox6);
+            this.groupBoxStudentAdd.BackColor = System.Drawing.Color.White;
+            this.groupBoxStudentAdd.Controls.Add(this.comboBox3);
+            this.groupBoxStudentAdd.Controls.Add(this.comboBox2);
+            this.groupBoxStudentAdd.Controls.Add(this.comboBox1);
+            this.groupBoxStudentAdd.Controls.Add(this.pictureBox2);
+            this.groupBoxStudentAdd.Controls.Add(this.label7);
+            this.groupBoxStudentAdd.Controls.Add(this.pictureBox1);
             this.groupBoxStudentAdd.Controls.Add(this.label6);
             this.groupBoxStudentAdd.Controls.Add(this.label5);
             this.groupBoxStudentAdd.Controls.Add(this.label4);
             this.groupBoxStudentAdd.Controls.Add(this.label3);
             this.groupBoxStudentAdd.Controls.Add(this.label2);
             this.groupBoxStudentAdd.Controls.Add(this.label1);
-            this.groupBoxStudentAdd.Controls.Add(this.textBox5);
-            this.groupBoxStudentAdd.Controls.Add(this.textBox4);
             this.groupBoxStudentAdd.Controls.Add(this.textBox3);
             this.groupBoxStudentAdd.Controls.Add(this.textBox2);
             this.groupBoxStudentAdd.Controls.Add(this.textBox1);
-            this.groupBoxStudentAdd.Location = new System.Drawing.Point(104, 39);
+            this.groupBoxStudentAdd.Cursor = System.Windows.Forms.Cursors.Default;
+            this.groupBoxStudentAdd.Location = new System.Drawing.Point(48, 36);
             this.groupBoxStudentAdd.Name = "groupBoxStudentAdd";
-            this.groupBoxStudentAdd.Size = new System.Drawing.Size(574, 366);
+            this.groupBoxStudentAdd.Size = new System.Drawing.Size(701, 370);
             this.groupBoxStudentAdd.TabIndex = 0;
             this.groupBoxStudentAdd.TabStop = false;
             this.groupBoxStudentAdd.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 38);
+            this.textBox1.Location = new System.Drawing.Point(371, 89);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 21);
+            this.textBox1.Size = new System.Drawing.Size(156, 21);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 75);
+            this.textBox2.Location = new System.Drawing.Point(371, 123);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 21);
+            this.textBox2.Size = new System.Drawing.Size(156, 21);
             this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 111);
+            this.textBox3.Location = new System.Drawing.Point(371, 159);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(139, 21);
+            this.textBox3.Size = new System.Drawing.Size(156, 21);
             this.textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(115, 148);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(139, 21);
-            this.textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(115, 185);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(139, 21);
-            this.textBox5.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(366, 38);
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(575, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(67, 21);
             this.label1.TabIndex = 5;
-            this.label1.Text = "الرقم العام";
+            this.label1.Text = "الرقم العام :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(366, 75);
+            this.label2.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(575, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(51, 21);
             this.label2.TabIndex = 6;
-            this.label2.Text = "السرية";
+            this.label2.Text = "السرية :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(366, 111);
+            this.label3.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(575, 159);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.Size = new System.Drawing.Size(44, 21);
             this.label3.TabIndex = 7;
-            this.label3.Text = "الأسم";
+            this.label3.Text = "الأسم :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(366, 148);
+            this.label4.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(575, 196);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(52, 21);
             this.label4.TabIndex = 8;
-            this.label4.Text = "المؤهل";
+            this.label4.Text = "المؤهل :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(366, 185);
+            this.label5.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(575, 233);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.Size = new System.Drawing.Size(83, 21);
             this.label5.TabIndex = 9;
-            this.label5.Text = "منطقة التجنيد";
+            this.label5.Text = "منطقة التجنيد :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(366, 227);
+            this.label6.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(575, 270);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.Size = new System.Drawing.Size(62, 21);
             this.label6.TabIndex = 10;
-            this.label6.Text = "المحافظة";
+            this.label6.Text = "المحافظة :";
             // 
-            // textBox6
+            // pictureBox1
             // 
-            this.textBox6.Location = new System.Drawing.Point(115, 224);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(139, 21);
-            this.textBox6.TabIndex = 11;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-25, -16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(261, 404);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Britannic Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(444, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(131, 36);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "اضافة طالب";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(394, 27);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(44, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(371, 196);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(156, 21);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(371, 233);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(156, 21);
+            this.comboBox2.TabIndex = 16;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(371, 270);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(156, 21);
+            this.comboBox3.TabIndex = 17;
             // 
             // FrmStudentAdd
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBoxStudentAdd);
@@ -171,6 +230,8 @@
             this.Size = new System.Drawing.Size(777, 458);
             this.groupBoxStudentAdd.ResumeLayout(false);
             this.groupBoxStudentAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,17 +239,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxStudentAdd;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
