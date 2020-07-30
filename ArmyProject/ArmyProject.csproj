@@ -94,6 +94,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BL\CLS_Login.cs" />
+    <Compile Include="BL\CLS_Students.cs" />
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>

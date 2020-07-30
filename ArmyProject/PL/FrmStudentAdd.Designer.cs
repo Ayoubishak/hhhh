@@ -30,26 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentAdd));
             this.groupBoxStudentAdd = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.comboGovernorates = new System.Windows.Forms.ComboBox();
+            this.comboRecruitingArea = new System.Windows.Forms.ComboBox();
+            this.comboDegrees = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_Name = new System.Windows.Forms.TextBox();
+            this.textBox_Company = new System.Windows.Forms.TextBox();
+            this.textBox_GeneralNumber = new System.Windows.Forms.TextBox();
             this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
             this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
             this.groupBoxStudentAdd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxStudentAdd
@@ -59,9 +59,9 @@
             this.groupBoxStudentAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBoxStudentAdd.Controls.Add(this.button_WOC2);
             this.groupBoxStudentAdd.Controls.Add(this.button_WOC1);
-            this.groupBoxStudentAdd.Controls.Add(this.comboBox3);
-            this.groupBoxStudentAdd.Controls.Add(this.comboBox2);
-            this.groupBoxStudentAdd.Controls.Add(this.comboBox1);
+            this.groupBoxStudentAdd.Controls.Add(this.comboGovernorates);
+            this.groupBoxStudentAdd.Controls.Add(this.comboRecruitingArea);
+            this.groupBoxStudentAdd.Controls.Add(this.comboDegrees);
             this.groupBoxStudentAdd.Controls.Add(this.pictureBox2);
             this.groupBoxStudentAdd.Controls.Add(this.label7);
             this.groupBoxStudentAdd.Controls.Add(this.pictureBox1);
@@ -71,9 +71,9 @@
             this.groupBoxStudentAdd.Controls.Add(this.label3);
             this.groupBoxStudentAdd.Controls.Add(this.label2);
             this.groupBoxStudentAdd.Controls.Add(this.label1);
-            this.groupBoxStudentAdd.Controls.Add(this.textBox3);
-            this.groupBoxStudentAdd.Controls.Add(this.textBox2);
-            this.groupBoxStudentAdd.Controls.Add(this.textBox1);
+            this.groupBoxStudentAdd.Controls.Add(this.textBox_Name);
+            this.groupBoxStudentAdd.Controls.Add(this.textBox_Company);
+            this.groupBoxStudentAdd.Controls.Add(this.textBox_GeneralNumber);
             this.groupBoxStudentAdd.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBoxStudentAdd.Location = new System.Drawing.Point(52, 16);
             this.groupBoxStudentAdd.Name = "groupBoxStudentAdd";
@@ -82,82 +82,62 @@
             this.groupBoxStudentAdd.TabStop = false;
             this.groupBoxStudentAdd.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBox1
+            // comboGovernorates
             // 
-            this.textBox1.Location = new System.Drawing.Point(371, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 21);
-            this.textBox1.TabIndex = 0;
+            this.comboGovernorates.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboGovernorates.FormattingEnabled = true;
+            this.comboGovernorates.Location = new System.Drawing.Point(371, 270);
+            this.comboGovernorates.Name = "comboGovernorates";
+            this.comboGovernorates.Size = new System.Drawing.Size(156, 24);
+            this.comboGovernorates.TabIndex = 17;
             // 
-            // textBox2
+            // comboRecruitingArea
             // 
-            this.textBox2.Location = new System.Drawing.Point(371, 123);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 21);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.comboRecruitingArea.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboRecruitingArea.FormattingEnabled = true;
+            this.comboRecruitingArea.Location = new System.Drawing.Point(371, 233);
+            this.comboRecruitingArea.Name = "comboRecruitingArea";
+            this.comboRecruitingArea.Size = new System.Drawing.Size(156, 24);
+            this.comboRecruitingArea.TabIndex = 16;
             // 
-            // textBox3
+            // comboDegrees
             // 
-            this.textBox3.Location = new System.Drawing.Point(371, 159);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 21);
-            this.textBox3.TabIndex = 2;
+            this.comboDegrees.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboDegrees.FormattingEnabled = true;
+            this.comboDegrees.Location = new System.Drawing.Point(371, 196);
+            this.comboDegrees.Name = "comboDegrees";
+            this.comboDegrees.Size = new System.Drawing.Size(156, 24);
+            this.comboDegrees.TabIndex = 15;
             // 
-            // label1
+            // pictureBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(575, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 21);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "الرقم العام :";
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(394, 27);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(44, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(575, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 21);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "السرية :";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Britannic Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(444, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(131, 36);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "اضافة طالب";
             // 
-            // label3
+            // pictureBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(575, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 21);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "الأسم :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(575, 196);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 21);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "المؤهل :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(575, 233);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 21);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "منطقة التجنيد :";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-25, -16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(261, 445);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -170,59 +150,88 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "المحافظة :";
             // 
-            // pictureBox1
+            // label5
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-25, -16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(261, 445);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(575, 233);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 21);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "منطقة التجنيد :";
             // 
-            // label7
+            // label4
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Britannic Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(444, 27);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 36);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "اضافة طالب";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(575, 196);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 21);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "المؤهل :";
             // 
-            // pictureBox2
+            // label3
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(394, 27);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(575, 159);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 21);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "الأسم :";
             // 
-            // comboBox1
+            // label2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(371, 196);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 21);
-            this.comboBox1.TabIndex = 15;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(575, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 21);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "السرية :";
             // 
-            // comboBox2
+            // label1
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(371, 233);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(156, 21);
-            this.comboBox2.TabIndex = 16;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(575, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "الرقم العام :";
             // 
-            // comboBox3
+            // textBox_Name
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(371, 270);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(156, 21);
-            this.comboBox3.TabIndex = 17;
+            this.textBox_Name.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Name.Location = new System.Drawing.Point(371, 159);
+            this.textBox_Name.MaxLength = 100;
+            this.textBox_Name.Name = "textBox_Name";
+            this.textBox_Name.Size = new System.Drawing.Size(156, 23);
+            this.textBox_Name.TabIndex = 2;
+            // 
+            // textBox_Company
+            // 
+            this.textBox_Company.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Company.Location = new System.Drawing.Point(371, 123);
+            this.textBox_Company.MaxLength = 2;
+            this.textBox_Company.Name = "textBox_Company";
+            this.textBox_Company.Size = new System.Drawing.Size(156, 23);
+            this.textBox_Company.TabIndex = 1;
+            this.textBox_Company.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox_GeneralNumber
+            // 
+            this.textBox_GeneralNumber.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_GeneralNumber.Location = new System.Drawing.Point(371, 89);
+            this.textBox_GeneralNumber.MaxLength = 5;
+            this.textBox_GeneralNumber.Name = "textBox_GeneralNumber";
+            this.textBox_GeneralNumber.Size = new System.Drawing.Size(156, 23);
+            this.textBox_GeneralNumber.TabIndex = 0;
             // 
             // button_WOC2
             // 
@@ -241,6 +250,7 @@
             this.button_WOC2.Text = "الغاء";
             this.button_WOC2.TextColor = System.Drawing.Color.Black;
             this.button_WOC2.UseVisualStyleBackColor = true;
+            this.button_WOC2.Click += new System.EventHandler(this.button_WOC2_Click);
             // 
             // button_WOC1
             // 
@@ -259,6 +269,7 @@
             this.button_WOC1.Text = "حسنا";
             this.button_WOC1.TextColor = System.Drawing.Color.Black;
             this.button_WOC1.UseVisualStyleBackColor = true;
+            this.button_WOC1.Click += new System.EventHandler(this.button_WOC1_Click);
             // 
             // FrmStudentAdd
             // 
@@ -273,8 +284,8 @@
             this.Size = new System.Drawing.Size(795, 468);
             this.groupBoxStudentAdd.ResumeLayout(false);
             this.groupBoxStudentAdd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,12 +300,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox_Name;
+        private System.Windows.Forms.TextBox textBox_Company;
+        private System.Windows.Forms.TextBox textBox_GeneralNumber;
+        private System.Windows.Forms.ComboBox comboGovernorates;
+        private System.Windows.Forms.ComboBox comboRecruitingArea;
+        private System.Windows.Forms.ComboBox comboDegrees;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
