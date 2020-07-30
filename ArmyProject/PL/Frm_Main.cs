@@ -12,9 +12,41 @@ namespace ArmyProject.PL
 {
     public partial class Frm_Main : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+        private static Frm_Main frm;
+        static void frm_FormClosed (object sender, FormClosedEventArgs e)
+        {
+            frm = null;
+        }
+
+        public static Frm_Main getMainForm
+        {
+            get
+            {
+                if(frm == null)
+                {
+                    frm = new Frm_Main();
+                    frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+                }
+                return frm;
+            }
+        }
+
         public Frm_Main()
         {
             InitializeComponent();
+            if(frm == null)
+            {
+                frm = this;
+            }
+            this.accordionControlElementStudents.Enabled = false;
+            this.accordionControlElementHoliday.Enabled = false;
+            this.accordionControlElementArrival_Stations.Enabled = false;
+            this.accordionControlElementSanctions.Enabled = false;
+            this.accordionControlElementHistory.Enabled = false;
+            this.accordionControlElementUsers.Enabled = false;
+            this.accordionControlElementMakeBackup.Enabled = false;
+            this.accordionControlElementGetBackup.Enabled = false;
+
         }
 
         private void Frm_Main_Load(object sender, EventArgs e)
@@ -28,7 +60,7 @@ namespace ArmyProject.PL
         }
 
         //accordionControlElement_Logout Logout_Button
-        private void accordionControlElement4_Click(object sender, EventArgs e)
+        private void accordionControlElement_Logout_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -37,6 +69,12 @@ namespace ArmyProject.PL
         private void accordionControlElement_AddStudent_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void accordionControlElementLogin_Click(object sender, EventArgs e)
+        {
+            Frm_Login frm = new Frm_Login();
+            frm.ShowDialog();
         }
     }
 }

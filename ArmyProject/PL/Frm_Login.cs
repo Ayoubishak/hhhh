@@ -43,7 +43,17 @@ namespace ArmyProject.PL
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show("تم تسجيل الدخول بنجاح !", "عملية الدخول", MessageBoxButtons.OK);
-
+                    Frm_Main frm = Frm_Main.getMainForm;
+                    frm.accordionControlElementLogin.Enabled = false;
+                    frm.accordionControlElementStudents.Enabled = true;
+                    frm.accordionControlElementHoliday.Enabled = true;
+                    frm.accordionControlElementArrival_Stations.Enabled = true;
+                    frm.accordionControlElementSanctions.Enabled = true;
+                    frm.accordionControlElementHistory.Enabled = true;
+                    frm.accordionControlElementUsers.Enabled = true;
+                    frm.accordionControlElementMakeBackup.Enabled = true;
+                    frm.accordionControlElementGetBackup.Enabled = true;
+                    this.Close();
                 }
                 else
                 {
