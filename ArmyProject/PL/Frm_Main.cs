@@ -26,5 +26,17 @@ namespace ArmyProject.PL
         {
 
         }
+
+        //accordionControlElement_Logout Logout_Button
+        private void accordionControlElement4_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        //Button Add Student
+        private void accordionControlElement_AddStudent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
