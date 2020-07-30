@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Army_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ArrivalStations_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Transport_Id" Type="Int32" />
+    <NavigationProperty Name="Transport_TBL" Relationship="Self.FK_ArrivalStations_TBL_Transport_TBL" FromRole="ArrivalStations_TBL" ToRole="Transport_TBL" />
+    <NavigationProperty Name="Governorates_TBL" Relationship="Self.FK_Governorates_TBL_ArrivalStations_TBL" FromRole="ArrivalStations_TBL" ToRole="Governorates_TBL" />
+    <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Students_TBL_ArrivalStations_TBL" FromRole="ArrivalStations_TBL" ToRole="Students_TBL" />
+  </EntityType>
+  <EntityType Name="Degree_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Students_TBL_Degree_TBL" FromRole="Degree_TBL" ToRole="Students_TBL" />
+  </EntityType>
+  <EntityType Name="Governorates_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ArrivalStations_Id" Type="Int32" />
+    <NavigationProperty Name="ArrivalStations_TBL" Relationship="Self.FK_Governorates_TBL_ArrivalStations_TBL" FromRole="Governorates_TBL" ToRole="ArrivalStations_TBL" />
+    <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL" FromRole="Governorates_TBL" ToRole="Students_TBL" />
+  </EntityType>
+  <EntityType Name="History_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Action" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Part" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users_TBL" Relationship="Self.FK_History_TBL_Users_TBL" FromRole="History_TBL" ToRole="Users_TBL" />
+  </EntityType>
+  <EntityType Name="RecruitingArea_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Students_TBL_RecruitingArea_TBL" FromRole="RecruitingArea_TBL" ToRole="Students_TBL" />
+  </EntityType>
+  <EntityType Name="Sanctions_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Grades" Type="Int32" />
+    <NavigationProperty Name="Student_Sanctions_TBL" Relationship="Self.FK_Student_Sanctions_TBL_Sanctions_TBL" FromRole="Sanctions_TBL" ToRole="Student_Sanctions_TBL" />
+  </EntityType>
+  <EntityType Name="Student_Sanctions_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Student_Id" Type="Int32" Nullable="false" />
+    <Property Name="Sanctions_Id" Type="Int32" Nullable="false" />
+    <Property Name="Number" Type="Int32" />
+    <NavigationProperty Name="Sanctions_TBL" Relationship="Self.FK_Student_Sanctions_TBL_Sanctions_TBL" FromRole="Student_Sanctions_TBL" ToRole="Sanctions_TBL" />
+    <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Student_Sanctions_TBL_Students_TBL" FromRole="Student_Sanctions_TBL" ToRole="Students_TBL" />
+  </EntityType>
+  <EntityType Name="Students_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GeneralNumber" Type="Int32" Nullable="false" />
+    <Property Name="Company" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Degree_Id" Type="Int32" />
+    <Property Name="RecruitingArea_Id" Type="Int32" />
+    <Property Name="Governorate_Id" Type="Int32" />
+    <Property Name="ArrivalStations_Id" Type="Int32" />
+    <Property Name="Weight" Type="Int32" />
+    <Property Name="Length" Type="Int32" />
+    <Property Name="Evaluation" Type="Int32" />
+    <Property Name="Rank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="BirthOfDate" Type="DateTime" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Battalion" Type="Int32" />
+    <Property Name="History_Id" Type="Int32" />
+    <NavigationProperty Name="ArrivalStations_TBL" Relationship="Self.FK_Students_TBL_ArrivalStations_TBL" FromRole="Students_TBL" ToRole="ArrivalStations_TBL" />
+    <NavigationProperty Name="Degree_TBL" Relationship="Self.FK_Students_TBL_Degree_TBL" FromRole="Students_TBL" ToRole="Degree_TBL" />
+    <NavigationProperty Name="Governorates_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL" FromRole="Students_TBL" ToRole="Governorates_TBL" />
+    <NavigationProperty Name="RecruitingArea_TBL" Relationship="Self.FK_Students_TBL_RecruitingArea_TBL" FromRole="Students_TBL" ToRole="RecruitingArea_TBL" />
+    <NavigationProperty Name="Student_Sanctions_TBL" Relationship="Self.FK_Student_Sanctions_TBL_Students_TBL" FromRole="Students_TBL" ToRole="Student_Sanctions_TBL" />
+  </EntityType>
+  <EntityType Name="Transport_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="Int32" />
+    <NavigationProperty Name="ArrivalStations_TBL" Relationship="Self.FK_ArrivalStations_TBL_Transport_TBL" FromRole="Transport_TBL" ToRole="ArrivalStations_TBL" />
+  </EntityType>
+  <EntityType Name="Users_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type" Type="Byte" />
+    <NavigationProperty Name="History_TBL" Relationship="Self.FK_History_TBL_Users_TBL" FromRole="Users_TBL" ToRole="History_TBL" />
+  </EntityType>
+  <Association Name="FK_ArrivalStations_TBL_Transport_TBL">
+    <End Role="Transport_TBL" Type="Self.Transport_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transport_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArrivalStations_TBL">
+        <PropertyRef Name="Transport_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Governorates_TBL_ArrivalStations_TBL">
+    <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Governorates_TBL" Type="Self.Governorates_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArrivalStations_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Governorates_TBL">
+        <PropertyRef Name="ArrivalStations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_TBL_ArrivalStations_TBL">
+    <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArrivalStations_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students_TBL">
+        <PropertyRef Name="ArrivalStations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_TBL_Degree_TBL">
+    <End Role="Degree_TBL" Type="Self.Degree_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Degree_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students_TBL">
+        <PropertyRef Name="Degree_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_TBL_Governorates_TBL">
+    <End Role="Governorates_TBL" Type="Self.Governorates_TBL" Multiplicity="0..1" />
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Governorates_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students_TBL">
+        <PropertyRef Name="Governorate_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_History_TBL_Users_TBL">
+    <End Role="Users_TBL" Type="Self.Users_TBL" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="History_TBL" Type="Self.History_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="History_TBL">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_TBL_RecruitingArea_TBL">
+    <End Role="RecruitingArea_TBL" Type="Self.RecruitingArea_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecruitingArea_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students_TBL">
+        <PropertyRef Name="RecruitingArea_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Sanctions_TBL_Sanctions_TBL">
+    <End Role="Sanctions_TBL" Type="Self.Sanctions_TBL" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Student_Sanctions_TBL" Type="Self.Student_Sanctions_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanctions_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student_Sanctions_TBL">
+        <PropertyRef Name="Sanctions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Sanctions_TBL_Students_TBL">
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Student_Sanctions_TBL" Type="Self.Student_Sanctions_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student_Sanctions_TBL">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Army_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ArrivalStations_TBL" EntityType="Self.ArrivalStations_TBL" />
+    <EntitySet Name="Degree_TBL" EntityType="Self.Degree_TBL" />
+    <EntitySet Name="Governorates_TBL" EntityType="Self.Governorates_TBL" />
+    <EntitySet Name="History_TBL" EntityType="Self.History_TBL" />
+    <EntitySet Name="RecruitingArea_TBL" EntityType="Self.RecruitingArea_TBL" />
+    <EntitySet Name="Sanctions_TBL" EntityType="Self.Sanctions_TBL" />
+    <EntitySet Name="Student_Sanctions_TBL" EntityType="Self.Student_Sanctions_TBL" />
+    <EntitySet Name="Students_TBL" EntityType="Self.Students_TBL" />
+    <EntitySet Name="Transport_TBL" EntityType="Self.Transport_TBL" />
+    <EntitySet Name="Users_TBL" EntityType="Self.Users_TBL" />
+    <AssociationSet Name="FK_ArrivalStations_TBL_Transport_TBL" Association="Self.FK_ArrivalStations_TBL_Transport_TBL">
+      <End Role="Transport_TBL" EntitySet="Transport_TBL" />
+      <End Role="ArrivalStations_TBL" EntitySet="ArrivalStations_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Governorates_TBL_ArrivalStations_TBL" Association="Self.FK_Governorates_TBL_ArrivalStations_TBL">
+      <End Role="ArrivalStations_TBL" EntitySet="ArrivalStations_TBL" />
+      <End Role="Governorates_TBL" EntitySet="Governorates_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_ArrivalStations_TBL" Association="Self.FK_Students_TBL_ArrivalStations_TBL">
+      <End Role="ArrivalStations_TBL" EntitySet="ArrivalStations_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_Degree_TBL" Association="Self.FK_Students_TBL_Degree_TBL">
+      <End Role="Degree_TBL" EntitySet="Degree_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_Governorates_TBL" Association="Self.FK_Students_TBL_Governorates_TBL">
+      <End Role="Governorates_TBL" EntitySet="Governorates_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_History_TBL_Users_TBL" Association="Self.FK_History_TBL_Users_TBL">
+      <End Role="Users_TBL" EntitySet="Users_TBL" />
+      <End Role="History_TBL" EntitySet="History_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_RecruitingArea_TBL" Association="Self.FK_Students_TBL_RecruitingArea_TBL">
+      <End Role="RecruitingArea_TBL" EntitySet="RecruitingArea_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Sanctions_TBL_Sanctions_TBL" Association="Self.FK_Student_Sanctions_TBL_Sanctions_TBL">
+      <End Role="Sanctions_TBL" EntitySet="Sanctions_TBL" />
+      <End Role="Student_Sanctions_TBL" EntitySet="Student_Sanctions_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Sanctions_TBL_Students_TBL" Association="Self.FK_Student_Sanctions_TBL_Students_TBL">
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+      <End Role="Student_Sanctions_TBL" EntitySet="Student_Sanctions_TBL" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Army_DBModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Army_DBModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Login" ReturnType="Collection(Army_DBModel.SP_Login_Result)">
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_Login_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+    <Property Type="Byte" Name="Type" Nullable="true" />
+  </ComplexType>
+</Schema>

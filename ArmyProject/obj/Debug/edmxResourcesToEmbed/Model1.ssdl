@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Army_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ArrivalStations_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Transport_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Degree_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Governorates_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="ArrivalStations_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="History_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Action" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="Part" Type="varchar" MaxLength="50" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecruitingArea_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sanctions_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Grades" Type="int" />
+  </EntityType>
+  <EntityType Name="Student_Sanctions_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Student_Id" Type="int" Nullable="false" />
+    <Property Name="Sanctions_Id" Type="int" Nullable="false" />
+    <Property Name="Number" Type="int" />
+  </EntityType>
+  <EntityType Name="Students_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GeneralNumber" Type="int" Nullable="false" />
+    <Property Name="Company" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Degree_Id" Type="int" />
+    <Property Name="RecruitingArea_Id" Type="int" />
+    <Property Name="Governorate_Id" Type="int" />
+    <Property Name="ArrivalStations_Id" Type="int" />
+    <Property Name="Weight" Type="int" />
+    <Property Name="Length" Type="int" />
+    <Property Name="Evaluation" Type="int" />
+    <Property Name="Rank" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="BirthOfDate" Type="date" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Battalion" Type="int" />
+    <Property Name="History_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Transport_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Number" Type="int" />
+  </EntityType>
+  <EntityType Name="Users_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="tinyint" />
+  </EntityType>
+  <Association Name="FK_ArrivalStations_TBL_Transport_TBL">
+    <End Role="Transport_TBL" Type="Self.Transport_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transport_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArrivalStations_TBL">
+        <PropertyRef Name="Transport_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Governorates_TBL_ArrivalStations_TBL">
+    <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Governorates_TBL" Type="Self.Governorates_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArrivalStations_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Governorates_TBL">
+        <PropertyRef Name="ArrivalStations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_History_TBL_Users_TBL">
+    <End Role="Users_TBL" Type="Self.Users_TBL" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="History_TBL" Type="Self.History_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="History_TBL">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Sanctions_TBL_Sanctions_TBL">
+    <End Role="Sanctions_TBL" Type="Self.Sanctions_TBL" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Student_Sanctions_TBL" Type="Self.Student_Sanctions_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanctions_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student_Sanctions_TBL">
+        <PropertyRef Name="Sanctions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Sanctions_TBL_Students_TBL">
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Student_Sanctions_TBL" Type="Self.Student_Sanctions_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student_Sanctions_TBL">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_TBL_ArrivalStations_TBL">
+    <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArrivalStations_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students_TBL">
+        <PropertyRef Name="ArrivalStations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_TBL_Degree_TBL">
+    <End Role="Degree_TBL" Type="Self.Degree_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Degree_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students_TBL">
+        <PropertyRef Name="Degree_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_TBL_Governorates_TBL">
+    <End Role="Governorates_TBL" Type="Self.Governorates_TBL" Multiplicity="0..1" />
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Governorates_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students_TBL">
+        <PropertyRef Name="Governorate_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_TBL_RecruitingArea_TBL">
+    <End Role="RecruitingArea_TBL" Type="Self.RecruitingArea_TBL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecruitingArea_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students_TBL">
+        <PropertyRef Name="RecruitingArea_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Username" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Army_DBModelStoreContainer">
+    <EntitySet Name="ArrivalStations_TBL" EntityType="Self.ArrivalStations_TBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Degree_TBL" EntityType="Self.Degree_TBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Governorates_TBL" EntityType="Self.Governorates_TBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="History_TBL" EntityType="Self.History_TBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecruitingArea_TBL" EntityType="Self.RecruitingArea_TBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sanctions_TBL" EntityType="Self.Sanctions_TBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student_Sanctions_TBL" EntityType="Self.Student_Sanctions_TBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Students_TBL" EntityType="Self.Students_TBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transport_TBL" EntityType="Self.Transport_TBL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users_TBL" EntityType="Self.Users_TBL" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ArrivalStations_TBL_Transport_TBL" Association="Self.FK_ArrivalStations_TBL_Transport_TBL">
+      <End Role="Transport_TBL" EntitySet="Transport_TBL" />
+      <End Role="ArrivalStations_TBL" EntitySet="ArrivalStations_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Governorates_TBL_ArrivalStations_TBL" Association="Self.FK_Governorates_TBL_ArrivalStations_TBL">
+      <End Role="ArrivalStations_TBL" EntitySet="ArrivalStations_TBL" />
+      <End Role="Governorates_TBL" EntitySet="Governorates_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_History_TBL_Users_TBL" Association="Self.FK_History_TBL_Users_TBL">
+      <End Role="Users_TBL" EntitySet="Users_TBL" />
+      <End Role="History_TBL" EntitySet="History_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Sanctions_TBL_Sanctions_TBL" Association="Self.FK_Student_Sanctions_TBL_Sanctions_TBL">
+      <End Role="Sanctions_TBL" EntitySet="Sanctions_TBL" />
+      <End Role="Student_Sanctions_TBL" EntitySet="Student_Sanctions_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Sanctions_TBL_Students_TBL" Association="Self.FK_Student_Sanctions_TBL_Students_TBL">
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+      <End Role="Student_Sanctions_TBL" EntitySet="Student_Sanctions_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_ArrivalStations_TBL" Association="Self.FK_Students_TBL_ArrivalStations_TBL">
+      <End Role="ArrivalStations_TBL" EntitySet="ArrivalStations_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_Degree_TBL" Association="Self.FK_Students_TBL_Degree_TBL">
+      <End Role="Degree_TBL" EntitySet="Degree_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_Governorates_TBL" Association="Self.FK_Students_TBL_Governorates_TBL">
+      <End Role="Governorates_TBL" EntitySet="Governorates_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_RecruitingArea_TBL" Association="Self.FK_Students_TBL_RecruitingArea_TBL">
+      <End Role="RecruitingArea_TBL" EntitySet="RecruitingArea_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
