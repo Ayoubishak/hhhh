@@ -13,3 +13,5 @@ C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\EntityFramewo
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\EntityFramework.xml
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Frm_Dashboard.resources
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Frm_Main.resources
