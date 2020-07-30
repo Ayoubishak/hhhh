@@ -18,7 +18,7 @@ namespace ArmyProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new PL.Frm_Login());
         }
     }
 }

@@ -1,1 +1,12 @@
 C:\Users\ortega\Desktop\VS 2013 Projects\ArmyProject\ArmyProject\bin\Debug\ArmyProject.exe.config
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\ArmyProject.exe.config
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\ArmyProject.exe
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\ArmyProject.pdb
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.csprojResolveAssemblyReference.cache
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.Form1.resources
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.Properties.Resources.resources
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.csproj.GenerateResource.Cache
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.exe.licenses
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.exe
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.pdb
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Frm_Login.resources
