@@ -18,3 +18,6 @@ C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.p
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Frm_StudentAdd.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Frm_StudentGrid.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.csprojResolveAssemblyReference.cache
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\DevExpress.Images.v20.1.dll
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Views.Students_TBLView.Students_TBLView.resources
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Views.Students_TBLCollectionView.Students_TBLCollectionView.resources
