@@ -19,6 +19,7 @@ namespace ArmyProject.PL
         BL.CLS_Students st = new BL.CLS_Students();
         public FrmStudentAdd()
         {
+            /*
             InitializeComponent();
             //comboBox of degrees المؤهل
             comboDegrees.DataSource = st.GetAllDegrees();
@@ -34,7 +35,7 @@ namespace ArmyProject.PL
             comboGovernorates.DataSource = st.GetAllGovernorates();
             comboGovernorates.DisplayMember = "Name";
             comboGovernorates.ValueMember = "Id";
-
+            */
         }
         public void validateNumericTextBox()
         {
@@ -69,17 +70,24 @@ namespace ArmyProject.PL
         //AddStudent Button
         private void button_WOC1_Click(object sender, EventArgs e)
         {
-            st.Add_Student(Convert.ToInt32(textBox_GeneralNumber.Text), Convert.ToInt32(textBox_Company.Text),
-                textBox_Name.Text,Convert.ToInt32(comboDegrees.SelectedValue),
-                Convert.ToInt32(comboRecruitingArea.SelectedValue),
-                Convert.ToInt32(comboGovernorates.SelectedValue));
+            /*
+             st.Add_Student(Convert.ToInt32(textBox_GeneralNumber.Text), Convert.ToInt32(textBox_Company.Text),
+                textBox_Name.Text, Convert.ToString(comboDegrees.SelectedValue),
+                Convert.ToString(comboRecruitingArea.SelectedValue),
+                Convert.ToString(comboGovernorates.SelectedValue));
             MessageBox.Show("تم الاضافة بنجاح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             */
         }
 
         private void button_WOC2_Click(object sender, EventArgs e)
         {
 
-            this.Hide();
+            //this.Hide();
+        }
+
+        private void button_WOC2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

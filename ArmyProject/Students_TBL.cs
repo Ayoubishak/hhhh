@@ -24,19 +24,20 @@ namespace ArmyProject
         public int GeneralNumber { get; set; }
         public Nullable<int> Company { get; set; }
         public string Name { get; set; }
+        public string Degree { get; set; }
+        public string RecruitingArea { get; set; }
+        public string Governorate { get; set; }
+        public Nullable<int> ArrivalStations_Id { get; set; }
         public Nullable<int> Degree_Id { get; set; }
         public Nullable<int> RecruitingArea_Id { get; set; }
         public Nullable<int> Governorate_Id { get; set; }
-        public Nullable<int> ArrivalStations_Id { get; set; }
-        public Nullable<int> Weight { get; set; }
-        public Nullable<int> Length { get; set; }
-        public Nullable<int> Evaluation { get; set; }
         public string Rank { get; set; }
         public Nullable<int> Age { get; set; }
         public Nullable<System.DateTime> BirthOfDate { get; set; }
         public string Address { get; set; }
         public Nullable<int> Battalion { get; set; }
-        public Nullable<int> History_Id { get; set; }
+        public string Weapon { get; set; }
+        public Nullable<int> Evaluation { get; set; }
     
         public virtual ArrivalStations_TBL ArrivalStations_TBL { get; set; }
         public virtual Degree_TBL Degree_TBL { get; set; }

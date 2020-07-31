@@ -4,22 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="64fe4d3890e347539e68ad3c3588a119" Name="Diagram1">
+      <Diagram DiagramId="dbde3fa11f7142258396078833a8e14a" Name="Diagram1" ZoomLevel="82">
         <EntityTypeShape EntityType="Army_DBModel.ArrivalStations_TBL" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.Degree_TBL" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.Governorates_TBL" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Army_DBModel.History_TBL" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Army_DBModel.History_TBL" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.RecruitingArea_TBL" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.Sanctions_TBL" Width="1.5" PointX="7.5" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.Student_Sanctions_TBL" Width="1.5" PointX="9.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.Students_TBL" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Army_DBModel.sysdiagram" Width="1.5" PointX="9.75" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.Transport_TBL" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Army_DBModel.Users_TBL" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Army_DBModel.Users_TBL" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
         <AssociationConnector Association="Army_DBModel.FK_ArrivalStations_TBL_Transport_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_Governorates_TBL_ArrivalStations_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_Students_TBL_ArrivalStations_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Degree_TBL" ManuallyRouted="false" />
-        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Governorates_TBL" ManuallyRouted="false" />
+        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Governorates_TBL1" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_History_TBL_Users_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_Students_TBL_RecruitingArea_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_Student_Sanctions_TBL_Sanctions_TBL" ManuallyRouted="false" />

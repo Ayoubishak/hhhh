@@ -15,10 +15,10 @@ namespace ArmyProject
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Army_DBEntities : DbContext
+    public partial class Army_DBEntities1 : DbContext
     {
-        public Army_DBEntities()
-            : base("name=Army_DBEntities")
+        public Army_DBEntities1()
+            : base("name=Army_DBEntities1")
         {
         }
     
@@ -35,8 +35,38 @@ namespace ArmyProject
         public virtual DbSet<Sanctions_TBL> Sanctions_TBL { get; set; }
         public virtual DbSet<Student_Sanctions_TBL> Student_Sanctions_TBL { get; set; }
         public virtual DbSet<Students_TBL> Students_TBL { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Transport_TBL> Transport_TBL { get; set; }
         public virtual DbSet<Users_TBL> Users_TBL { get; set; }
+    
+        public virtual int SP_AddStudent(Nullable<int> generalNumber, Nullable<int> company, string name, Nullable<int> degree, Nullable<int> recruitingArea, Nullable<int> governorate)
+        {
+            var generalNumberParameter = generalNumber.HasValue ?
+                new ObjectParameter("GeneralNumber", generalNumber) :
+                new ObjectParameter("GeneralNumber", typeof(int));
+    
+            var companyParameter = company.HasValue ?
+                new ObjectParameter("Company", company) :
+                new ObjectParameter("Company", typeof(int));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var degreeParameter = degree.HasValue ?
+                new ObjectParameter("Degree", degree) :
+                new ObjectParameter("Degree", typeof(int));
+    
+            var recruitingAreaParameter = recruitingArea.HasValue ?
+                new ObjectParameter("RecruitingArea", recruitingArea) :
+                new ObjectParameter("RecruitingArea", typeof(int));
+    
+            var governorateParameter = governorate.HasValue ?
+                new ObjectParameter("Governorate", governorate) :
+                new ObjectParameter("Governorate", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_AddStudent", generalNumberParameter, companyParameter, nameParameter, degreeParameter, recruitingAreaParameter, governorateParameter);
+        }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -91,6 +121,26 @@ namespace ArmyProject
                 new ObjectParameter("owner_id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<SP_GetAllDegrees_Result> SP_GetAllDegrees()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllDegrees_Result>("SP_GetAllDegrees");
+        }
+    
+        public virtual ObjectResult<SP_GetAllGovernorates_Result> SP_GetAllGovernorates()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllGovernorates_Result>("SP_GetAllGovernorates");
+        }
+    
+        public virtual ObjectResult<SP_GetAllRecruitingArea_Result> SP_GetAllRecruitingArea()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllRecruitingArea_Result>("SP_GetAllRecruitingArea");
+        }
+    
+        public virtual ObjectResult<SP_GetAllTransports_Result> SP_GetAllTransports()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAllTransports_Result>("SP_GetAllTransports");
         }
     
         public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)

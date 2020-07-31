@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace ArmyProject.PL
 {
@@ -20,17 +21,17 @@ namespace ArmyProject.PL
             //comboBox of degrees المؤهل
             comboDegrees.DataSource = st.GetAllDegrees();
             comboDegrees.DisplayMember = "Name";
-            comboDegrees.ValueMember = "Id";
+            comboDegrees.ValueMember = "Name";
 
             //comboBox of RecruitingArea منطقة التجنيد
             comboRecruitingArea.DataSource = st.GetAllRecruitingArea();
             comboRecruitingArea.DisplayMember = "Name";
-            comboRecruitingArea.ValueMember = "Id";
+            comboRecruitingArea.ValueMember = "Name";
 
             //comboBox of Governorates المحافظات
             comboGovernorates.DataSource = st.GetAllGovernorates();
             comboGovernorates.DisplayMember = "Name";
-            comboGovernorates.ValueMember = "Id";
+            comboGovernorates.ValueMember = "Name";
         }
 
         private void Frm_StudentAdd_Load(object sender, EventArgs e)
@@ -38,19 +39,6 @@ namespace ArmyProject.PL
 
         }
 
-        private void button_WOC1_AddStudent_Click(object sender, EventArgs e)
-        {
-            st.Add_Student(Convert.ToInt32(textBox_GeneralNumber.Text), Convert.ToInt32(textBox_Company.Text),
-                textBox_Name.Text, Convert.ToInt32(comboDegrees.SelectedValue),
-                Convert.ToInt32(comboRecruitingArea.SelectedValue),
-                Convert.ToInt32(comboGovernorates.SelectedValue));
-            MessageBox.Show("تم الاضافة بنجاح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void button_WOC2_Cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         public void validateNumericTextBox()
         {
@@ -76,5 +64,21 @@ namespace ArmyProject.PL
         {
 
         }
+
+        private void button_AddStudent_Click(object sender, EventArgs e)
+        {
+            st.Add_Student(Convert.ToInt32(textBox_GeneralNumber.Text),
+                Convert.ToInt32(textBox_Company.Text),textBox_Name.Text,
+                Convert.ToString(comboDegrees.SelectedValue),
+                Convert.ToString(comboRecruitingArea.SelectedValue),
+                Convert.ToString(comboGovernorates.SelectedValue));
+            MessageBox.Show("تم الاضافة بنجاح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button_WOC2_Cancel_AddStudent_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

@@ -11,17 +11,17 @@ using DevExpress.XtraEditors;
 
 namespace ArmyProject.PL
 {
-    public partial class Frm_StudentView : DevExpress.XtraEditors.XtraUserControl
+    public partial class Frm_StudentGrid : DevExpress.XtraEditors.XtraUserControl
     {
-        public Frm_StudentView()
+        public Frm_StudentGrid()
         {
             InitializeComponent();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
-        {  
-            this.students_TBLTableAdapter1.Fill(army_DBDataSetViewStudents.Students_TBL);
-            governorates_TBLTableAdapter1.Fill(army_DBDataSetViewStudents.Governorates_TBL);
+        {
+            this.students_TBLTableAdapter1.Fill(army_DBDataSetForGrid.Students_TBL);
+            //governorates_TBLTableAdapter1.Fill(army_DBDataSetViewStudents.Governorates_TBL);
         }
     }
 }

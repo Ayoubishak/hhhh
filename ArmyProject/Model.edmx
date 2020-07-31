@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -75,19 +75,30 @@
           <Property Name="GeneralNumber" Type="int" Nullable="false" />
           <Property Name="Company" Type="int" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Degree" Type="nvarchar" MaxLength="50" />
+          <Property Name="RecruitingArea" Type="nvarchar" MaxLength="50" />
+          <Property Name="Governorate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ArrivalStations_Id" Type="int" />
           <Property Name="Degree_Id" Type="int" />
           <Property Name="RecruitingArea_Id" Type="int" />
           <Property Name="Governorate_Id" Type="int" />
-          <Property Name="ArrivalStations_Id" Type="int" />
-          <Property Name="Weight" Type="int" />
-          <Property Name="Length" Type="int" />
-          <Property Name="Evaluation" Type="int" />
           <Property Name="Rank" Type="varchar" MaxLength="50" />
           <Property Name="Age" Type="int" />
           <Property Name="BirthOfDate" Type="date" />
           <Property Name="Address" Type="nvarchar(max)" />
           <Property Name="Battalion" Type="int" />
-          <Property Name="History_Id" Type="int" />
+          <Property Name="Weapon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Evaluation" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Transport_TBL">
           <Key>
@@ -179,9 +190,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_TBL_ArrivalStations_TBL">
-          <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1" />
           <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ArrivalStations_TBL">
@@ -193,9 +202,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_TBL_Degree_TBL">
-          <End Role="Degree_TBL" Type="Self.Degree_TBL" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Degree_TBL" Type="Self.Degree_TBL" Multiplicity="0..1" />
           <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Degree_TBL">
@@ -206,7 +213,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Students_TBL_Governorates_TBL">
+        <Association Name="FK_Students_TBL_Governorates_TBL1">
           <End Role="Governorates_TBL" Type="Self.Governorates_TBL" Multiplicity="0..1" />
           <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -219,9 +226,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_TBL_RecruitingArea_TBL">
-          <End Role="RecruitingArea_TBL" Type="Self.RecruitingArea_TBL" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="RecruitingArea_TBL" Type="Self.RecruitingArea_TBL" Multiplicity="0..1" />
           <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RecruitingArea_TBL">
@@ -233,6 +238,14 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="SP_AddStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GeneralNumber" Type="int" Mode="In" />
+          <Parameter Name="Company" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Degree" Type="int" Mode="In" />
+          <Parameter Name="RecruitingArea" Type="int" Mode="In" />
+          <Parameter Name="Governorate" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -249,6 +262,10 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="SP_GetAllDegrees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_GetAllGovernorates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_GetAllRecruitingArea" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_GetAllTransports" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -276,6 +293,7 @@
           <EntitySet Name="Sanctions_TBL" EntityType="Self.Sanctions_TBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student_Sanctions_TBL" EntityType="Self.Student_Sanctions_TBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students_TBL" EntityType="Self.Students_TBL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transport_TBL" EntityType="Self.Transport_TBL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users_TBL" EntityType="Self.Users_TBL" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ArrivalStations_TBL_Transport_TBL" Association="Self.FK_ArrivalStations_TBL_Transport_TBL">
@@ -306,7 +324,7 @@
             <End Role="Degree_TBL" EntitySet="Degree_TBL" />
             <End Role="Students_TBL" EntitySet="Students_TBL" />
           </AssociationSet>
-          <AssociationSet Name="FK_Students_TBL_Governorates_TBL" Association="Self.FK_Students_TBL_Governorates_TBL">
+          <AssociationSet Name="FK_Students_TBL_Governorates_TBL1" Association="Self.FK_Students_TBL_Governorates_TBL1">
             <End Role="Governorates_TBL" EntitySet="Governorates_TBL" />
             <End Role="Students_TBL" EntitySet="Students_TBL" />
           </AssociationSet>
@@ -336,7 +354,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Students_TBL_Degree_TBL" FromRole="Degree_TBL" ToRole="Students_TBL" />
@@ -350,7 +368,7 @@
           <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ArrivalStations_Id" Type="Int32" />
           <NavigationProperty Name="ArrivalStations_TBL" Relationship="Self.FK_Governorates_TBL_ArrivalStations_TBL" FromRole="Governorates_TBL" ToRole="ArrivalStations_TBL" />
-          <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL" FromRole="Governorates_TBL" ToRole="Students_TBL" />
+          <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL1" FromRole="Governorates_TBL" ToRole="Students_TBL" />
         </EntityType>
         <EntityType Name="History_TBL">
           <Key>
@@ -401,24 +419,35 @@
           <Property Name="GeneralNumber" Type="Int32" Nullable="false" />
           <Property Name="Company" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecruitingArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Governorate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ArrivalStations_Id" Type="Int32" />
           <Property Name="Degree_Id" Type="Int32" />
           <Property Name="RecruitingArea_Id" Type="Int32" />
           <Property Name="Governorate_Id" Type="Int32" />
-          <Property Name="ArrivalStations_Id" Type="Int32" />
-          <Property Name="Weight" Type="Int32" />
-          <Property Name="Length" Type="Int32" />
-          <Property Name="Evaluation" Type="Int32" />
           <Property Name="Rank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Age" Type="Int32" />
           <Property Name="BirthOfDate" Type="DateTime" Precision="0" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Battalion" Type="Int32" />
-          <Property Name="History_Id" Type="Int32" />
+          <Property Name="Weapon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Evaluation" Type="Int32" />
           <NavigationProperty Name="ArrivalStations_TBL" Relationship="Self.FK_Students_TBL_ArrivalStations_TBL" FromRole="Students_TBL" ToRole="ArrivalStations_TBL" />
           <NavigationProperty Name="Degree_TBL" Relationship="Self.FK_Students_TBL_Degree_TBL" FromRole="Students_TBL" ToRole="Degree_TBL" />
-          <NavigationProperty Name="Governorates_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL" FromRole="Students_TBL" ToRole="Governorates_TBL" />
+          <NavigationProperty Name="Governorates_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL1" FromRole="Students_TBL" ToRole="Governorates_TBL" />
           <NavigationProperty Name="RecruitingArea_TBL" Relationship="Self.FK_Students_TBL_RecruitingArea_TBL" FromRole="Students_TBL" ToRole="RecruitingArea_TBL" />
           <NavigationProperty Name="Student_Sanctions_TBL" Relationship="Self.FK_Student_Sanctions_TBL_Students_TBL" FromRole="Students_TBL" ToRole="Student_Sanctions_TBL" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Transport_TBL">
           <Key>
@@ -470,9 +499,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_TBL_ArrivalStations_TBL">
-          <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1" />
           <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ArrivalStations_TBL">
@@ -484,9 +511,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_TBL_Degree_TBL">
-          <End Role="Degree_TBL" Type="Self.Degree_TBL" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="Degree_TBL" Type="Self.Degree_TBL" Multiplicity="0..1" />
           <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Degree_TBL">
@@ -497,7 +522,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Students_TBL_Governorates_TBL">
+        <Association Name="FK_Students_TBL_Governorates_TBL1">
           <End Role="Governorates_TBL" Type="Self.Governorates_TBL" Multiplicity="0..1" />
           <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -524,9 +549,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Students_TBL_RecruitingArea_TBL">
-          <End Role="RecruitingArea_TBL" Type="Self.RecruitingArea_TBL" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="RecruitingArea_TBL" Type="Self.RecruitingArea_TBL" Multiplicity="0..1" />
           <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RecruitingArea_TBL">
@@ -565,7 +588,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Army_DBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Army_DBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ArrivalStations_TBL" EntityType="Self.ArrivalStations_TBL" />
           <EntitySet Name="Degree_TBL" EntityType="Self.Degree_TBL" />
           <EntitySet Name="Governorates_TBL" EntityType="Self.Governorates_TBL" />
@@ -574,6 +597,7 @@
           <EntitySet Name="Sanctions_TBL" EntityType="Self.Sanctions_TBL" />
           <EntitySet Name="Student_Sanctions_TBL" EntityType="Self.Student_Sanctions_TBL" />
           <EntitySet Name="Students_TBL" EntityType="Self.Students_TBL" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Transport_TBL" EntityType="Self.Transport_TBL" />
           <EntitySet Name="Users_TBL" EntityType="Self.Users_TBL" />
           <AssociationSet Name="FK_ArrivalStations_TBL_Transport_TBL" Association="Self.FK_ArrivalStations_TBL_Transport_TBL">
@@ -592,7 +616,7 @@
             <End Role="Degree_TBL" EntitySet="Degree_TBL" />
             <End Role="Students_TBL" EntitySet="Students_TBL" />
           </AssociationSet>
-          <AssociationSet Name="FK_Students_TBL_Governorates_TBL" Association="Self.FK_Students_TBL_Governorates_TBL">
+          <AssociationSet Name="FK_Students_TBL_Governorates_TBL1" Association="Self.FK_Students_TBL_Governorates_TBL1">
             <End Role="Governorates_TBL" EntitySet="Governorates_TBL" />
             <End Role="Students_TBL" EntitySet="Students_TBL" />
           </AssociationSet>
@@ -612,6 +636,14 @@
             <End Role="Students_TBL" EntitySet="Students_TBL" />
             <End Role="Student_Sanctions_TBL" EntitySet="Student_Sanctions_TBL" />
           </AssociationSet>
+          <FunctionImport Name="SP_AddStudent">
+            <Parameter Name="GeneralNumber" Mode="In" Type="Int32" />
+            <Parameter Name="Company" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Degree" Mode="In" Type="Int32" />
+            <Parameter Name="RecruitingArea" Mode="In" Type="Int32" />
+            <Parameter Name="Governorate" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -628,6 +660,10 @@
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="SP_GetAllDegrees" ReturnType="Collection(Army_DBModel.SP_GetAllDegrees_Result)" />
+          <FunctionImport Name="SP_GetAllGovernorates" ReturnType="Collection(Army_DBModel.SP_GetAllGovernorates_Result)" />
+          <FunctionImport Name="SP_GetAllRecruitingArea" ReturnType="Collection(Army_DBModel.SP_GetAllRecruitingArea_Result)" />
+          <FunctionImport Name="SP_GetAllTransports" ReturnType="Collection(Army_DBModel.SP_GetAllTransports_Result)" />
           <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Army_DBModel.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -647,6 +683,28 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
+        <ComplexType Name="SP_GetAllDegrees_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_GetAllGovernorates_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ArrivalStations_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GetAllRecruitingArea_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_GetAllTransports_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Number" Nullable="true" />
+        </ComplexType>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -670,7 +728,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Army_DBModelStoreContainer" CdmEntityContainer="Army_DBEntities">
+        <EntityContainerMapping StorageEntityContainer="Army_DBModelStoreContainer" CdmEntityContainer="Army_DBEntities1">
           <EntitySetMapping Name="ArrivalStations_TBL">
             <EntityTypeMapping TypeName="Army_DBModel.ArrivalStations_TBL">
               <MappingFragment StoreEntitySet="ArrivalStations_TBL">
@@ -747,19 +805,31 @@
                 <ScalarProperty Name="GeneralNumber" ColumnName="GeneralNumber" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="RecruitingArea" ColumnName="RecruitingArea" />
+                <ScalarProperty Name="Governorate" ColumnName="Governorate" />
+                <ScalarProperty Name="ArrivalStations_Id" ColumnName="ArrivalStations_Id" />
                 <ScalarProperty Name="Degree_Id" ColumnName="Degree_Id" />
                 <ScalarProperty Name="RecruitingArea_Id" ColumnName="RecruitingArea_Id" />
                 <ScalarProperty Name="Governorate_Id" ColumnName="Governorate_Id" />
-                <ScalarProperty Name="ArrivalStations_Id" ColumnName="ArrivalStations_Id" />
-                <ScalarProperty Name="Weight" ColumnName="Weight" />
-                <ScalarProperty Name="Length" ColumnName="Length" />
-                <ScalarProperty Name="Evaluation" ColumnName="Evaluation" />
                 <ScalarProperty Name="Rank" ColumnName="Rank" />
                 <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="BirthOfDate" ColumnName="BirthOfDate" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Battalion" ColumnName="Battalion" />
-                <ScalarProperty Name="History_Id" ColumnName="History_Id" />
+                <ScalarProperty Name="Weapon" ColumnName="Weapon" />
+                <ScalarProperty Name="Evaluation" ColumnName="Evaluation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Army_DBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -784,9 +854,48 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_AddStudent" FunctionName="Army_DBModel.Store.SP_AddStudent" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Army_DBModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Army_DBModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Army_DBModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="SP_GetAllDegrees" FunctionName="Army_DBModel.Store.SP_GetAllDegrees">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Army_DBModel.SP_GetAllDegrees_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetAllGovernorates" FunctionName="Army_DBModel.Store.SP_GetAllGovernorates">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Army_DBModel.SP_GetAllGovernorates_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ArrivalStations_Id" ColumnName="ArrivalStations_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetAllRecruitingArea" FunctionName="Army_DBModel.Store.SP_GetAllRecruitingArea">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Army_DBModel.SP_GetAllRecruitingArea_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetAllTransports" FunctionName="Army_DBModel.Store.SP_GetAllTransports">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Army_DBModel.SP_GetAllTransports_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Army_DBModel.Store.sp_helpdiagramdefinition">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Army_DBModel.sp_helpdiagramdefinition_Result">

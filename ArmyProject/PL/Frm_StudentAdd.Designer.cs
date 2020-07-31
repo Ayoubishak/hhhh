@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_StudentAdd));
             this.groupBoxStudentAdd = new System.Windows.Forms.GroupBox();
-            this.button_WOC2_Cancel = new ePOSOne.btnProduct.Button_WOC();
-            this.button_WOC1_AddStudent = new ePOSOne.btnProduct.Button_WOC();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.comboGovernorates = new System.Windows.Forms.ComboBox();
             this.comboRecruitingArea = new System.Windows.Forms.ComboBox();
             this.comboDegrees = new System.Windows.Forms.ComboBox();
@@ -49,8 +48,9 @@
             this.textBox_GeneralNumber = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button_WOC2_Cancel_AddStudent = new ePOSOne.btnProduct.Button_WOC();
+            this.button_AddStudent = new ePOSOne.btnProduct.Button_WOC();
             this.groupBoxStudentAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,9 +61,9 @@
             this.groupBoxStudentAdd.AutoSize = true;
             this.groupBoxStudentAdd.BackColor = System.Drawing.Color.White;
             this.groupBoxStudentAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBoxStudentAdd.Controls.Add(this.button_WOC2_Cancel_AddStudent);
+            this.groupBoxStudentAdd.Controls.Add(this.button_AddStudent);
             this.groupBoxStudentAdd.Controls.Add(this.panel3);
-            this.groupBoxStudentAdd.Controls.Add(this.button_WOC2_Cancel);
-            this.groupBoxStudentAdd.Controls.Add(this.button_WOC1_AddStudent);
             this.groupBoxStudentAdd.Controls.Add(this.comboGovernorates);
             this.groupBoxStudentAdd.Controls.Add(this.comboRecruitingArea);
             this.groupBoxStudentAdd.Controls.Add(this.comboDegrees);
@@ -89,43 +89,15 @@
             this.groupBoxStudentAdd.TabStop = false;
             this.groupBoxStudentAdd.Enter += new System.EventHandler(this.groupBoxStudentAdd_Enter);
             // 
-            // button_WOC2_Cancel
+            // panel3
             // 
-            this.button_WOC2_Cancel.BorderColor = System.Drawing.Color.Orange;
-            this.button_WOC2_Cancel.ButtonColor = System.Drawing.Color.White;
-            this.button_WOC2_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC2_Cancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC2_Cancel.ForeColor = System.Drawing.Color.Transparent;
-            this.button_WOC2_Cancel.Location = new System.Drawing.Point(472, 316);
-            this.button_WOC2_Cancel.Name = "button_WOC2_Cancel";
-            this.button_WOC2_Cancel.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.button_WOC2_Cancel.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.button_WOC2_Cancel.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.button_WOC2_Cancel.Size = new System.Drawing.Size(97, 48);
-            this.button_WOC2_Cancel.TabIndex = 19;
-            this.button_WOC2_Cancel.Text = "الغاء";
-            this.button_WOC2_Cancel.TextColor = System.Drawing.Color.Black;
-            this.button_WOC2_Cancel.UseVisualStyleBackColor = true;
-            this.button_WOC2_Cancel.Click += new System.EventHandler(this.button_WOC2_Cancel_Click);
-            // 
-            // button_WOC1_AddStudent
-            // 
-            this.button_WOC1_AddStudent.BorderColor = System.Drawing.Color.Orange;
-            this.button_WOC1_AddStudent.ButtonColor = System.Drawing.Color.White;
-            this.button_WOC1_AddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC1_AddStudent.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC1_AddStudent.ForeColor = System.Drawing.Color.Transparent;
-            this.button_WOC1_AddStudent.Location = new System.Drawing.Point(325, 316);
-            this.button_WOC1_AddStudent.Name = "button_WOC1_AddStudent";
-            this.button_WOC1_AddStudent.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.button_WOC1_AddStudent.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.button_WOC1_AddStudent.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.button_WOC1_AddStudent.Size = new System.Drawing.Size(89, 48);
-            this.button_WOC1_AddStudent.TabIndex = 18;
-            this.button_WOC1_AddStudent.Text = "حسنا";
-            this.button_WOC1_AddStudent.TextColor = System.Drawing.Color.Black;
-            this.button_WOC1_AddStudent.UseVisualStyleBackColor = true;
-            this.button_WOC1_AddStudent.Click += new System.EventHandler(this.button_WOC1_AddStudent_Click);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 427);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(682, 17);
+            this.panel3.TabIndex = 0;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // comboGovernorates
             // 
@@ -295,16 +267,6 @@
             this.panel2.Size = new System.Drawing.Size(12, 520);
             this.panel2.TabIndex = 5;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 427);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(682, 17);
-            this.panel3.TabIndex = 0;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
@@ -313,6 +275,44 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(942, 11);
             this.panel4.TabIndex = 6;
+            // 
+            // button_WOC2_Cancel_AddStudent
+            // 
+            this.button_WOC2_Cancel_AddStudent.BorderColor = System.Drawing.Color.Orange;
+            this.button_WOC2_Cancel_AddStudent.ButtonColor = System.Drawing.Color.White;
+            this.button_WOC2_Cancel_AddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC2_Cancel_AddStudent.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC2_Cancel_AddStudent.ForeColor = System.Drawing.Color.Transparent;
+            this.button_WOC2_Cancel_AddStudent.Location = new System.Drawing.Point(486, 333);
+            this.button_WOC2_Cancel_AddStudent.Name = "button_WOC2_Cancel_AddStudent";
+            this.button_WOC2_Cancel_AddStudent.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.button_WOC2_Cancel_AddStudent.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.button_WOC2_Cancel_AddStudent.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.button_WOC2_Cancel_AddStudent.Size = new System.Drawing.Size(97, 48);
+            this.button_WOC2_Cancel_AddStudent.TabIndex = 21;
+            this.button_WOC2_Cancel_AddStudent.Text = "الغاء";
+            this.button_WOC2_Cancel_AddStudent.TextColor = System.Drawing.Color.Black;
+            this.button_WOC2_Cancel_AddStudent.UseVisualStyleBackColor = true;
+            this.button_WOC2_Cancel_AddStudent.Click += new System.EventHandler(this.button_WOC2_Cancel_AddStudent_Click);
+            // 
+            // button_AddStudent
+            // 
+            this.button_AddStudent.BorderColor = System.Drawing.Color.Orange;
+            this.button_AddStudent.ButtonColor = System.Drawing.Color.White;
+            this.button_AddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_AddStudent.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_AddStudent.ForeColor = System.Drawing.Color.Transparent;
+            this.button_AddStudent.Location = new System.Drawing.Point(339, 333);
+            this.button_AddStudent.Name = "button_AddStudent";
+            this.button_AddStudent.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.button_AddStudent.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.button_AddStudent.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.button_AddStudent.Size = new System.Drawing.Size(89, 48);
+            this.button_AddStudent.TabIndex = 20;
+            this.button_AddStudent.Text = "حسنا";
+            this.button_AddStudent.TextColor = System.Drawing.Color.Black;
+            this.button_AddStudent.UseVisualStyleBackColor = true;
+            this.button_AddStudent.Click += new System.EventHandler(this.button_AddStudent_Click);
             // 
             // Frm_StudentAdd
             // 
@@ -325,12 +325,10 @@
             this.Controls.Add(this.groupBoxStudentAdd);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Frm_StudentAdd.IconOptions.LargeImage")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Frm_StudentAdd";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "نافذة اضافة طالب";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Frm_StudentAdd_Load);
@@ -346,8 +344,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxStudentAdd;
-        private ePOSOne.btnProduct.Button_WOC button_WOC2_Cancel;
-        private ePOSOne.btnProduct.Button_WOC button_WOC1_AddStudent;
+        //private ePOSOne.btnProduct.Button_WOC button_WOC2_Cancel;
+        //private ePOSOne.btnProduct.Button_WOC button_WOC1_AddStudent;
         private System.Windows.Forms.ComboBox comboGovernorates;
         private System.Windows.Forms.ComboBox comboRecruitingArea;
         private System.Windows.Forms.ComboBox comboDegrees;
@@ -367,5 +365,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
+        private ePOSOne.btnProduct.Button_WOC button_WOC2_Cancel_AddStudent;
+        private ePOSOne.btnProduct.Button_WOC button_AddStudent;
     }
 }
