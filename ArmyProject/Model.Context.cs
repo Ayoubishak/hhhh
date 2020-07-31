@@ -15,10 +15,10 @@ namespace ArmyProject
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Army_DBEntities1 : DbContext
+    public partial class Army_DBEntities : DbContext
     {
-        public Army_DBEntities1()
-            : base("name=Army_DBEntities1")
+        public Army_DBEntities()
+            : base("name=Army_DBEntities")
         {
         }
     
@@ -39,7 +39,7 @@ namespace ArmyProject
         public virtual DbSet<Transport_TBL> Transport_TBL { get; set; }
         public virtual DbSet<Users_TBL> Users_TBL { get; set; }
     
-        public virtual int SP_AddStudent(Nullable<int> generalNumber, Nullable<int> company, string name, Nullable<int> degree, Nullable<int> recruitingArea, Nullable<int> governorate)
+        public virtual int SP_AddStudent(Nullable<int> generalNumber, Nullable<int> company, string name, string degree, string recruitingArea, string governorate)
         {
             var generalNumberParameter = generalNumber.HasValue ?
                 new ObjectParameter("GeneralNumber", generalNumber) :
@@ -53,17 +53,17 @@ namespace ArmyProject
                 new ObjectParameter("Name", name) :
                 new ObjectParameter("Name", typeof(string));
     
-            var degreeParameter = degree.HasValue ?
+            var degreeParameter = degree != null ?
                 new ObjectParameter("Degree", degree) :
-                new ObjectParameter("Degree", typeof(int));
+                new ObjectParameter("Degree", typeof(string));
     
-            var recruitingAreaParameter = recruitingArea.HasValue ?
+            var recruitingAreaParameter = recruitingArea != null ?
                 new ObjectParameter("RecruitingArea", recruitingArea) :
-                new ObjectParameter("RecruitingArea", typeof(int));
+                new ObjectParameter("RecruitingArea", typeof(string));
     
-            var governorateParameter = governorate.HasValue ?
+            var governorateParameter = governorate != null ?
                 new ObjectParameter("Governorate", governorate) :
-                new ObjectParameter("Governorate", typeof(int));
+                new ObjectParameter("Governorate", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_AddStudent", generalNumberParameter, companyParameter, nameParameter, degreeParameter, recruitingAreaParameter, governorateParameter);
         }

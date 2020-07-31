@@ -40,5 +40,10 @@ namespace ArmyProject.PL.Views.Students_TBLView{
         {
 
         }
+
+        private void DegreeTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dbde3fa11f7142258396078833a8e14a" Name="Diagram1" ZoomLevel="82">
+      <Diagram DiagramId="22051b0b44144a00a84c9b9deadde1ea" Name="Diagram1">
         <EntityTypeShape EntityType="Army_DBModel.ArrivalStations_TBL" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.Degree_TBL" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.Governorates_TBL" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
@@ -20,7 +20,7 @@
         <AssociationConnector Association="Army_DBModel.FK_Governorates_TBL_ArrivalStations_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_Students_TBL_ArrivalStations_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Degree_TBL" ManuallyRouted="false" />
-        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Governorates_TBL1" ManuallyRouted="false" />
+        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Governorates_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_History_TBL_Users_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_Students_TBL_RecruitingArea_TBL" ManuallyRouted="false" />
         <AssociationConnector Association="Army_DBModel.FK_Student_Sanctions_TBL_Sanctions_TBL" ManuallyRouted="false" />

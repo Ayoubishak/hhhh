@@ -14,7 +14,7 @@
   </EntityType>
   <EntityType Name="Degree_TBL">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -23,14 +23,14 @@
   </EntityType>
   <EntityType Name="Governorates_TBL">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ArrivalStations_Id" Type="Int32" />
     <NavigationProperty Name="ArrivalStations_TBL" Relationship="Self.FK_Governorates_TBL_ArrivalStations_TBL" FromRole="Governorates_TBL" ToRole="ArrivalStations_TBL" />
-    <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL1" FromRole="Governorates_TBL" ToRole="Students_TBL" />
+    <NavigationProperty Name="Students_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL" FromRole="Governorates_TBL" ToRole="Students_TBL" />
   </EntityType>
   <EntityType Name="History_TBL">
     <Key>
@@ -45,7 +45,7 @@
   </EntityType>
   <EntityType Name="RecruitingArea_TBL">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -85,9 +85,9 @@
     <Property Name="RecruitingArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Governorate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ArrivalStations_Id" Type="Int32" />
-    <Property Name="Degree_Id" Type="Int32" />
-    <Property Name="RecruitingArea_Id" Type="Int32" />
-    <Property Name="Governorate_Id" Type="Int32" />
+    <Property Name="Degree_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecruitingArea_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Governorate_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Rank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Age" Type="Int32" />
     <Property Name="BirthOfDate" Type="DateTime" Precision="0" />
@@ -97,7 +97,7 @@
     <Property Name="Evaluation" Type="Int32" />
     <NavigationProperty Name="ArrivalStations_TBL" Relationship="Self.FK_Students_TBL_ArrivalStations_TBL" FromRole="Students_TBL" ToRole="ArrivalStations_TBL" />
     <NavigationProperty Name="Degree_TBL" Relationship="Self.FK_Students_TBL_Degree_TBL" FromRole="Students_TBL" ToRole="Degree_TBL" />
-    <NavigationProperty Name="Governorates_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL1" FromRole="Students_TBL" ToRole="Governorates_TBL" />
+    <NavigationProperty Name="Governorates_TBL" Relationship="Self.FK_Students_TBL_Governorates_TBL" FromRole="Students_TBL" ToRole="Governorates_TBL" />
     <NavigationProperty Name="RecruitingArea_TBL" Relationship="Self.FK_Students_TBL_RecruitingArea_TBL" FromRole="Students_TBL" ToRole="RecruitingArea_TBL" />
     <NavigationProperty Name="Student_Sanctions_TBL" Relationship="Self.FK_Student_Sanctions_TBL_Students_TBL" FromRole="Students_TBL" ToRole="Student_Sanctions_TBL" />
   </EntityType>
@@ -177,22 +177,22 @@
     <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Degree_TBL">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="Name" />
       </Principal>
       <Dependent Role="Students_TBL">
-        <PropertyRef Name="Degree_Id" />
+        <PropertyRef Name="Degree" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Students_TBL_Governorates_TBL1">
+  <Association Name="FK_Students_TBL_Governorates_TBL">
     <End Role="Governorates_TBL" Type="Self.Governorates_TBL" Multiplicity="0..1" />
     <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Governorates_TBL">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="Name" />
       </Principal>
       <Dependent Role="Students_TBL">
-        <PropertyRef Name="Governorate_Id" />
+        <PropertyRef Name="Governorate" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -215,10 +215,10 @@
     <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="RecruitingArea_TBL">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="Name" />
       </Principal>
       <Dependent Role="Students_TBL">
-        <PropertyRef Name="RecruitingArea_Id" />
+        <PropertyRef Name="RecruitingArea" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -250,7 +250,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Army_DBEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Army_DBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ArrivalStations_TBL" EntityType="Self.ArrivalStations_TBL" />
     <EntitySet Name="Degree_TBL" EntityType="Self.Degree_TBL" />
     <EntitySet Name="Governorates_TBL" EntityType="Self.Governorates_TBL" />
@@ -278,7 +278,7 @@
       <End Role="Degree_TBL" EntitySet="Degree_TBL" />
       <End Role="Students_TBL" EntitySet="Students_TBL" />
     </AssociationSet>
-    <AssociationSet Name="FK_Students_TBL_Governorates_TBL1" Association="Self.FK_Students_TBL_Governorates_TBL1">
+    <AssociationSet Name="FK_Students_TBL_Governorates_TBL" Association="Self.FK_Students_TBL_Governorates_TBL">
       <End Role="Governorates_TBL" EntitySet="Governorates_TBL" />
       <End Role="Students_TBL" EntitySet="Students_TBL" />
     </AssociationSet>
@@ -302,9 +302,9 @@
       <Parameter Name="GeneralNumber" Mode="In" Type="Int32" />
       <Parameter Name="Company" Mode="In" Type="Int32" />
       <Parameter Name="Name" Mode="In" Type="String" />
-      <Parameter Name="Degree" Mode="In" Type="Int32" />
-      <Parameter Name="RecruitingArea" Mode="In" Type="Int32" />
-      <Parameter Name="Governorate" Mode="In" Type="Int32" />
+      <Parameter Name="Degree" Mode="In" Type="String" />
+      <Parameter Name="RecruitingArea" Mode="In" Type="String" />
+      <Parameter Name="Governorate" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />

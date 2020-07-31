@@ -10,9 +10,9 @@ namespace ArmyProject.PL.Army_DBEntities1DataModel {
     /// <summary>
     /// A Army_DBEntities1UnitOfWork instance that represents the run-time implementation of the IArmy_DBEntities1UnitOfWork interface.
     /// </summary>
-    public class Army_DBEntities1UnitOfWork : DbUnitOfWork<Army_DBEntities1>, IArmy_DBEntities1UnitOfWork {
+    public class Army_DBEntities1UnitOfWork : DbUnitOfWork<Army_DBEntities>, IArmy_DBEntities1UnitOfWork {
 
-        public Army_DBEntities1UnitOfWork(Func<Army_DBEntities1> contextFactory)
+        public Army_DBEntities1UnitOfWork(Func<Army_DBEntities> contextFactory)
             : base(contextFactory) {
         }
 
@@ -48,9 +48,7 @@ namespace ArmyProject.PL.Army_DBEntities1DataModel {
             get { return GetRepository(x => x.Set<Students_TBL>(), (Students_TBL x) => x.Id); }
         }
 
-        IRepository<sysdiagram, int> IArmy_DBEntities1UnitOfWork.sysdiagrams {
-            get { return GetRepository(x => x.Set<sysdiagram>(), (sysdiagram x) => x.diagram_id); }
-        }
+        
 
         IRepository<Transport_TBL, int> IArmy_DBEntities1UnitOfWork.Transport_TBL {
             get { return GetRepository(x => x.Set<Transport_TBL>(), (Transport_TBL x) => x.Id); }

@@ -28,9 +28,9 @@ namespace ArmyProject
         public string RecruitingArea { get; set; }
         public string Governorate { get; set; }
         public Nullable<int> ArrivalStations_Id { get; set; }
-        public Nullable<int> Degree_Id { get; set; }
-        public Nullable<int> RecruitingArea_Id { get; set; }
-        public Nullable<int> Governorate_Id { get; set; }
+        public string Degree_Id { get; set; }
+        public string RecruitingArea_Id { get; set; }
+        public string Governorate_Id { get; set; }
         public string Rank { get; set; }
         public Nullable<int> Age { get; set; }
         public Nullable<System.DateTime> BirthOfDate { get; set; }

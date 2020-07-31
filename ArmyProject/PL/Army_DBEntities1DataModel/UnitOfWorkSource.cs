@@ -18,7 +18,7 @@ namespace ArmyProject.PL.Army_DBEntities1DataModel {
         /// Returns the IUnitOfWorkFactory implementation.
         /// </summary>
         public static IUnitOfWorkFactory<IArmy_DBEntities1UnitOfWork> GetUnitOfWorkFactory() {
-            return new DbUnitOfWorkFactory<IArmy_DBEntities1UnitOfWork>(() => new Army_DBEntities1UnitOfWork(() => new Army_DBEntities1()));
+            return new DbUnitOfWorkFactory<IArmy_DBEntities1UnitOfWork>(() => new Army_DBEntities1UnitOfWork(() => new Army_DBEntities()));
         }
     }
 }

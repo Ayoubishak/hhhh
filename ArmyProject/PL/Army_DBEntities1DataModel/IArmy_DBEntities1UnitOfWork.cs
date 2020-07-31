@@ -54,7 +54,7 @@ namespace ArmyProject.PL.Army_DBEntities1DataModel {
         /// <summary>
         /// The sysdiagram entities repository.
         /// </summary>
-		IRepository<sysdiagram, int> sysdiagrams { get; }
+	
         
         /// <summary>
         /// The Transport_TBL entities repository.
