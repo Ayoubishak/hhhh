@@ -1,13 +1,13 @@
 ﻿namespace ArmyProject.PL
 {
-    partial class FrmStudentAdd
+    partial class Frm_StudentAdd
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,18 +20,18 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentAdd));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_StudentAdd));
             this.groupBoxStudentAdd = new System.Windows.Forms.GroupBox();
-            this.button_WOC2 = new ePOSOne.btnProduct.Button_WOC();
-            this.button_WOC1 = new ePOSOne.btnProduct.Button_WOC();
+            this.button_WOC2_Cancel = new ePOSOne.btnProduct.Button_WOC();
+            this.button_WOC1_AddStudent = new ePOSOne.btnProduct.Button_WOC();
             this.comboGovernorates = new System.Windows.Forms.ComboBox();
             this.comboRecruitingArea = new System.Windows.Forms.ComboBox();
             this.comboDegrees = new System.Windows.Forms.ComboBox();
@@ -47,6 +47,10 @@
             this.textBox_Name = new System.Windows.Forms.TextBox();
             this.textBox_Company = new System.Windows.Forms.TextBox();
             this.textBox_GeneralNumber = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.groupBoxStudentAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,8 +61,9 @@
             this.groupBoxStudentAdd.AutoSize = true;
             this.groupBoxStudentAdd.BackColor = System.Drawing.Color.White;
             this.groupBoxStudentAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.groupBoxStudentAdd.Controls.Add(this.button_WOC2);
-            this.groupBoxStudentAdd.Controls.Add(this.button_WOC1);
+            this.groupBoxStudentAdd.Controls.Add(this.panel3);
+            this.groupBoxStudentAdd.Controls.Add(this.button_WOC2_Cancel);
+            this.groupBoxStudentAdd.Controls.Add(this.button_WOC1_AddStudent);
             this.groupBoxStudentAdd.Controls.Add(this.comboGovernorates);
             this.groupBoxStudentAdd.Controls.Add(this.comboRecruitingArea);
             this.groupBoxStudentAdd.Controls.Add(this.comboDegrees);
@@ -75,47 +80,52 @@
             this.groupBoxStudentAdd.Controls.Add(this.textBox_Company);
             this.groupBoxStudentAdd.Controls.Add(this.textBox_GeneralNumber);
             this.groupBoxStudentAdd.Cursor = System.Windows.Forms.Cursors.Default;
-            this.groupBoxStudentAdd.Location = new System.Drawing.Point(59, 10);
+            this.groupBoxStudentAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBoxStudentAdd.Location = new System.Drawing.Point(138, 25);
             this.groupBoxStudentAdd.Name = "groupBoxStudentAdd";
-            this.groupBoxStudentAdd.Size = new System.Drawing.Size(676, 449);
-            this.groupBoxStudentAdd.TabIndex = 2;
+            this.groupBoxStudentAdd.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBoxStudentAdd.Size = new System.Drawing.Size(682, 444);
+            this.groupBoxStudentAdd.TabIndex = 3;
             this.groupBoxStudentAdd.TabStop = false;
+            this.groupBoxStudentAdd.Enter += new System.EventHandler(this.groupBoxStudentAdd_Enter);
             // 
-            // button_WOC2
+            // button_WOC2_Cancel
             // 
-            this.button_WOC2.BorderColor = System.Drawing.Color.Orange;
-            this.button_WOC2.ButtonColor = System.Drawing.Color.White;
-            this.button_WOC2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC2.ForeColor = System.Drawing.Color.Transparent;
-            this.button_WOC2.Location = new System.Drawing.Point(472, 316);
-            this.button_WOC2.Name = "button_WOC2";
-            this.button_WOC2.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.button_WOC2.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.button_WOC2.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.button_WOC2.Size = new System.Drawing.Size(97, 48);
-            this.button_WOC2.TabIndex = 19;
-            this.button_WOC2.Text = "الغاء";
-            this.button_WOC2.TextColor = System.Drawing.Color.Black;
-            this.button_WOC2.UseVisualStyleBackColor = true;
+            this.button_WOC2_Cancel.BorderColor = System.Drawing.Color.Orange;
+            this.button_WOC2_Cancel.ButtonColor = System.Drawing.Color.White;
+            this.button_WOC2_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC2_Cancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC2_Cancel.ForeColor = System.Drawing.Color.Transparent;
+            this.button_WOC2_Cancel.Location = new System.Drawing.Point(472, 316);
+            this.button_WOC2_Cancel.Name = "button_WOC2_Cancel";
+            this.button_WOC2_Cancel.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.button_WOC2_Cancel.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.button_WOC2_Cancel.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.button_WOC2_Cancel.Size = new System.Drawing.Size(97, 48);
+            this.button_WOC2_Cancel.TabIndex = 19;
+            this.button_WOC2_Cancel.Text = "الغاء";
+            this.button_WOC2_Cancel.TextColor = System.Drawing.Color.Black;
+            this.button_WOC2_Cancel.UseVisualStyleBackColor = true;
+            this.button_WOC2_Cancel.Click += new System.EventHandler(this.button_WOC2_Cancel_Click);
             // 
-            // button_WOC1
+            // button_WOC1_AddStudent
             // 
-            this.button_WOC1.BorderColor = System.Drawing.Color.Orange;
-            this.button_WOC1.ButtonColor = System.Drawing.Color.White;
-            this.button_WOC1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_WOC1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_WOC1.ForeColor = System.Drawing.Color.Transparent;
-            this.button_WOC1.Location = new System.Drawing.Point(325, 316);
-            this.button_WOC1.Name = "button_WOC1";
-            this.button_WOC1.OnHoverBorderColor = System.Drawing.Color.Gray;
-            this.button_WOC1.OnHoverButtonColor = System.Drawing.Color.Yellow;
-            this.button_WOC1.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.button_WOC1.Size = new System.Drawing.Size(89, 48);
-            this.button_WOC1.TabIndex = 18;
-            this.button_WOC1.Text = "حسنا";
-            this.button_WOC1.TextColor = System.Drawing.Color.Black;
-            this.button_WOC1.UseVisualStyleBackColor = true;
+            this.button_WOC1_AddStudent.BorderColor = System.Drawing.Color.Orange;
+            this.button_WOC1_AddStudent.ButtonColor = System.Drawing.Color.White;
+            this.button_WOC1_AddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_WOC1_AddStudent.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_WOC1_AddStudent.ForeColor = System.Drawing.Color.Transparent;
+            this.button_WOC1_AddStudent.Location = new System.Drawing.Point(325, 316);
+            this.button_WOC1_AddStudent.Name = "button_WOC1_AddStudent";
+            this.button_WOC1_AddStudent.OnHoverBorderColor = System.Drawing.Color.Gray;
+            this.button_WOC1_AddStudent.OnHoverButtonColor = System.Drawing.Color.Yellow;
+            this.button_WOC1_AddStudent.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.button_WOC1_AddStudent.Size = new System.Drawing.Size(89, 48);
+            this.button_WOC1_AddStudent.TabIndex = 18;
+            this.button_WOC1_AddStudent.Text = "حسنا";
+            this.button_WOC1_AddStudent.TextColor = System.Drawing.Color.Black;
+            this.button_WOC1_AddStudent.UseVisualStyleBackColor = true;
+            this.button_WOC1_AddStudent.Click += new System.EventHandler(this.button_WOC1_AddStudent_Click);
             // 
             // comboGovernorates
             // 
@@ -158,7 +168,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Britannic Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(444, 27);
+            this.label7.Location = new System.Drawing.Point(441, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 36);
             this.label7.TabIndex = 13;
@@ -167,9 +177,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-25, -16);
+            this.pictureBox1.Location = new System.Drawing.Point(-22, -13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(261, 445);
+            this.pictureBox1.Size = new System.Drawing.Size(261, 434);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -179,9 +189,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(575, 270);
+            this.label6.Location = new System.Drawing.Point(572, 267);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 21);
+            this.label6.Size = new System.Drawing.Size(62, 21);
             this.label6.TabIndex = 10;
             this.label6.Text = "المحافظة :";
             // 
@@ -190,9 +200,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(575, 233);
+            this.label5.Location = new System.Drawing.Point(572, 230);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 21);
+            this.label5.Size = new System.Drawing.Size(83, 21);
             this.label5.TabIndex = 9;
             this.label5.Text = "منطقة التجنيد :";
             // 
@@ -201,9 +211,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(575, 196);
+            this.label4.Location = new System.Drawing.Point(572, 193);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 21);
+            this.label4.Size = new System.Drawing.Size(52, 21);
             this.label4.TabIndex = 8;
             this.label4.Text = "المؤهل :";
             // 
@@ -212,9 +222,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(575, 159);
+            this.label3.Location = new System.Drawing.Point(572, 156);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 21);
+            this.label3.Size = new System.Drawing.Size(44, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "الأسم :";
             // 
@@ -223,9 +233,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(575, 123);
+            this.label2.Location = new System.Drawing.Point(572, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 21);
+            this.label2.Size = new System.Drawing.Size(51, 21);
             this.label2.TabIndex = 6;
             this.label2.Text = "السرية :";
             // 
@@ -234,9 +244,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(575, 86);
+            this.label1.Location = new System.Drawing.Point(572, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 21);
+            this.label1.Size = new System.Drawing.Size(67, 21);
             this.label1.TabIndex = 5;
             this.label1.Text = "الرقم العام :";
             // 
@@ -267,17 +277,63 @@
             this.textBox_GeneralNumber.Size = new System.Drawing.Size(156, 23);
             this.textBox_GeneralNumber.TabIndex = 0;
             // 
-            // FrmStudentAdd
+            // panel1
             // 
-            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.Appearance.Options.UseBackColor = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(954, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(11, 520);
+            this.panel1.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(12, 520);
+            this.panel2.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 427);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(682, 17);
+            this.panel3.TabIndex = 0;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(12, 509);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(942, 11);
+            this.panel4.TabIndex = 6;
+            // 
+            // Frm_StudentAdd
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(965, 520);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBoxStudentAdd);
-            this.Name = "FrmStudentAdd";
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("Frm_StudentAdd.IconOptions.LargeImage")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Frm_StudentAdd";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(795, 468);
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "نافذة اضافة طالب";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.Frm_StudentAdd_Load);
             this.groupBoxStudentAdd.ResumeLayout(false);
             this.groupBoxStudentAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -290,8 +346,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxStudentAdd;
-        private ePOSOne.btnProduct.Button_WOC button_WOC2;
-        private ePOSOne.btnProduct.Button_WOC button_WOC1;
+        private ePOSOne.btnProduct.Button_WOC button_WOC2_Cancel;
+        private ePOSOne.btnProduct.Button_WOC button_WOC1_AddStudent;
         private System.Windows.Forms.ComboBox comboGovernorates;
         private System.Windows.Forms.ComboBox comboRecruitingArea;
         private System.Windows.Forms.ComboBox comboDegrees;
@@ -307,6 +363,9 @@
         private System.Windows.Forms.TextBox textBox_Name;
         private System.Windows.Forms.TextBox textBox_Company;
         private System.Windows.Forms.TextBox textBox_GeneralNumber;
-
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
     }
 }

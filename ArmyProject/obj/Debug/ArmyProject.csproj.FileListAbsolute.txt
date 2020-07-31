@@ -16,3 +16,4 @@ C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.e
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.exe
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.pdb
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.csprojResolveAssemblyReference.cache
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Frm_StudentAdd.resources

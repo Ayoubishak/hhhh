@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using System.Data.SqlClient;
 
-
-//Won't use it i made another one
 namespace ArmyProject.PL
 {
-    public partial class FrmStudentAdd : DevExpress.XtraEditors.XtraUserControl
+    public partial class Frm_StudentAdd : DevExpress.XtraEditors.XtraForm
     {
         BL.CLS_Students st = new BL.CLS_Students();
-        public FrmStudentAdd()
+        public Frm_StudentAdd()
         {
             InitializeComponent();
             //comboBox of degrees المؤهل
@@ -34,14 +31,33 @@ namespace ArmyProject.PL
             comboGovernorates.DataSource = st.GetAllGovernorates();
             comboGovernorates.DisplayMember = "Name";
             comboGovernorates.ValueMember = "Id";
+        }
+
+        private void Frm_StudentAdd_Load(object sender, EventArgs e)
+        {
 
         }
+
+        private void button_WOC1_AddStudent_Click(object sender, EventArgs e)
+        {
+            st.Add_Student(Convert.ToInt32(textBox_GeneralNumber.Text), Convert.ToInt32(textBox_Company.Text),
+                textBox_Name.Text, Convert.ToInt32(comboDegrees.SelectedValue),
+                Convert.ToInt32(comboRecruitingArea.SelectedValue),
+                Convert.ToInt32(comboGovernorates.SelectedValue));
+            MessageBox.Show("تم الاضافة بنجاح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button_WOC2_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public void validateNumericTextBox()
         {
             MessageBox.Show("Please enter only numbers.");
 
-            if (System.Text.RegularExpressions.Regex.IsMatch(textBox_GeneralNumber.Text, "[^0-9]") 
-               // || System.Text.RegularExpressions.Regex.IsMatch(textBox_Company.Text, "[^0-9]")
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox_GeneralNumber.Text, "[^0-9]")
+                // || System.Text.RegularExpressions.Regex.IsMatch(textBox_Company.Text, "[^0-9]")
                 )
             {
                 MessageBox.Show("Please enter only numbers.");
@@ -51,35 +67,14 @@ namespace ArmyProject.PL
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void groupBoxStudentAdd_Enter(object sender, EventArgs e)
         {
 
-        }
-
-        private void ribbonStatusBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //AddStudent Button
-        private void button_WOC1_Click(object sender, EventArgs e)
-        {
-            st.Add_Student(Convert.ToInt32(textBox_GeneralNumber.Text), Convert.ToInt32(textBox_Company.Text),
-                textBox_Name.Text,Convert.ToInt32(comboDegrees.SelectedValue),
-                Convert.ToInt32(comboRecruitingArea.SelectedValue),
-                Convert.ToInt32(comboGovernorates.SelectedValue));
-            MessageBox.Show("تم الاضافة بنجاح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void button_WOC2_Click(object sender, EventArgs e)
-        {
-
-            this.Hide();
         }
     }
 }
