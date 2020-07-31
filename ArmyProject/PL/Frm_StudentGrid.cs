@@ -20,8 +20,13 @@ namespace ArmyProject.PL
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
-            this.students_TBLTableAdapter1.Fill(army_DBDataSetForGrid.Students_TBL);
             //governorates_TBLTableAdapter1.Fill(army_DBDataSetViewStudents.Governorates_TBL);
+        }
+
+        private void gridControl1_Click_1(object sender, EventArgs e)
+        {
+            this.students_TBLTableAdapter1.Fill(army_DBDataSetForGrid.Students_TBL);
+
         }
     }
 }
