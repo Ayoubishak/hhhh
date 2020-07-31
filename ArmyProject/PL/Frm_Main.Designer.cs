@@ -43,7 +43,7 @@
             this.accordionControlSeparator1 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElementStudents = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement_AddStudent = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement23 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement_StudentManage = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement24 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementSanctions = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -182,7 +182,7 @@
             // 
             this.accordionControlElementStudents.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement_AddStudent,
-            this.accordionControlElement23,
+            this.accordionControlElement_StudentManage,
             this.accordionControlElement24});
             this.accordionControlElementStudents.Expanded = true;
             this.accordionControlElementStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementStudents.ImageOptions.SvgImage")));
@@ -196,11 +196,12 @@
             this.accordionControlElement_AddStudent.Text = "اضافة طالب";
             this.accordionControlElement_AddStudent.Click += new System.EventHandler(this.accordionControlElement_AddStudent_Click);
             // 
-            // accordionControlElement23
+            // accordionControlElement_StudentManage
             // 
-            this.accordionControlElement23.Name = "accordionControlElement23";
-            this.accordionControlElement23.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement23.Text = "ادارة الطلاب";
+            this.accordionControlElement_StudentManage.Name = "accordionControlElement_StudentManage";
+            this.accordionControlElement_StudentManage.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement_StudentManage.Text = "ادارة الطلاب";
+            this.accordionControlElement_StudentManage.Click += new System.EventHandler(this.accordionControlElement_StudentManage_Click);
             // 
             // accordionControlElement24
             // 
@@ -414,7 +415,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement19;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement20;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_AddStudent;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement23;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_StudentManage;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement24;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
