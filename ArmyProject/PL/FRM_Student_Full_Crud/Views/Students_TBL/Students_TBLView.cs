@@ -30,5 +30,15 @@ namespace ArmyProject.PL.Views.Students_TBLView{
 			 
 			bbiCustomize.ItemClick += (s, e) => { dataLayoutControl1.ShowCustomizationForm(); };
        }
+
+        private void mainRibbonControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ArrivalStations_TBLLookUpEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

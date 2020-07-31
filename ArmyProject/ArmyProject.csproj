@@ -141,10 +141,10 @@
     <Compile Include="PL\Army_DBEntities1DataModel\Army_DBEntities1UnitOfWork.cs" />
     <Compile Include="PL\Army_DBEntities1DataModel\IArmy_DBEntities1UnitOfWork.cs" />
     <Compile Include="PL\Army_DBEntities1DataModel\UnitOfWorkSource.cs" />
-    <Compile Include="PL\Common\CollectionViewModel.cs" />
-    <Compile Include="PL\Common\EntitiesViewModel.cs" />
-    <Compile Include="PL\Common\ReadOnlyCollectionViewModel.cs" />
-    <Compile Include="PL\Common\SingleObjectViewModel.cs" />
+    <Compile Include="PL\FRM_Student_Full_Crud\Common\CollectionViewModel.cs" />
+    <Compile Include="PL\FRM_Student_Full_Crud\Common\EntitiesViewModel.cs" />
+    <Compile Include="PL\FRM_Student_Full_Crud\Common\ReadOnlyCollectionViewModel.cs" />
+    <Compile Include="PL\FRM_Student_Full_Crud\Common\SingleObjectViewModel.cs" />
     <Compile Include="PL\FrmStudentAdd.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,25 +181,25 @@
     <Compile Include="PL\Frm_StudentGrid.Designer.cs">
       <DependentUpon>Frm_StudentGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\ViewModels\Army_DBEntities1ViewModel.cs" />
-    <Compile Include="PL\ViewModels\Students_TBL\Students_TBLCollectionViewModel.cs" />
-    <Compile Include="PL\ViewModels\Students_TBL\Students_TBLViewModel.cs" />
-    <Compile Include="PL\Views\Army_DBEntities1View.cs">
+    <Compile Include="PL\FRM_Student_Full_Crud\ViewModels\Army_DBEntities1ViewModel.cs" />
+    <Compile Include="PL\FRM_Student_Full_Crud\ViewModels\Students_TBL\Students_TBLCollectionViewModel.cs" />
+    <Compile Include="PL\FRM_Student_Full_Crud\ViewModels\Students_TBL\Students_TBLViewModel.cs" />
+    <Compile Include="PL\FRM_Student_Full_Crud\Views\Army_DBEntities1View.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PL\Views\Army_DBEntities1View.designer.cs">
+    <Compile Include="PL\FRM_Student_Full_Crud\Views\Army_DBEntities1View.designer.cs">
       <DependentUpon>Army_DBEntities1View.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Views\Students_TBL\Students_TBLCollectionView.cs">
+    <Compile Include="PL\FRM_Student_Full_Crud\Views\Students_TBL\Students_TBLCollectionView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PL\Views\Students_TBL\Students_TBLCollectionView.Designer.cs">
+    <Compile Include="PL\FRM_Student_Full_Crud\Views\Students_TBL\Students_TBLCollectionView.Designer.cs">
       <DependentUpon>Students_TBLCollectionView.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\Views\Students_TBL\Students_TBLView.cs">
+    <Compile Include="PL\FRM_Student_Full_Crud\Views\Students_TBL\Students_TBLView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PL\Views\Students_TBL\Students_TBLView.designer.cs">
+    <Compile Include="PL\FRM_Student_Full_Crud\Views\Students_TBL\Students_TBLView.designer.cs">
       <DependentUpon>Students_TBLView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -264,10 +264,10 @@
     <EmbeddedResource Include="PL\Frm_StudentGrid.resx">
       <DependentUpon>Frm_StudentGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\Views\Students_TBL\Students_TBLCollectionView.resx">
+    <EmbeddedResource Include="PL\FRM_Student_Full_Crud\Views\Students_TBL\Students_TBLCollectionView.resx">
       <DependentUpon>Students_TBLCollectionView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\Views\Students_TBL\Students_TBLView.resx">
+    <EmbeddedResource Include="PL\FRM_Student_Full_Crud\Views\Students_TBL\Students_TBLView.resx">
       <DependentUpon>Students_TBLView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />

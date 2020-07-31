@@ -51,8 +51,6 @@
             this.BattalionTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.WeaponTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.EvaluationTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.Student_Sanctions_TBLGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForId = new DevExpress.XtraLayout.LayoutControlItem();
@@ -73,7 +71,6 @@
             this.ItemForBattalion = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForWeapon = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForEvaluation = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForStudent_Sanctions_TBL = new DevExpress.XtraLayout.LayoutControlItem();
             this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
@@ -118,8 +115,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BattalionTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeaponTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EvaluationTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Student_Sanctions_TBLGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForId)).BeginInit();
@@ -140,7 +135,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForBattalion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForWeapon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForEvaluation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForStudent_Sanctions_TBL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.SuspendLayout();
@@ -166,11 +160,11 @@
             this.dataLayoutControl1.Controls.Add(this.BattalionTextEdit);
             this.dataLayoutControl1.Controls.Add(this.WeaponTextEdit);
             this.dataLayoutControl1.Controls.Add(this.EvaluationTextEdit);
-            this.dataLayoutControl1.Controls.Add(this.Student_Sanctions_TBLGridControl);
             this.dataLayoutControl1.DataSource = this.students_TBLViewBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 113);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
+            this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 0, 650, 400);
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
             this.dataLayoutControl1.Size = new System.Drawing.Size(1024, 655);
             this.dataLayoutControl1.TabIndex = 0;
@@ -273,6 +267,7 @@
             this.ArrivalStations_TBLLookUpEdit.Size = new System.Drawing.Size(907, 20);
             this.ArrivalStations_TBLLookUpEdit.StyleController = this.dataLayoutControl1;
             this.ArrivalStations_TBLLookUpEdit.TabIndex = 11;
+            this.ArrivalStations_TBLLookUpEdit.EditValueChanged += new System.EventHandler(this.ArrivalStations_TBLLookUpEdit_EditValueChanged);
             // 
             // ArrivalStations_TBLBindingSource
             // 
@@ -450,22 +445,6 @@
             this.EvaluationTextEdit.StyleController = this.dataLayoutControl1;
             this.EvaluationTextEdit.TabIndex = 21;
             // 
-            // Student_Sanctions_TBLGridControl
-            // 
-            this.Student_Sanctions_TBLGridControl.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.students_TBLViewBindingSource, "Student_Sanctions_TBL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.Student_Sanctions_TBLGridControl.Location = new System.Drawing.Point(12, 444);
-            this.Student_Sanctions_TBLGridControl.MainView = this.gridView1;
-            this.Student_Sanctions_TBLGridControl.Name = "Student_Sanctions_TBLGridControl";
-            this.Student_Sanctions_TBLGridControl.Size = new System.Drawing.Size(1000, 199);
-            this.Student_Sanctions_TBLGridControl.TabIndex = 22;
-            this.Student_Sanctions_TBLGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.Student_Sanctions_TBLGridControl;
-            this.gridView1.Name = "gridView1";
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -498,8 +477,7 @@
             this.ItemForAddress,
             this.ItemForBattalion,
             this.ItemForWeapon,
-            this.ItemForEvaluation,
-            this.ItemForStudent_Sanctions_TBL});
+            this.ItemForEvaluation});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
             this.layoutControlGroup2.Size = new System.Drawing.Size(1004, 635);
@@ -528,6 +506,7 @@
             this.ItemForCompany.Location = new System.Drawing.Point(0, 48);
             this.ItemForCompany.Name = "ItemForCompany";
             this.ItemForCompany.Size = new System.Drawing.Size(1004, 24);
+            this.ItemForCompany.Tag = "السرية";
             this.ItemForCompany.Text = "السرية";
             this.ItemForCompany.TextSize = new System.Drawing.Size(90, 13);
             // 
@@ -537,6 +516,7 @@
             this.ItemForName.Location = new System.Drawing.Point(0, 72);
             this.ItemForName.Name = "ItemForName";
             this.ItemForName.Size = new System.Drawing.Size(1004, 24);
+            this.ItemForName.Tag = "الأسم";
             this.ItemForName.Text = "الأسم";
             this.ItemForName.TextSize = new System.Drawing.Size(90, 13);
             // 
@@ -662,20 +642,9 @@
             this.ItemForEvaluation.Control = this.EvaluationTextEdit;
             this.ItemForEvaluation.Location = new System.Drawing.Point(0, 408);
             this.ItemForEvaluation.Name = "ItemForEvaluation";
-            this.ItemForEvaluation.Size = new System.Drawing.Size(1004, 24);
+            this.ItemForEvaluation.Size = new System.Drawing.Size(1004, 227);
             this.ItemForEvaluation.Text = "التقييم";
             this.ItemForEvaluation.TextSize = new System.Drawing.Size(90, 13);
-            // 
-            // ItemForStudent_Sanctions_TBL
-            // 
-            this.ItemForStudent_Sanctions_TBL.Control = this.Student_Sanctions_TBLGridControl;
-            this.ItemForStudent_Sanctions_TBL.Location = new System.Drawing.Point(0, 432);
-            this.ItemForStudent_Sanctions_TBL.Name = "ItemForStudent_Sanctions_TBL";
-            this.ItemForStudent_Sanctions_TBL.Size = new System.Drawing.Size(1004, 203);
-            this.ItemForStudent_Sanctions_TBL.StartNewLine = true;
-            this.ItemForStudent_Sanctions_TBL.Text = "Student_Sanctions_TBL";
-            this.ItemForStudent_Sanctions_TBL.TextSize = new System.Drawing.Size(0, 0);
-            this.ItemForStudent_Sanctions_TBL.TextVisible = false;
             // 
             // mvvmContext
             // 
@@ -775,6 +744,7 @@
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.mainRibbonControl.Size = new System.Drawing.Size(1024, 113);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            this.mainRibbonControl.Click += new System.EventHandler(this.mainRibbonControl_Click);
             // 
             // bbiCustomize
             // 
@@ -803,7 +773,7 @@
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiDelete);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiClose);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
-            this.mainRibbonPageGroup.Text = "Students_TBL Tasks";
+            this.mainRibbonPageGroup.Text = "اجراءات التعديل على الطالب";
             // 
             // ribbonPageGroupLayout
             // 
@@ -812,7 +782,7 @@
             this.ribbonPageGroupLayout.ItemLinks.Add(this.bbiSaveLayout);
             this.ribbonPageGroupLayout.ItemLinks.Add(this.bbiResetLayout);
             this.ribbonPageGroupLayout.Name = "ribbonPageGroupLayout";
-            this.ribbonPageGroupLayout.Text = "Layout";
+            this.ribbonPageGroupLayout.Text = "خاص بالنافذة";
             // 
             // Students_TBLView
             // 
@@ -853,8 +823,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BattalionTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeaponTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EvaluationTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Student_Sanctions_TBLGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForId)).EndInit();
@@ -875,7 +843,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForBattalion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForWeapon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForEvaluation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForStudent_Sanctions_TBL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.ResumeLayout(false);
@@ -920,8 +887,6 @@
         private DevExpress.XtraEditors.TextEdit BattalionTextEdit;
         private DevExpress.XtraEditors.TextEdit WeaponTextEdit;
         private DevExpress.XtraEditors.TextEdit EvaluationTextEdit;
-        private DevExpress.XtraGrid.GridControl Student_Sanctions_TBLGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem ItemForId;
         private DevExpress.XtraLayout.LayoutControlItem ItemForGeneralNumber;
@@ -941,7 +906,6 @@
         private DevExpress.XtraLayout.LayoutControlItem ItemForBattalion;
         private DevExpress.XtraLayout.LayoutControlItem ItemForWeapon;
         private DevExpress.XtraLayout.LayoutControlItem ItemForEvaluation;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForStudent_Sanctions_TBL;
         private DevExpress.XtraBars.BarButtonItem bbiSave;
         private DevExpress.XtraBars.BarButtonItem bbiSaveAndClose;
         private DevExpress.XtraBars.BarButtonItem bbiSaveAndNew;
