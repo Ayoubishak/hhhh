@@ -19,7 +19,6 @@ C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.P
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\DevExpress.Images.v20.1.dll
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Views.Students_TBLView.Students_TBLView.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Views.Students_TBLCollectionView.Students_TBLCollectionView.resources
-C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.csprojResolveAssemblyReference.cache
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Holiday_FULL_Crud.Views.Governorates_TBLCollectionView.Governorates_TBLCollectionView.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Holiday_FULL_Crud.Views.Governorates_TBLView.Governorates_TBLView.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Holiday_Arrival_Full_Crud.Views.ArrivalStations_TBLCollectionView.ArrivalStations_TBLCollectionView.resources
