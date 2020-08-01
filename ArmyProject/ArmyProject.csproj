@@ -144,6 +144,34 @@
     <Compile Include="PL\Army_DBEntities1DataModel\Army_DBEntities1UnitOfWork.cs" />
     <Compile Include="PL\Army_DBEntities1DataModel\IArmy_DBEntities1UnitOfWork.cs" />
     <Compile Include="PL\Army_DBEntities1DataModel\UnitOfWorkSource.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Army_DBEntitiesDataModel\Army_DBEntitiesUnitOfWork.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Army_DBEntitiesDataModel\IArmy_DBEntitiesUnitOfWork.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Army_DBEntitiesDataModel\UnitOfWorkSource.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Common\CollectionViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Common\EntitiesViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Common\ReadOnlyCollectionViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Common\SingleObjectViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\ViewModels\Army_DBEntitiesViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\ViewModels\ArrivalStations_TBL\ArrivalStations_TBLCollectionViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\ViewModels\ArrivalStations_TBL\ArrivalStations_TBLViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Views\Army_DBEntitiesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Views\Army_DBEntitiesView.designer.cs">
+      <DependentUpon>Army_DBEntitiesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Views\ArrivalStations_TBL\ArrivalStations_TBLCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Views\ArrivalStations_TBL\ArrivalStations_TBLCollectionView.designer.cs">
+      <DependentUpon>ArrivalStations_TBLCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Views\ArrivalStations_TBL\ArrivalStations_TBLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_Arrival_Full_Crud\Views\ArrivalStations_TBL\ArrivalStations_TBLView.designer.cs">
+      <DependentUpon>ArrivalStations_TBLView.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Holiday_FULL_Crud\Army_DBEntitiesDataModel\Army_DBEntitiesUnitOfWork.cs" />
     <Compile Include="PL\FRM_Holiday_FULL_Crud\Army_DBEntitiesDataModel\IArmy_DBEntitiesUnitOfWork.cs" />
     <Compile Include="PL\FRM_Holiday_FULL_Crud\Army_DBEntitiesDataModel\UnitOfWorkSource.cs" />
@@ -273,6 +301,12 @@
     </Compile>
     <EmbeddedResource Include="PL\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Holiday_Arrival_Full_Crud\Views\ArrivalStations_TBL\ArrivalStations_TBLCollectionView.resx">
+      <DependentUpon>ArrivalStations_TBLCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Holiday_Arrival_Full_Crud\Views\ArrivalStations_TBL\ArrivalStations_TBLView.resx">
+      <DependentUpon>ArrivalStations_TBLView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Holiday_FULL_Crud\Views\Governorates_TBL\Governorates_TBLCollectionView.resx">
       <DependentUpon>Governorates_TBLCollectionView.cs</DependentUpon>

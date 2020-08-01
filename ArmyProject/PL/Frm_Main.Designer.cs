@@ -52,7 +52,7 @@
             this.accordionControlSeparator3 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElementHoliday = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementHoliday_Management = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementHolidayFinalPart = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementUsers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement14 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement15 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -251,7 +251,7 @@
             // 
             this.accordionControlElementHoliday.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementHoliday_Management,
-            this.accordionControlElement7});
+            this.accordionControlElementHolidayFinalPart});
             this.accordionControlElementHoliday.Expanded = true;
             this.accordionControlElementHoliday.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementHoliday.ImageOptions.SvgImage")));
             this.accordionControlElementHoliday.Name = "accordionControlElementHoliday";
@@ -264,11 +264,12 @@
             this.accordionControlElementHoliday_Management.Text = "ادارة الاجازات";
             this.accordionControlElementHoliday_Management.Click += new System.EventHandler(this.accordionControlElementHoliday_Management_Click);
             // 
-            // accordionControlElement7
+            // accordionControlElementHolidayFinalPart
             // 
-            this.accordionControlElement7.Name = "accordionControlElement7";
-            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement7.Text = "كشف بالاجازات";
+            this.accordionControlElementHolidayFinalPart.Name = "accordionControlElementHolidayFinalPart";
+            this.accordionControlElementHolidayFinalPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementHolidayFinalPart.Text = "كشف بالاجازات";
+            this.accordionControlElementHolidayFinalPart.Click += new System.EventHandler(this.accordionControlElementHolidayFinalPart_Click);
             // 
             // accordionControlElementUsers
             // 
@@ -421,7 +422,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_StudentManage;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementFullStudentReports;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementHoliday_Management;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementHolidayFinalPart;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementFile;
         public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementSanctions;
