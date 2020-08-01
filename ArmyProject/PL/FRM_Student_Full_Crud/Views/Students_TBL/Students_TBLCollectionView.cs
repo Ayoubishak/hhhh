@@ -44,5 +44,10 @@ namespace ArmyProject.PL.Views.Students_TBLCollectionView{
                 }
             };
         }
+
+        private void ribbonControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

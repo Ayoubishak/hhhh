@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 
 namespace ArmyProject.PL
 {
+    //Add Student ناذة شغاله فى البرنامج نفسه
     public partial class Frm_StudentAdd : DevExpress.XtraEditors.XtraForm
     {
         BL.CLS_Students st = new BL.CLS_Students();
@@ -20,18 +21,18 @@ namespace ArmyProject.PL
             InitializeComponent();
             //comboBox of degrees المؤهل
             comboDegrees.DataSource = st.GetAllDegrees();
-            comboDegrees.DisplayMember = "Name";
-            comboDegrees.ValueMember = "Name";
+            comboDegrees.DisplayMember = "DegName";
+            comboDegrees.ValueMember = "DegName";
 
             //comboBox of RecruitingArea منطقة التجنيد
             comboRecruitingArea.DataSource = st.GetAllRecruitingArea();
-            comboRecruitingArea.DisplayMember = "Name";
-            comboRecruitingArea.ValueMember = "Name";
+            comboRecruitingArea.DisplayMember = "RecName";
+            comboRecruitingArea.ValueMember = "RecName";
 
             //comboBox of Governorates المحافظات
             comboGovernorates.DataSource = st.GetAllGovernorates();
-            comboGovernorates.DisplayMember = "Name";
-            comboGovernorates.ValueMember = "Name";
+            comboGovernorates.DisplayMember = "GovName";
+            comboGovernorates.ValueMember = "GovName";
         }
 
         private void Frm_StudentAdd_Load(object sender, EventArgs e)

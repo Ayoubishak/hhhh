@@ -5,24 +5,24 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ArriName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
     <Property Name="Transport_Id" Type="int" />
   </EntityType>
   <EntityType Name="Degree_TBL">
     <Key>
-      <PropertyRef Name="Name" />
+      <PropertyRef Name="DegName" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DegName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Governorates_TBL">
     <Key>
-      <PropertyRef Name="Name" />
+      <PropertyRef Name="GovName" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GovName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
     <Property Name="ArrivalStations_Id" Type="int" />
   </EntityType>
@@ -38,10 +38,10 @@
   </EntityType>
   <EntityType Name="RecruitingArea_TBL">
     <Key>
-      <PropertyRef Name="Name" />
+      <PropertyRef Name="RecName" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Sanctions_TBL">
@@ -49,7 +49,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SancName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
     <Property Name="Grades" Type="int" />
   </EntityType>
@@ -100,7 +100,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TransName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
     <Property Name="Number" Type="int" />
   </EntityType>
@@ -201,7 +201,7 @@
     <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Degree_TBL">
-        <PropertyRef Name="Name" />
+        <PropertyRef Name="DegName" />
       </Principal>
       <Dependent Role="Students_TBL">
         <PropertyRef Name="Degree" />
@@ -213,7 +213,7 @@
     <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Governorates_TBL">
-        <PropertyRef Name="Name" />
+        <PropertyRef Name="GovName" />
       </Principal>
       <Dependent Role="Students_TBL">
         <PropertyRef Name="Governorate" />
@@ -225,7 +225,7 @@
     <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="RecruitingArea_TBL">
-        <PropertyRef Name="Name" />
+        <PropertyRef Name="RecName" />
       </Principal>
       <Dependent Role="Students_TBL">
         <PropertyRef Name="RecruitingArea" />

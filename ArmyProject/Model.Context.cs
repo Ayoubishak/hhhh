@@ -27,17 +27,17 @@ namespace ArmyProject
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ArrivalStations_TBL> ArrivalStations_TBL { get; set; }
-        public virtual DbSet<Degree_TBL> Degree_TBL { get; set; }
-        public virtual DbSet<Governorates_TBL> Governorates_TBL { get; set; }
         public virtual DbSet<History_TBL> History_TBL { get; set; }
-        public virtual DbSet<RecruitingArea_TBL> RecruitingArea_TBL { get; set; }
-        public virtual DbSet<Sanctions_TBL> Sanctions_TBL { get; set; }
         public virtual DbSet<Student_Sanctions_TBL> Student_Sanctions_TBL { get; set; }
         public virtual DbSet<Students_TBL> Students_TBL { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Transport_TBL> Transport_TBL { get; set; }
         public virtual DbSet<Users_TBL> Users_TBL { get; set; }
+        public virtual DbSet<Degree_TBL> Degree_TBL { get; set; }
+        public virtual DbSet<Governorates_TBL> Governorates_TBL { get; set; }
+        public virtual DbSet<RecruitingArea_TBL> RecruitingArea_TBL { get; set; }
+        public virtual DbSet<ArrivalStations_TBL> ArrivalStations_TBL { get; set; }
+        public virtual DbSet<Sanctions_TBL> Sanctions_TBL { get; set; }
+        public virtual DbSet<Transport_TBL> Transport_TBL { get; set; }
     
         public virtual int SP_AddStudent(Nullable<int> generalNumber, Nullable<int> company, string name, string degree, string recruitingArea, string governorate)
         {

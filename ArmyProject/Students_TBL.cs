@@ -39,11 +39,11 @@ namespace ArmyProject
         public string Weapon { get; set; }
         public Nullable<int> Evaluation { get; set; }
     
-        public virtual ArrivalStations_TBL ArrivalStations_TBL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Student_Sanctions_TBL> Student_Sanctions_TBL { get; set; }
         public virtual Degree_TBL Degree_TBL { get; set; }
         public virtual Governorates_TBL Governorates_TBL { get; set; }
         public virtual RecruitingArea_TBL RecruitingArea_TBL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Student_Sanctions_TBL> Student_Sanctions_TBL { get; set; }
+        public virtual ArrivalStations_TBL ArrivalStations_TBL { get; set; }
     }
 }

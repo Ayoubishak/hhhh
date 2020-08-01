@@ -6,7 +6,6 @@ C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\EntityFramewo
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\EntityFramework.xml
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FrmStudentAdd.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Frm_Dashboard.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Frm_Login.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Frm_Main.resources
@@ -20,3 +19,4 @@ C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.P
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\bin\Debug\DevExpress.Images.v20.1.dll
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Views.Students_TBLView.Students_TBLView.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.Views.Students_TBLCollectionView.Students_TBLCollectionView.resources
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.csprojResolveAssemblyReference.cache

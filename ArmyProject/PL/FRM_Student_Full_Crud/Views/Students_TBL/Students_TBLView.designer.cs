@@ -211,7 +211,7 @@
             this.NameTextEdit.StyleController = this.dataLayoutControl1;
             this.NameTextEdit.TabIndex = 7;
             // 
-            // ArrivalStations_TBLLookUpEdit
+            // ArrivalStations_TBLLookUpEdit ComboBox Of Arrival Stations
             // 
             this.ArrivalStations_TBLLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.students_TBLViewBindingSource, "ArrivalStations_Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ArrivalStations_TBLLookUpEdit.Location = new System.Drawing.Point(80, 180);
@@ -219,7 +219,7 @@
             this.ArrivalStations_TBLLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ArrivalStations_TBLLookUpEdit.Properties.DataSource = this.ArrivalStations_TBLBindingSource;
-            this.ArrivalStations_TBLLookUpEdit.Properties.DisplayMember = "Name";
+            this.ArrivalStations_TBLLookUpEdit.Properties.DisplayMember = "ArriName";
             this.ArrivalStations_TBLLookUpEdit.Properties.PopupView = this.ArrivalStations_TBLLookUpEditView;
             this.ArrivalStations_TBLLookUpEdit.Properties.ValueMember = "Id";
             this.ArrivalStations_TBLLookUpEdit.Size = new System.Drawing.Size(932, 20);
@@ -247,9 +247,9 @@
             this.Degree_TBLLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Degree_TBLLookUpEdit.Properties.DataSource = this.Degree_TBLBindingSource;
-            this.Degree_TBLLookUpEdit.Properties.DisplayMember = "Name";
+            this.Degree_TBLLookUpEdit.Properties.DisplayMember = "DegName";
             this.Degree_TBLLookUpEdit.Properties.PopupView = this.Degree_TBLLookUpEditView;
-            this.Degree_TBLLookUpEdit.Properties.ValueMember = "Name";
+            this.Degree_TBLLookUpEdit.Properties.ValueMember = "DegName";
             this.Degree_TBLLookUpEdit.Size = new System.Drawing.Size(932, 20);
             this.Degree_TBLLookUpEdit.StyleController = this.dataLayoutControl1;
             this.Degree_TBLLookUpEdit.TabIndex = 8;
@@ -273,12 +273,13 @@
             this.RecruitingArea_TBLLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.RecruitingArea_TBLLookUpEdit.Properties.DataSource = this.RecruitingArea_TBLBindingSource;
-            this.RecruitingArea_TBLLookUpEdit.Properties.DisplayMember = "Name";
+            this.RecruitingArea_TBLLookUpEdit.Properties.DisplayMember = "RecName";
             this.RecruitingArea_TBLLookUpEdit.Properties.PopupView = this.RecruitingArea_TBLLookUpEditView;
-            this.RecruitingArea_TBLLookUpEdit.Properties.ValueMember = "Name";
+            this.RecruitingArea_TBLLookUpEdit.Properties.ValueMember = "RecName";
             this.RecruitingArea_TBLLookUpEdit.Size = new System.Drawing.Size(932, 20);
             this.RecruitingArea_TBLLookUpEdit.StyleController = this.dataLayoutControl1;
             this.RecruitingArea_TBLLookUpEdit.TabIndex = 9;
+            this.RecruitingArea_TBLLookUpEdit.EditValueChanged += new System.EventHandler(this.RecruitingArea_TBLLookUpEdit_EditValueChanged);
             // 
             // RecruitingArea_TBLBindingSource
             // 
@@ -299,9 +300,9 @@
             this.Governorates_TBLLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Governorates_TBLLookUpEdit.Properties.DataSource = this.Governorates_TBLBindingSource;
-            this.Governorates_TBLLookUpEdit.Properties.DisplayMember = "Name";
+            this.Governorates_TBLLookUpEdit.Properties.DisplayMember = "GovName";
             this.Governorates_TBLLookUpEdit.Properties.PopupView = this.Governorates_TBLLookUpEditView;
-            this.Governorates_TBLLookUpEdit.Properties.ValueMember = "Name";
+            this.Governorates_TBLLookUpEdit.Properties.ValueMember = "GovName";
             this.Governorates_TBLLookUpEdit.Size = new System.Drawing.Size(932, 20);
             this.Governorates_TBLLookUpEdit.StyleController = this.dataLayoutControl1;
             this.Governorates_TBLLookUpEdit.TabIndex = 10;

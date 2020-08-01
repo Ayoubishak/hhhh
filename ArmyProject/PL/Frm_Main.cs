@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace ArmyProject.PL
 {
+    //MainPageDashboard  نافذة شغاله ف البرنامج
     public partial class Frm_Main : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
         private static Frm_Main frm;

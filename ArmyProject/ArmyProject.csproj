@@ -148,12 +148,6 @@
     <Compile Include="PL\FRM_Student_Full_Crud\Common\EntitiesViewModel.cs" />
     <Compile Include="PL\FRM_Student_Full_Crud\Common\ReadOnlyCollectionViewModel.cs" />
     <Compile Include="PL\FRM_Student_Full_Crud\Common\SingleObjectViewModel.cs" />
-    <Compile Include="PL\FrmStudentAdd.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PL\FrmStudentAdd.Designer.cs">
-      <DependentUpon>FrmStudentAdd.cs</DependentUpon>
-    </Compile>
     <Compile Include="PL\Frm_Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,9 +243,6 @@
     <Compile Include="Users_TBL.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PL\FrmStudentAdd.resx">
-      <DependentUpon>FrmStudentAdd.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,7 +310,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PL\FRM_STUDENT_FULL\" />
+    <Folder Include="PL\FRM_Holiday_FULL_Crud\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model.Context.tt">

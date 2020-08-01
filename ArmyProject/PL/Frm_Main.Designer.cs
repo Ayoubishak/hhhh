@@ -252,6 +252,7 @@
             this.accordionControlElementHoliday.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement6,
             this.accordionControlElement7});
+            this.accordionControlElementHoliday.Expanded = true;
             this.accordionControlElementHoliday.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementHoliday.ImageOptions.SvgImage")));
             this.accordionControlElementHoliday.Name = "accordionControlElementHoliday";
             this.accordionControlElementHoliday.Text = "الأجازات";

@@ -19,7 +19,7 @@ namespace ArmyProject
         public int Sanctions_Id { get; set; }
         public Nullable<int> Number { get; set; }
     
-        public virtual Sanctions_TBL Sanctions_TBL { get; set; }
         public virtual Students_TBL Students_TBL { get; set; }
+        public virtual Sanctions_TBL Sanctions_TBL { get; set; }
     }
 }

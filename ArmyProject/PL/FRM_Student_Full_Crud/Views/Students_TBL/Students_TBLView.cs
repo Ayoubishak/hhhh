@@ -45,5 +45,10 @@ namespace ArmyProject.PL.Views.Students_TBLView{
         {
 
         }
+
+        private void RecruitingArea_TBLLookUpEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
