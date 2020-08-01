@@ -102,5 +102,12 @@ namespace ArmyProject.PL
         {
             fluentDesignFormContainer1.Controls.Add(new Views.Students_TBLCollectionView.Students_TBLCollectionView() { Dock = DockStyle.Fill });
         }
+
+        //ادارة الاجازات
+        private void accordionControlElementHoliday_Management_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            fluentDesignFormContainer1.Controls.Add(new FRM_Holiday_FULL_Crud.Views.Governorates_TBLCollectionView.Governorates_TBLCollectionView() { Dock = DockStyle.Fill });
+        }
     }
 }

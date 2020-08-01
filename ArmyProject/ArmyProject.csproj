@@ -144,6 +144,34 @@
     <Compile Include="PL\Army_DBEntities1DataModel\Army_DBEntities1UnitOfWork.cs" />
     <Compile Include="PL\Army_DBEntities1DataModel\IArmy_DBEntities1UnitOfWork.cs" />
     <Compile Include="PL\Army_DBEntities1DataModel\UnitOfWorkSource.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Army_DBEntitiesDataModel\Army_DBEntitiesUnitOfWork.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Army_DBEntitiesDataModel\IArmy_DBEntitiesUnitOfWork.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Army_DBEntitiesDataModel\UnitOfWorkSource.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Common\CollectionViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Common\EntitiesViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Common\ReadOnlyCollectionViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Common\SingleObjectViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\ViewModels\Army_DBEntitiesViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\ViewModels\Governorates_TBL\Governorates_TBLCollectionViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\ViewModels\Governorates_TBL\Governorates_TBLViewModel.cs" />
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Views\Army_DBEntitiesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Views\Army_DBEntitiesView.designer.cs">
+      <DependentUpon>Army_DBEntitiesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Views\Governorates_TBL\Governorates_TBLCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Views\Governorates_TBL\Governorates_TBLCollectionView.Designer.cs">
+      <DependentUpon>Governorates_TBLCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Views\Governorates_TBL\Governorates_TBLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Holiday_FULL_Crud\Views\Governorates_TBL\Governorates_TBLView.designer.cs">
+      <DependentUpon>Governorates_TBLView.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Student_Full_Crud\Common\CollectionViewModel.cs" />
     <Compile Include="PL\FRM_Student_Full_Crud\Common\EntitiesViewModel.cs" />
     <Compile Include="PL\FRM_Student_Full_Crud\Common\ReadOnlyCollectionViewModel.cs" />
@@ -246,6 +274,12 @@
     <EmbeddedResource Include="PL\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Holiday_FULL_Crud\Views\Governorates_TBL\Governorates_TBLCollectionView.resx">
+      <DependentUpon>Governorates_TBLCollectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Holiday_FULL_Crud\Views\Governorates_TBL\Governorates_TBLView.resx">
+      <DependentUpon>Governorates_TBLView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,9 +343,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PL\FRM_Holiday_FULL_Crud\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

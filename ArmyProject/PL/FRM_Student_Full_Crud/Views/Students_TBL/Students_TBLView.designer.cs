@@ -165,6 +165,7 @@
             this.IdTextEdit.Properties.Mask.EditMask = "N0";
             this.IdTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.IdTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.IdTextEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.IdTextEdit.Size = new System.Drawing.Size(932, 20);
             this.IdTextEdit.StyleController = this.dataLayoutControl1;
             this.IdTextEdit.TabIndex = 4;
@@ -211,7 +212,7 @@
             this.NameTextEdit.StyleController = this.dataLayoutControl1;
             this.NameTextEdit.TabIndex = 7;
             // 
-            // ArrivalStations_TBLLookUpEdit ComboBox Of Arrival Stations
+            // ArrivalStations_TBLLookUpEdit
             // 
             this.ArrivalStations_TBLLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.students_TBLViewBindingSource, "ArrivalStations_Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ArrivalStations_TBLLookUpEdit.Location = new System.Drawing.Point(80, 180);
