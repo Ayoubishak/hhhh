@@ -90,20 +90,22 @@ namespace ArmyProject.PL
 
         }
 
-        //ادارة الطلاب 
+        //ادارة الطلاب
         private void accordionControlElement_StudentManage_Click(object sender, EventArgs e)
         {
-            //fluentDesignFormContainer1.Controls.Clear();
-            fluentDesignFormContainer1.Controls.Add(new Frm_StudentGrid() { Dock = DockStyle.Fill});
+            fluentDesignFormContainer1.Controls.Clear();
+            fluentDesignFormContainer1.Controls.Add(new Views.Students_TBLCollectionView.Students_TBLCollectionView() { Dock = DockStyle.Fill });
             
         }
 
-        private void accordionControlElement24_Click(object sender, EventArgs e)
+        //التقرير الشامل للطلاب
+        private void accordionControlElementFullStudentsReport_Click(object sender, EventArgs e)
         {
+            fluentDesignFormContainer1.Controls.Clear();
             fluentDesignFormContainer1.Controls.Add(new Views.Students_TBLCollectionView.Students_TBLCollectionView() { Dock = DockStyle.Fill });
         }
 
-        //ادارة الاجازات
+        //ادارة الاجازات والمحافظات
         private void accordionControlElementHoliday_Management_Click(object sender, EventArgs e)
         {
             fluentDesignFormContainer1.Controls.Clear();

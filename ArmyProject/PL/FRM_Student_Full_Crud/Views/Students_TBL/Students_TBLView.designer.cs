@@ -322,6 +322,7 @@
             // RankTextEdit
             // 
             this.RankTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.students_TBLViewBindingSource, "Rank", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.RankTextEdit.Enabled = false;
             this.RankTextEdit.Location = new System.Drawing.Point(80, 324);
             this.RankTextEdit.Name = "RankTextEdit";
             this.RankTextEdit.Size = new System.Drawing.Size(932, 20);
@@ -394,6 +395,7 @@
             // EvaluationTextEdit
             // 
             this.EvaluationTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.students_TBLViewBindingSource, "Evaluation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.EvaluationTextEdit.Enabled = false;
             this.EvaluationTextEdit.Location = new System.Drawing.Point(80, 348);
             this.EvaluationTextEdit.Name = "EvaluationTextEdit";
             this.EvaluationTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -409,6 +411,7 @@
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2});
@@ -443,10 +446,11 @@
             // ItemForId
             // 
             this.ItemForId.Control = this.IdTextEdit;
+            this.ItemForId.CustomizationFormText = "المعرف";
             this.ItemForId.Location = new System.Drawing.Point(0, 0);
             this.ItemForId.Name = "ItemForId";
             this.ItemForId.Size = new System.Drawing.Size(1004, 24);
-            this.ItemForId.Text = "#";
+            this.ItemForId.Text = "المعرف";
             this.ItemForId.TextSize = new System.Drawing.Size(65, 13);
             // 
             // ItemForCompany
@@ -562,6 +566,7 @@
             // ItemForGeneralNumber
             // 
             this.ItemForGeneralNumber.Control = this.GeneralNumberTextEdit;
+            this.ItemForGeneralNumber.CustomizationFormText = "الرقم العام";
             this.ItemForGeneralNumber.Location = new System.Drawing.Point(0, 24);
             this.ItemForGeneralNumber.Name = "ItemForGeneralNumber";
             this.ItemForGeneralNumber.Size = new System.Drawing.Size(1004, 24);
@@ -779,8 +784,7 @@
 
 		private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
 		private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-		private DevExpress.Utils.MVVM.MVVMContext mvvmContext;
-		private DevExpress.XtraBars.Ribbon.RibbonControl mainRibbonControl;
+        private DevExpress.Utils.MVVM.MVVMContext mvvmContext;
 		private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup mainRibbonPageGroup;
 		private DevExpress.XtraBars.BarButtonItem bbiCustomize;
@@ -833,6 +837,7 @@
         private DevExpress.XtraBars.BarButtonItem bbiClose;
         private DevExpress.XtraBars.BarButtonItem bbiSaveLayout;
         private DevExpress.XtraBars.BarButtonItem bbiResetLayout;
+        public DevExpress.XtraBars.Ribbon.RibbonControl mainRibbonControl;
 		 
 	}
 }
