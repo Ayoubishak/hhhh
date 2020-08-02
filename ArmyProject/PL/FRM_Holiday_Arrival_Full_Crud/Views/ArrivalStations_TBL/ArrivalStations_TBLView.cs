@@ -92,6 +92,11 @@ namespace ArmyProject.PL.FRM_Holiday_Arrival_Full_Crud.Views.ArrivalStations_TBL
 
         }
 
+        private void bbiClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
 
 
 

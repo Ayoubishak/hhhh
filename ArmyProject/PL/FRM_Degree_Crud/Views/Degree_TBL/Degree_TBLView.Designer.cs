@@ -30,7 +30,15 @@
             this.DegNameTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.DescriptionTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.Students_TBLGridControl = new DevExpress.XtraGrid.GridControl();
+            this.studentsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.army_DBDataSetForGrid = new ArmyProject.Army_DBDataSetForGrid();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colGeneralNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDegree = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecruitingArea = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGovernorate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ItemForDescription = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -48,10 +56,14 @@
             this.bbiResetLayout = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiCustomize = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemPrintDeg = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemCloseW = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroupLayout = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroupPrint2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.students_TBLTableAdapter = new ArmyProject.Army_DBDataSetForGridTableAdapters.Students_TBLTableAdapter();
+            this.ribbonPageGroupLayout = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IdTextEdit.Properties)).BeginInit();
@@ -59,6 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DegNameTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescriptionTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Students_TBLGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.army_DBDataSetForGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -128,6 +142,7 @@
             // Students_TBLGridControl
             // 
             this.Students_TBLGridControl.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.degree_TBLViewBindingSource, "Students_TBL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.Students_TBLGridControl.DataSource = this.studentsTBLBindingSource;
             this.Students_TBLGridControl.Location = new System.Drawing.Point(12, 60);
             this.Students_TBLGridControl.MainView = this.gridView1;
             this.Students_TBLGridControl.Name = "Students_TBLGridControl";
@@ -136,10 +151,75 @@
             this.Students_TBLGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // studentsTBLBindingSource
+            // 
+            this.studentsTBLBindingSource.DataMember = "Students_TBL";
+            this.studentsTBLBindingSource.DataSource = this.army_DBDataSetForGrid;
+            // 
+            // army_DBDataSetForGrid
+            // 
+            this.army_DBDataSetForGrid.DataSetName = "Army_DBDataSetForGrid";
+            this.army_DBDataSetForGrid.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colGeneralNumber,
+            this.colCompany,
+            this.colName,
+            this.colDegree,
+            this.colRecruitingArea,
+            this.colGovernorate});
             this.gridView1.GridControl = this.Students_TBLGridControl;
             this.gridView1.Name = "gridView1";
+            // 
+            // colGeneralNumber
+            // 
+            this.colGeneralNumber.Caption = "الرقم العام";
+            this.colGeneralNumber.FieldName = "GeneralNumber";
+            this.colGeneralNumber.Name = "colGeneralNumber";
+            this.colGeneralNumber.Visible = true;
+            this.colGeneralNumber.VisibleIndex = 0;
+            // 
+            // colCompany
+            // 
+            this.colCompany.Caption = "السريه";
+            this.colCompany.FieldName = "Company";
+            this.colCompany.Name = "colCompany";
+            this.colCompany.Visible = true;
+            this.colCompany.VisibleIndex = 1;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "الأسم";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 2;
+            // 
+            // colDegree
+            // 
+            this.colDegree.Caption = "المؤهل";
+            this.colDegree.FieldName = "Degree";
+            this.colDegree.Name = "colDegree";
+            this.colDegree.Visible = true;
+            this.colDegree.VisibleIndex = 3;
+            // 
+            // colRecruitingArea
+            // 
+            this.colRecruitingArea.Caption = "منطقة التجنيد";
+            this.colRecruitingArea.FieldName = "RecruitingArea";
+            this.colRecruitingArea.Name = "colRecruitingArea";
+            this.colRecruitingArea.Visible = true;
+            this.colRecruitingArea.VisibleIndex = 4;
+            // 
+            // colGovernorate
+            // 
+            this.colGovernorate.Caption = "المحافظة";
+            this.colGovernorate.FieldName = "Governorate";
+            this.colGovernorate.Name = "colGovernorate";
+            this.colGovernorate.Visible = true;
+            this.colGovernorate.VisibleIndex = 5;
             // 
             // ItemForDescription
             // 
@@ -209,7 +289,7 @@
             DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ArmyProject.PL.FRM_Degree_Crud.ViewModels.Degree_TBLViewModel), "SaveAndNew", this.bbiSaveAndNew),
             DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ArmyProject.PL.FRM_Degree_Crud.ViewModels.Degree_TBLViewModel), "Reset", this.bbiReset),
             DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ArmyProject.PL.FRM_Degree_Crud.ViewModels.Degree_TBLViewModel), "Delete", this.bbiDelete),
-            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ArmyProject.PL.FRM_Degree_Crud.ViewModels.Degree_TBLViewModel), "Close", this.bbiClose),
+            DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ArmyProject.PL.FRM_Degree_Crud.ViewModels.Degree_TBLViewModel), "Close", this.barButtonItemCloseW),
             DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ArmyProject.PL.FRM_Degree_Crud.ViewModels.Degree_TBLViewModel), "SaveLayout", this.bbiSaveLayout),
             DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(typeof(ArmyProject.PL.FRM_Degree_Crud.ViewModels.Degree_TBLViewModel), "ResetLayout", this.bbiResetLayout)});
             this.mvvmContext.ContainerControl = this;
@@ -287,9 +367,11 @@
             this.bbiDelete,
             this.bbiClose,
             this.bbiSaveLayout,
-            this.bbiResetLayout});
+            this.bbiResetLayout,
+            this.barButtonItemPrintDeg,
+            this.barButtonItemCloseW});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 10;
+            this.mainRibbonControl.MaxItemId = 13;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -305,12 +387,29 @@
             this.bbiCustomize.ImageOptions.ImageUri.Uri = "Customization";
             this.bbiCustomize.Name = "bbiCustomize";
             // 
+            // barButtonItemPrintDeg
+            // 
+            this.barButtonItemPrintDeg.Caption = "طباعة";
+            this.barButtonItemPrintDeg.Id = 10;
+            this.barButtonItemPrintDeg.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemPrintDeg.ImageOptions.Image")));
+            this.barButtonItemPrintDeg.Name = "barButtonItemPrintDeg";
+            this.barButtonItemPrintDeg.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPrintDeg_ItemClick);
+            // 
+            // barButtonItemCloseW
+            // 
+            this.barButtonItemCloseW.Caption = "غلق النافذة";
+            this.barButtonItemCloseW.Id = 12;
+            this.barButtonItemCloseW.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemCloseW.ImageOptions.Image")));
+            this.barButtonItemCloseW.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemCloseW.ImageOptions.LargeImage")));
+            this.barButtonItemCloseW.Name = "barButtonItemCloseW";
+            this.barButtonItemCloseW.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCloseW_ItemClick);
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.mainRibbonPageGroup,
-            this.ribbonPageGroupLayout,
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroupPrint2});
             this.mainRibbonPage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mainRibbonPage.ImageOptions.Image")));
             this.mainRibbonPage.MergeOrder = 0;
             this.mainRibbonPage.Name = "mainRibbonPage";
@@ -328,6 +427,23 @@
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.Text = "اعدادات المؤهل";
             // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup1.ImageOptions.Image")));
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemCloseW);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "اغلاق النافذة";
+            // 
+            // ribbonPageGroupPrint2
+            // 
+            this.ribbonPageGroupPrint2.ItemLinks.Add(this.barButtonItemPrintDeg);
+            this.ribbonPageGroupPrint2.Name = "ribbonPageGroupPrint2";
+            this.ribbonPageGroupPrint2.Text = "طباعة الطلاب";
+            // 
+            // students_TBLTableAdapter
+            // 
+            this.students_TBLTableAdapter.ClearBeforeFill = true;
+            // 
             // ribbonPageGroupLayout
             // 
             this.ribbonPageGroupLayout.AllowTextClipping = false;
@@ -336,12 +452,6 @@
             this.ribbonPageGroupLayout.ItemLinks.Add(this.bbiResetLayout);
             this.ribbonPageGroupLayout.Name = "ribbonPageGroupLayout";
             this.ribbonPageGroupLayout.Text = "الواجهة";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiClose);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "اغلاق النافذة";
             // 
             // Degree_TBLView
             // 
@@ -361,6 +471,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DegNameTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DescriptionTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Students_TBLGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.army_DBDataSetForGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -383,8 +495,7 @@
 		private DevExpress.XtraBars.Ribbon.RibbonControl mainRibbonControl;
 		private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup mainRibbonPageGroup;
-		private DevExpress.XtraBars.BarButtonItem bbiCustomize;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupLayout;
+        private DevExpress.XtraBars.BarButtonItem bbiCustomize;
 		private System.Windows.Forms.BindingSource degree_TBLViewBindingSource;
         private DevExpress.XtraEditors.TextEdit IdTextEdit;
         private DevExpress.XtraEditors.TextEdit DegNameTextEdit;
@@ -405,6 +516,19 @@
         private DevExpress.XtraBars.BarButtonItem bbiSaveLayout;
         private DevExpress.XtraBars.BarButtonItem bbiResetLayout;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private System.Windows.Forms.BindingSource studentsTBLBindingSource;
+        private Army_DBDataSetForGrid army_DBDataSetForGrid;
+        private DevExpress.XtraGrid.Columns.GridColumn colGeneralNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompany;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDegree;
+        private DevExpress.XtraGrid.Columns.GridColumn colRecruitingArea;
+        private DevExpress.XtraGrid.Columns.GridColumn colGovernorate;
+        private Army_DBDataSetForGridTableAdapters.Students_TBLTableAdapter students_TBLTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPrintDeg;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupPrint2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupLayout;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemCloseW;
 				 
 	}
 }
