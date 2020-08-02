@@ -66,6 +66,7 @@
             this.accordionControlElementArrivalStationsMange = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.accordionControlElementDegreeCrud = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
@@ -103,7 +104,7 @@
             this.accordionControlElementArrival_Stations});
             this.accordionControl1.Location = new System.Drawing.Point(0, 30);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
+            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
             this.accordionControl1.Size = new System.Drawing.Size(279, 471);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
@@ -183,7 +184,8 @@
             this.accordionControlElementStudents.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement_AddStudent,
             this.accordionControlElement_StudentManage,
-            this.accordionControlElementFullStudentReports});
+            this.accordionControlElementFullStudentReports,
+            this.accordionControlElementDegreeCrud});
             this.accordionControlElementStudents.Expanded = true;
             this.accordionControlElementStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementStudents.ImageOptions.SvgImage")));
             this.accordionControlElementStudents.Name = "accordionControlElementStudents";
@@ -373,6 +375,13 @@
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "simpleButton1";
             // 
+            // accordionControlElementDegreeCrud
+            // 
+            this.accordionControlElementDegreeCrud.Name = "accordionControlElementDegreeCrud";
+            this.accordionControlElementDegreeCrud.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementDegreeCrud.Text = "ادارة المؤهل";
+            this.accordionControlElementDegreeCrud.Click += new System.EventHandler(this.accordionControlElementDegreeCrud_Click);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,5 +447,6 @@
         public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementMakeBackup;
         public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementGetBackup;
         public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_Logout;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementDegreeCrud;
     }
 }
