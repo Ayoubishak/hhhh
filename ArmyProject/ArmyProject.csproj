@@ -336,6 +336,9 @@
     <EmbeddedResource Include="PL\FRM_Degree_Crud\Views\Degree_TBL\Degree_TBLCollectionView.resx">
       <DependentUpon>Degree_TBLCollectionView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Degree_Crud\Views\Degree_TBL\Degree_TBLView.resx">
+      <DependentUpon>Degree_TBLView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Holiday_Arrival_Full_Crud\Views\ArrivalStations_TBL\ArrivalStations_TBLCollectionView.resx">
       <DependentUpon>ArrivalStations_TBLCollectionView.cs</DependentUpon>
     </EmbeddedResource>

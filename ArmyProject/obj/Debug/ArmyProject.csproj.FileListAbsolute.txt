@@ -25,3 +25,4 @@ C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.P
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Holiday_Arrival_Full_Crud.Views.ArrivalStations_TBLView.ArrivalStations_TBLView.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.csprojResolveAssemblyReference.cache
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Degree_Crud.Views.Degree_TBLCollectionView.Degree_TBLCollectionView.resources
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Degree_Crud.Views.Degree_TBLView.Degree_TBLView.resources
