@@ -24,6 +24,8 @@
 		private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArrivalStations_TBLView));
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.IdTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.arrivalStations_TBLViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -119,21 +121,22 @@
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 143);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(446, 213, 650, 400);
+            this.dataLayoutControl1.OptionsView.RightToLeftMirroringApplied = true;
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(1024, 625);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(1195, 802);
             this.dataLayoutControl1.TabIndex = 0;
             // 
             // IdTextEdit
             // 
             this.IdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.arrivalStations_TBLViewBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.IdTextEdit.Location = new System.Drawing.Point(77, 12);
+            this.IdTextEdit.Location = new System.Drawing.Point(90, 15);
             this.IdTextEdit.Name = "IdTextEdit";
             this.IdTextEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.IdTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.IdTextEdit.Properties.Mask.EditMask = "N0";
             this.IdTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.IdTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.IdTextEdit.Size = new System.Drawing.Size(935, 20);
+            this.IdTextEdit.Size = new System.Drawing.Size(1091, 20);
             this.IdTextEdit.StyleController = this.dataLayoutControl1;
             this.IdTextEdit.TabIndex = 4;
             // 
@@ -144,9 +147,9 @@
             // ArriNameTextEdit
             // 
             this.ArriNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.arrivalStations_TBLViewBindingSource, "ArriName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ArriNameTextEdit.Location = new System.Drawing.Point(77, 12);
+            this.ArriNameTextEdit.Location = new System.Drawing.Point(14, 14);
             this.ArriNameTextEdit.Name = "ArriNameTextEdit";
-            this.ArriNameTextEdit.Size = new System.Drawing.Size(935, 20);
+            this.ArriNameTextEdit.Size = new System.Drawing.Size(1102, 20);
             this.ArriNameTextEdit.StyleController = this.dataLayoutControl1;
             this.ArriNameTextEdit.TabIndex = 5;
             // 
@@ -154,16 +157,16 @@
             // 
             this.DescriptionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.arrivalStations_TBLViewBindingSource, "Description", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DescriptionTextEdit.Enabled = false;
-            this.DescriptionTextEdit.Location = new System.Drawing.Point(77, 60);
+            this.DescriptionTextEdit.Location = new System.Drawing.Point(14, 62);
             this.DescriptionTextEdit.Name = "DescriptionTextEdit";
-            this.DescriptionTextEdit.Size = new System.Drawing.Size(935, 20);
+            this.DescriptionTextEdit.Size = new System.Drawing.Size(1102, 20);
             this.DescriptionTextEdit.StyleController = this.dataLayoutControl1;
             this.DescriptionTextEdit.TabIndex = 6;
             // 
             // Transport_TBLLookUpEdit
             // 
             this.Transport_TBLLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.arrivalStations_TBLViewBindingSource, "Transport_Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.Transport_TBLLookUpEdit.Location = new System.Drawing.Point(77, 36);
+            this.Transport_TBLLookUpEdit.Location = new System.Drawing.Point(14, 38);
             this.Transport_TBLLookUpEdit.Name = "Transport_TBLLookUpEdit";
             this.Transport_TBLLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -171,7 +174,7 @@
             this.Transport_TBLLookUpEdit.Properties.DisplayMember = "TransName";
             this.Transport_TBLLookUpEdit.Properties.PopupView = this.Transport_TBLLookUpEditView;
             this.Transport_TBLLookUpEdit.Properties.ValueMember = "Id";
-            this.Transport_TBLLookUpEdit.Size = new System.Drawing.Size(935, 20);
+            this.Transport_TBLLookUpEdit.Size = new System.Drawing.Size(1102, 20);
             this.Transport_TBLLookUpEdit.StyleController = this.dataLayoutControl1;
             this.Transport_TBLLookUpEdit.TabIndex = 7;
             // 
@@ -181,6 +184,7 @@
             // 
             // Transport_TBLLookUpEditView
             // 
+            this.Transport_TBLLookUpEditView.DetailHeight = 431;
             this.Transport_TBLLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.Transport_TBLLookUpEditView.Name = "Transport_TBLLookUpEditView";
             this.Transport_TBLLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -190,11 +194,11 @@
             // 
             this.Governorates_TBLGridControl.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.arrivalStations_TBLViewBindingSource, "Governorates_TBL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Governorates_TBLGridControl.DataSource = this.governoratesTBLBindingSource;
-            this.Governorates_TBLGridControl.Location = new System.Drawing.Point(12, 84);
+            this.Governorates_TBLGridControl.Location = new System.Drawing.Point(14, 86);
             this.Governorates_TBLGridControl.MainView = this.gridView1;
             this.Governorates_TBLGridControl.Name = "Governorates_TBLGridControl";
             this.Governorates_TBLGridControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Governorates_TBLGridControl.Size = new System.Drawing.Size(1000, 249);
+            this.Governorates_TBLGridControl.Size = new System.Drawing.Size(1167, 331);
             this.Governorates_TBLGridControl.TabIndex = 8;
             this.Governorates_TBLGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -209,6 +213,7 @@
             this.colGovName,
             this.colArrivalStations_Id,
             this.colStudents_TBL});
+            this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.Governorates_TBLGridControl;
             this.gridView1.Name = "gridView1";
             // 
@@ -216,35 +221,41 @@
             // 
             this.colGovName.Caption = "المحافظة";
             this.colGovName.FieldName = "GovName";
+            this.colGovName.MinWidth = 23;
             this.colGovName.Name = "colGovName";
             this.colGovName.Visible = true;
             this.colGovName.VisibleIndex = 0;
+            this.colGovName.Width = 87;
             // 
             // colArrivalStations_Id
             // 
             this.colArrivalStations_Id.Caption = "محطة الوصول";
             this.colArrivalStations_Id.FieldName = "ArrivalStations_TBL.ArriName";
+            this.colArrivalStations_Id.MinWidth = 23;
             this.colArrivalStations_Id.Name = "colArrivalStations_Id";
             this.colArrivalStations_Id.Visible = true;
             this.colArrivalStations_Id.VisibleIndex = 2;
+            this.colArrivalStations_Id.Width = 87;
             // 
             // colStudents_TBL
             // 
             this.colStudents_TBL.Caption = "عدد الطلاب";
             this.colStudents_TBL.FieldName = "Students_TBL.Count";
+            this.colStudents_TBL.MinWidth = 23;
             this.colStudents_TBL.Name = "colStudents_TBL";
             this.colStudents_TBL.Visible = true;
             this.colStudents_TBL.VisibleIndex = 1;
+            this.colStudents_TBL.Width = 87;
             // 
             // Students_TBLGridControl
             // 
             this.Students_TBLGridControl.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.arrivalStations_TBLViewBindingSource, "Students_TBL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Students_TBLGridControl.DataSource = this.studentsTBLBindingSource;
-            this.Students_TBLGridControl.Location = new System.Drawing.Point(12, 337);
+            this.Students_TBLGridControl.Location = new System.Drawing.Point(14, 421);
             this.Students_TBLGridControl.MainView = this.gridView2;
             this.Students_TBLGridControl.Name = "Students_TBLGridControl";
             this.Students_TBLGridControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Students_TBLGridControl.Size = new System.Drawing.Size(1000, 276);
+            this.Students_TBLGridControl.Size = new System.Drawing.Size(1167, 367);
             this.Students_TBLGridControl.TabIndex = 9;
             this.Students_TBLGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -268,6 +279,7 @@
             this.colDegree,
             this.colRecruitingArea,
             this.colGovernorate});
+            this.gridView2.DetailHeight = 431;
             this.gridView2.GridControl = this.Students_TBLGridControl;
             this.gridView2.Name = "gridView2";
             // 
@@ -275,49 +287,61 @@
             // 
             this.colGeneralNumber.Caption = "الرقم العام";
             this.colGeneralNumber.FieldName = "GeneralNumber";
+            this.colGeneralNumber.MinWidth = 23;
             this.colGeneralNumber.Name = "colGeneralNumber";
             this.colGeneralNumber.Visible = true;
             this.colGeneralNumber.VisibleIndex = 0;
+            this.colGeneralNumber.Width = 87;
             // 
             // colCompany
             // 
             this.colCompany.Caption = "السرية";
             this.colCompany.FieldName = "Company";
+            this.colCompany.MinWidth = 23;
             this.colCompany.Name = "colCompany";
             this.colCompany.Visible = true;
             this.colCompany.VisibleIndex = 1;
+            this.colCompany.Width = 87;
             // 
             // colName
             // 
             this.colName.Caption = "الأسم";
             this.colName.FieldName = "Name";
+            this.colName.MinWidth = 23;
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 2;
+            this.colName.Width = 87;
             // 
             // colDegree
             // 
             this.colDegree.Caption = "المؤهل";
             this.colDegree.FieldName = "Degree";
+            this.colDegree.MinWidth = 23;
             this.colDegree.Name = "colDegree";
             this.colDegree.Visible = true;
             this.colDegree.VisibleIndex = 3;
+            this.colDegree.Width = 87;
             // 
             // colRecruitingArea
             // 
             this.colRecruitingArea.Caption = "منطقة التجنيد";
             this.colRecruitingArea.FieldName = "RecruitingArea";
+            this.colRecruitingArea.MinWidth = 23;
             this.colRecruitingArea.Name = "colRecruitingArea";
             this.colRecruitingArea.Visible = true;
             this.colRecruitingArea.VisibleIndex = 4;
+            this.colRecruitingArea.Width = 87;
             // 
             // colGovernorate
             // 
             this.colGovernorate.Caption = "المحافظة";
             this.colGovernorate.FieldName = "Governorate";
+            this.colGovernorate.MinWidth = 23;
             this.colGovernorate.Name = "colGovernorate";
             this.colGovernorate.Visible = true;
             this.colGovernorate.VisibleIndex = 5;
+            this.colGovernorate.Width = 87;
             // 
             // ItemForId
             // 
@@ -327,7 +351,7 @@
             this.ItemForId.Name = "ItemForId";
             this.ItemForId.Size = new System.Drawing.Size(1004, 24);
             this.ItemForId.Text = "المعرف";
-            this.ItemForId.TextSize = new System.Drawing.Size(62, 13);
+            this.ItemForId.TextSize = new System.Drawing.Size(72, 16);
             // 
             // layoutControlGroup1
             // 
@@ -336,7 +360,7 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1024, 625);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1195, 802);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -351,14 +375,14 @@
             this.ItemForDescription});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1004, 605);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1171, 778);
             // 
             // ItemForArriName
             // 
             this.ItemForArriName.Control = this.ArriNameTextEdit;
             this.ItemForArriName.Location = new System.Drawing.Point(0, 0);
             this.ItemForArriName.Name = "ItemForArriName";
-            this.ItemForArriName.Size = new System.Drawing.Size(1004, 24);
+            this.ItemForArriName.Size = new System.Drawing.Size(1171, 24);
             this.ItemForArriName.Text = "محطة الوصول";
             this.ItemForArriName.TextSize = new System.Drawing.Size(62, 13);
             // 
@@ -367,7 +391,7 @@
             this.ItemForTransport_Id.Control = this.Transport_TBLLookUpEdit;
             this.ItemForTransport_Id.Location = new System.Drawing.Point(0, 24);
             this.ItemForTransport_Id.Name = "ItemForTransport_Id";
-            this.ItemForTransport_Id.Size = new System.Drawing.Size(1004, 24);
+            this.ItemForTransport_Id.Size = new System.Drawing.Size(1171, 24);
             this.ItemForTransport_Id.Text = "طريقة النقل";
             this.ItemForTransport_Id.TextSize = new System.Drawing.Size(62, 13);
             // 
@@ -376,7 +400,7 @@
             this.ItemForGovernorates_TBL.Control = this.Governorates_TBLGridControl;
             this.ItemForGovernorates_TBL.Location = new System.Drawing.Point(0, 72);
             this.ItemForGovernorates_TBL.Name = "ItemForGovernorates_TBL";
-            this.ItemForGovernorates_TBL.Size = new System.Drawing.Size(1004, 253);
+            this.ItemForGovernorates_TBL.Size = new System.Drawing.Size(1171, 335);
             this.ItemForGovernorates_TBL.StartNewLine = true;
             this.ItemForGovernorates_TBL.Text = "Governorates_TBL";
             this.ItemForGovernorates_TBL.TextSize = new System.Drawing.Size(0, 0);
@@ -385,9 +409,9 @@
             // ItemForStudents_TBL
             // 
             this.ItemForStudents_TBL.Control = this.Students_TBLGridControl;
-            this.ItemForStudents_TBL.Location = new System.Drawing.Point(0, 325);
+            this.ItemForStudents_TBL.Location = new System.Drawing.Point(0, 407);
             this.ItemForStudents_TBL.Name = "ItemForStudents_TBL";
-            this.ItemForStudents_TBL.Size = new System.Drawing.Size(1004, 280);
+            this.ItemForStudents_TBL.Size = new System.Drawing.Size(1171, 371);
             this.ItemForStudents_TBL.StartNewLine = true;
             this.ItemForStudents_TBL.Text = "Students_TBL";
             this.ItemForStudents_TBL.TextSize = new System.Drawing.Size(0, 0);
@@ -399,7 +423,7 @@
             this.ItemForDescription.Enabled = false;
             this.ItemForDescription.Location = new System.Drawing.Point(0, 48);
             this.ItemForDescription.Name = "ItemForDescription";
-            this.ItemForDescription.Size = new System.Drawing.Size(1004, 24);
+            this.ItemForDescription.Size = new System.Drawing.Size(1171, 24);
             this.ItemForDescription.Text = "الوصف";
             this.ItemForDescription.TextSize = new System.Drawing.Size(62, 13);
             // 
@@ -478,6 +502,7 @@
             // mainRibbonControl
             // 
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
+            this.mainRibbonControl.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
             this.mainRibbonControl.SearchEditItem,
@@ -500,7 +525,7 @@
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.mainRibbonControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(1024, 143);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1195, 143);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiCustomize
@@ -519,7 +544,13 @@
             // 
             this.barButtonItemPrintStudents.Caption = "طباعة الطلاب";
             this.barButtonItemPrintStudents.Id = 11;
+            this.barButtonItemPrintStudents.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemPrintStudents.ImageOptions.Image")));
             this.barButtonItemPrintStudents.Name = "barButtonItemPrintStudents";
+            this.barButtonItemPrintStudents.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipItem1.Icon = ((System.Drawing.Icon)(resources.GetObject("toolTipItem1.Icon")));
+            superToolTip1.Items.Add(toolTipItem1);
+            this.barButtonItemPrintStudents.SuperTip = superToolTip1;
             this.barButtonItemPrintStudents.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPrintStudents_ItemClick);
             // 
             // mainRibbonPage
@@ -566,7 +597,7 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItemPrintStudents);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "ملف اكسل لطلاب فى محطة الوصول";
             // 
             // students_TBLTableAdapter
             // 
@@ -574,13 +605,17 @@
             // 
             // ArrivalStations_TBLView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Appearance.Options.UseFont = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "ArrivalStations_TBLView";
-            this.Size = new System.Drawing.Size(1024, 768);
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Size = new System.Drawing.Size(1195, 945);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IdTextEdit.Properties)).EndInit();

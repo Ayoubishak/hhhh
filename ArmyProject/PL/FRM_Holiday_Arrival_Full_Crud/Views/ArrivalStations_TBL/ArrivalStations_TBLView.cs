@@ -33,6 +33,8 @@ namespace ArmyProject.PL.FRM_Holiday_Arrival_Full_Crud.Views.ArrivalStations_TBL
             bbiCustomize.ItemClick += (s, e) => { dataLayoutControl1.ShowCustomizationForm(); };
         }
 
+
+        //زرار طباعة الطلاب لطباعة ال Grid Control
         private void barButtonItemPrintStudents_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             using (SaveFileDialog saveDialog = new SaveFileDialog())

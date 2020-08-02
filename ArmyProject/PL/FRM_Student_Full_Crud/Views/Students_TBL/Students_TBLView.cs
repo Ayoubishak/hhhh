@@ -50,5 +50,10 @@ namespace ArmyProject.PL.Views.Students_TBLView{
         {
 
         }
+
+        private void IdTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
