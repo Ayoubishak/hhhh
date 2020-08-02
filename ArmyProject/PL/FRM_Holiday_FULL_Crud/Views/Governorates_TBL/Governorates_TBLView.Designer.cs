@@ -153,6 +153,7 @@
             this.ArrivalStations_TBLLookUpEdit.Size = new System.Drawing.Size(930, 20);
             this.ArrivalStations_TBLLookUpEdit.StyleController = this.dataLayoutControl1;
             this.ArrivalStations_TBLLookUpEdit.TabIndex = 7;
+            this.ArrivalStations_TBLLookUpEdit.EditValueChanged += new System.EventHandler(this.ArrivalStations_TBLLookUpEdit_EditValueChanged);
             // 
             // ArrivalStations_TBLBindingSource
             // 

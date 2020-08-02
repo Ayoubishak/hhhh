@@ -69,5 +69,13 @@ namespace ArmyProject.BL
             dal.Close();
         }
 
+        public void UpdateArrivalIdInStudents()
+        {
+            DAL.DataAccessLayer dal = new DAL.DataAccessLayer();
+            dal.Open();
+            dal.ExcuteCommand("SP_UpdateArrivalIdInStudents", null);
+            dal.Close();
+        }
+
     }
 }
