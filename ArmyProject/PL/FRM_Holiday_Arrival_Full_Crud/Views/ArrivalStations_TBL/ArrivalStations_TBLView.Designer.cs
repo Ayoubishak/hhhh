@@ -48,14 +48,14 @@
             this.colDegree = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRecruitingArea = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGovernorate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ItemForId = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.ItemForId = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForArriName = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForDescription = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForTransport_Id = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForGovernorates_TBL = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForStudents_TBL = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemForDescription = new DevExpress.XtraLayout.LayoutControlItem();
             this.mvvmContext = new DevExpress.Utils.MVVM.MVVMContext(this.components);
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAndClose = new DevExpress.XtraBars.BarButtonItem();
@@ -68,10 +68,12 @@
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiCustomize = new DevExpress.XtraBars.BarButtonItem();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.barButtonItemPrintStudents = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupLayout = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.students_TBLTableAdapter = new ArmyProject.Army_DBDataSetForGridTableAdapters.Students_TBLTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
@@ -89,14 +91,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentsTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.army_DBDataSetForGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForArriName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTransport_Id)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForGovernorates_TBL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForStudents_TBL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             this.SuspendLayout();
@@ -151,6 +153,7 @@
             // DescriptionTextEdit
             // 
             this.DescriptionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.arrivalStations_TBLViewBindingSource, "Description", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.DescriptionTextEdit.Enabled = false;
             this.DescriptionTextEdit.Location = new System.Drawing.Point(77, 60);
             this.DescriptionTextEdit.Name = "DescriptionTextEdit";
             this.DescriptionTextEdit.Size = new System.Drawing.Size(935, 20);
@@ -316,6 +319,16 @@
             this.colGovernorate.Visible = true;
             this.colGovernorate.VisibleIndex = 5;
             // 
+            // ItemForId
+            // 
+            this.ItemForId.Control = this.IdTextEdit;
+            this.ItemForId.Enabled = false;
+            this.ItemForId.Location = new System.Drawing.Point(0, 0);
+            this.ItemForId.Name = "ItemForId";
+            this.ItemForId.Size = new System.Drawing.Size(1004, 24);
+            this.ItemForId.Text = "المعرف";
+            this.ItemForId.TextSize = new System.Drawing.Size(62, 13);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -340,16 +353,6 @@
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
             this.layoutControlGroup2.Size = new System.Drawing.Size(1004, 605);
             // 
-            // ItemForId
-            // 
-            this.ItemForId.Control = this.IdTextEdit;
-            this.ItemForId.Enabled = false;
-            this.ItemForId.Location = new System.Drawing.Point(0, 0);
-            this.ItemForId.Name = "ItemForId";
-            this.ItemForId.Size = new System.Drawing.Size(1004, 24);
-            this.ItemForId.Text = "المعرف";
-            this.ItemForId.TextSize = new System.Drawing.Size(62, 13);
-            // 
             // ItemForArriName
             // 
             this.ItemForArriName.Control = this.ArriNameTextEdit;
@@ -358,16 +361,6 @@
             this.ItemForArriName.Size = new System.Drawing.Size(1004, 24);
             this.ItemForArriName.Text = "محطة الوصول";
             this.ItemForArriName.TextSize = new System.Drawing.Size(62, 13);
-            // 
-            // ItemForDescription
-            // 
-            this.ItemForDescription.Control = this.DescriptionTextEdit;
-            this.ItemForDescription.Enabled = false;
-            this.ItemForDescription.Location = new System.Drawing.Point(0, 48);
-            this.ItemForDescription.Name = "ItemForDescription";
-            this.ItemForDescription.Size = new System.Drawing.Size(1004, 24);
-            this.ItemForDescription.Text = "الوصف";
-            this.ItemForDescription.TextSize = new System.Drawing.Size(62, 13);
             // 
             // ItemForTransport_Id
             // 
@@ -399,6 +392,16 @@
             this.ItemForStudents_TBL.Text = "Students_TBL";
             this.ItemForStudents_TBL.TextSize = new System.Drawing.Size(0, 0);
             this.ItemForStudents_TBL.TextVisible = false;
+            // 
+            // ItemForDescription
+            // 
+            this.ItemForDescription.Control = this.DescriptionTextEdit;
+            this.ItemForDescription.Enabled = false;
+            this.ItemForDescription.Location = new System.Drawing.Point(0, 48);
+            this.ItemForDescription.Name = "ItemForDescription";
+            this.ItemForDescription.Size = new System.Drawing.Size(1004, 24);
+            this.ItemForDescription.Text = "الوصف";
+            this.ItemForDescription.TextSize = new System.Drawing.Size(62, 13);
             // 
             // mvvmContext
             // 
@@ -487,9 +490,10 @@
             this.bbiClose,
             this.bbiSaveLayout,
             this.bbiResetLayout,
-            this.skinDropDownButtonItem1});
+            this.skinDropDownButtonItem1,
+            this.barButtonItemPrintStudents});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 11;
+            this.mainRibbonControl.MaxItemId = 12;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
@@ -511,12 +515,20 @@
             this.skinDropDownButtonItem1.Id = 10;
             this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
             // 
+            // barButtonItemPrintStudents
+            // 
+            this.barButtonItemPrintStudents.Caption = "طباعة الطلاب";
+            this.barButtonItemPrintStudents.Id = 11;
+            this.barButtonItemPrintStudents.Name = "barButtonItemPrintStudents";
+            this.barButtonItemPrintStudents.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPrintStudents_ItemClick);
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.mainRibbonPageGroup,
             this.ribbonPageGroupLayout,
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
             this.mainRibbonPage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mainRibbonPage.ImageOptions.Image")));
             this.mainRibbonPage.MergeOrder = 0;
             this.mainRibbonPage.Name = "mainRibbonPage";
@@ -550,6 +562,12 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "الشكل واللون";
             // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItemPrintStudents);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            // 
             // students_TBLTableAdapter
             // 
             this.students_TBLTableAdapter.ClearBeforeFill = true;
@@ -579,14 +597,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentsTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.army_DBDataSetForGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForArriName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForTransport_Id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForGovernorates_TBL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForStudents_TBL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemForDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             this.ResumeLayout(false);
@@ -645,6 +663,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colGovName;
         private DevExpress.XtraGrid.Columns.GridColumn colArrivalStations_Id;
         private DevExpress.XtraGrid.Columns.GridColumn colStudents_TBL;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPrintStudents;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
 		 
 	}
 }

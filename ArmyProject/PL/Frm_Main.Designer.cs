@@ -184,6 +184,7 @@
             this.accordionControlElement_AddStudent,
             this.accordionControlElement_StudentManage,
             this.accordionControlElementFullStudentReports});
+            this.accordionControlElementStudents.Expanded = true;
             this.accordionControlElementStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementStudents.ImageOptions.SvgImage")));
             this.accordionControlElementStudents.Name = "accordionControlElementStudents";
             this.accordionControlElementStudents.Text = "الطلاب";
