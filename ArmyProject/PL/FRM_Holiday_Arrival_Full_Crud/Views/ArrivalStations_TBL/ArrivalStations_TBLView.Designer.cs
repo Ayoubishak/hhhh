@@ -33,9 +33,21 @@
             this.Transport_TBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Transport_TBLLookUpEditView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Governorates_TBLGridControl = new DevExpress.XtraGrid.GridControl();
+            this.governoratesTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colGovName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colArrivalStations_Id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStudents_TBL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Students_TBLGridControl = new DevExpress.XtraGrid.GridControl();
+            this.studentsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.army_DBDataSetForGrid = new ArmyProject.Army_DBDataSetForGrid();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colGeneralNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompany = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDegree = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRecruitingArea = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGovernorate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForId = new DevExpress.XtraLayout.LayoutControlItem();
@@ -60,15 +72,7 @@
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupLayout = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.army_DBDataSetForGrid = new ArmyProject.Army_DBDataSetForGrid();
-            this.studentsTBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.students_TBLTableAdapter = new ArmyProject.Army_DBDataSetForGridTableAdapters.Students_TBLTableAdapter();
-            this.colGeneralNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCompany = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDegree = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRecruitingArea = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGovernorate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IdTextEdit.Properties)).BeginInit();
@@ -79,8 +83,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Transport_TBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Transport_TBLLookUpEditView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Governorates_TBLGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governoratesTBLBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Students_TBLGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsTBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.army_DBDataSetForGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -92,8 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForStudents_TBL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.army_DBDataSetForGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsTBLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -107,8 +112,11 @@
             this.dataLayoutControl1.Controls.Add(this.Students_TBLGridControl);
             this.dataLayoutControl1.DataSource = this.arrivalStations_TBLViewBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataLayoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.ItemForId});
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 143);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
+            this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(446, 213, 650, 400);
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
             this.dataLayoutControl1.Size = new System.Drawing.Size(1024, 625);
             this.dataLayoutControl1.TabIndex = 0;
@@ -134,7 +142,7 @@
             // ArriNameTextEdit
             // 
             this.ArriNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.arrivalStations_TBLViewBindingSource, "ArriName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ArriNameTextEdit.Location = new System.Drawing.Point(77, 36);
+            this.ArriNameTextEdit.Location = new System.Drawing.Point(77, 12);
             this.ArriNameTextEdit.Name = "ArriNameTextEdit";
             this.ArriNameTextEdit.Size = new System.Drawing.Size(935, 20);
             this.ArriNameTextEdit.StyleController = this.dataLayoutControl1;
@@ -152,7 +160,7 @@
             // Transport_TBLLookUpEdit
             // 
             this.Transport_TBLLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.arrivalStations_TBLViewBindingSource, "Transport_Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.Transport_TBLLookUpEdit.Location = new System.Drawing.Point(77, 84);
+            this.Transport_TBLLookUpEdit.Location = new System.Drawing.Point(77, 36);
             this.Transport_TBLLookUpEdit.Name = "Transport_TBLLookUpEdit";
             this.Transport_TBLLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -178,32 +186,75 @@
             // Governorates_TBLGridControl
             // 
             this.Governorates_TBLGridControl.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.arrivalStations_TBLViewBindingSource, "Governorates_TBL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.Governorates_TBLGridControl.Location = new System.Drawing.Point(12, 108);
+            this.Governorates_TBLGridControl.DataSource = this.governoratesTBLBindingSource;
+            this.Governorates_TBLGridControl.Location = new System.Drawing.Point(12, 84);
             this.Governorates_TBLGridControl.MainView = this.gridView1;
             this.Governorates_TBLGridControl.Name = "Governorates_TBLGridControl";
             this.Governorates_TBLGridControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Governorates_TBLGridControl.Size = new System.Drawing.Size(1000, 250);
+            this.Governorates_TBLGridControl.Size = new System.Drawing.Size(1000, 249);
             this.Governorates_TBLGridControl.TabIndex = 8;
             this.Governorates_TBLGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // governoratesTBLBindingSource
+            // 
+            this.governoratesTBLBindingSource.DataSource = typeof(ArmyProject.Governorates_TBL);
+            // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colGovName,
+            this.colArrivalStations_Id,
+            this.colStudents_TBL});
             this.gridView1.GridControl = this.Governorates_TBLGridControl;
             this.gridView1.Name = "gridView1";
+            // 
+            // colGovName
+            // 
+            this.colGovName.Caption = "المحافظة";
+            this.colGovName.FieldName = "GovName";
+            this.colGovName.Name = "colGovName";
+            this.colGovName.Visible = true;
+            this.colGovName.VisibleIndex = 0;
+            // 
+            // colArrivalStations_Id
+            // 
+            this.colArrivalStations_Id.Caption = "محطة الوصول";
+            this.colArrivalStations_Id.FieldName = "ArrivalStations_TBL.ArriName";
+            this.colArrivalStations_Id.Name = "colArrivalStations_Id";
+            this.colArrivalStations_Id.Visible = true;
+            this.colArrivalStations_Id.VisibleIndex = 2;
+            // 
+            // colStudents_TBL
+            // 
+            this.colStudents_TBL.Caption = "عدد الطلاب";
+            this.colStudents_TBL.FieldName = "Students_TBL.Count";
+            this.colStudents_TBL.Name = "colStudents_TBL";
+            this.colStudents_TBL.Visible = true;
+            this.colStudents_TBL.VisibleIndex = 1;
             // 
             // Students_TBLGridControl
             // 
             this.Students_TBLGridControl.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.arrivalStations_TBLViewBindingSource, "Students_TBL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Students_TBLGridControl.DataSource = this.studentsTBLBindingSource;
-            this.Students_TBLGridControl.Location = new System.Drawing.Point(12, 362);
+            this.Students_TBLGridControl.Location = new System.Drawing.Point(12, 337);
             this.Students_TBLGridControl.MainView = this.gridView2;
             this.Students_TBLGridControl.Name = "Students_TBLGridControl";
             this.Students_TBLGridControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Students_TBLGridControl.Size = new System.Drawing.Size(1000, 251);
+            this.Students_TBLGridControl.Size = new System.Drawing.Size(1000, 276);
             this.Students_TBLGridControl.TabIndex = 9;
             this.Students_TBLGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            // 
+            // studentsTBLBindingSource
+            // 
+            this.studentsTBLBindingSource.DataMember = "Students_TBL";
+            this.studentsTBLBindingSource.DataSource = this.army_DBDataSetForGrid;
+            // 
+            // army_DBDataSetForGrid
+            // 
+            this.army_DBDataSetForGrid.DataSetName = "Army_DBDataSetForGrid";
+            this.army_DBDataSetForGrid.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView2
             // 
@@ -216,6 +267,54 @@
             this.colGovernorate});
             this.gridView2.GridControl = this.Students_TBLGridControl;
             this.gridView2.Name = "gridView2";
+            // 
+            // colGeneralNumber
+            // 
+            this.colGeneralNumber.Caption = "الرقم العام";
+            this.colGeneralNumber.FieldName = "GeneralNumber";
+            this.colGeneralNumber.Name = "colGeneralNumber";
+            this.colGeneralNumber.Visible = true;
+            this.colGeneralNumber.VisibleIndex = 0;
+            // 
+            // colCompany
+            // 
+            this.colCompany.Caption = "السرية";
+            this.colCompany.FieldName = "Company";
+            this.colCompany.Name = "colCompany";
+            this.colCompany.Visible = true;
+            this.colCompany.VisibleIndex = 1;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "الأسم";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 2;
+            // 
+            // colDegree
+            // 
+            this.colDegree.Caption = "المؤهل";
+            this.colDegree.FieldName = "Degree";
+            this.colDegree.Name = "colDegree";
+            this.colDegree.Visible = true;
+            this.colDegree.VisibleIndex = 3;
+            // 
+            // colRecruitingArea
+            // 
+            this.colRecruitingArea.Caption = "منطقة التجنيد";
+            this.colRecruitingArea.FieldName = "RecruitingArea";
+            this.colRecruitingArea.Name = "colRecruitingArea";
+            this.colRecruitingArea.Visible = true;
+            this.colRecruitingArea.VisibleIndex = 4;
+            // 
+            // colGovernorate
+            // 
+            this.colGovernorate.Caption = "المحافظة";
+            this.colGovernorate.FieldName = "Governorate";
+            this.colGovernorate.Name = "colGovernorate";
+            this.colGovernorate.Visible = true;
+            this.colGovernorate.VisibleIndex = 5;
             // 
             // layoutControlGroup1
             // 
@@ -232,12 +331,11 @@
             this.layoutControlGroup2.AllowDrawBackground = false;
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.ItemForId,
             this.ItemForArriName,
-            this.ItemForDescription,
             this.ItemForTransport_Id,
             this.ItemForGovernorates_TBL,
-            this.ItemForStudents_TBL});
+            this.ItemForStudents_TBL,
+            this.ItemForDescription});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
             this.layoutControlGroup2.Size = new System.Drawing.Size(1004, 605);
@@ -255,7 +353,7 @@
             // ItemForArriName
             // 
             this.ItemForArriName.Control = this.ArriNameTextEdit;
-            this.ItemForArriName.Location = new System.Drawing.Point(0, 24);
+            this.ItemForArriName.Location = new System.Drawing.Point(0, 0);
             this.ItemForArriName.Name = "ItemForArriName";
             this.ItemForArriName.Size = new System.Drawing.Size(1004, 24);
             this.ItemForArriName.Text = "محطة الوصول";
@@ -264,6 +362,7 @@
             // ItemForDescription
             // 
             this.ItemForDescription.Control = this.DescriptionTextEdit;
+            this.ItemForDescription.Enabled = false;
             this.ItemForDescription.Location = new System.Drawing.Point(0, 48);
             this.ItemForDescription.Name = "ItemForDescription";
             this.ItemForDescription.Size = new System.Drawing.Size(1004, 24);
@@ -273,7 +372,7 @@
             // ItemForTransport_Id
             // 
             this.ItemForTransport_Id.Control = this.Transport_TBLLookUpEdit;
-            this.ItemForTransport_Id.Location = new System.Drawing.Point(0, 72);
+            this.ItemForTransport_Id.Location = new System.Drawing.Point(0, 24);
             this.ItemForTransport_Id.Name = "ItemForTransport_Id";
             this.ItemForTransport_Id.Size = new System.Drawing.Size(1004, 24);
             this.ItemForTransport_Id.Text = "طريقة النقل";
@@ -282,9 +381,9 @@
             // ItemForGovernorates_TBL
             // 
             this.ItemForGovernorates_TBL.Control = this.Governorates_TBLGridControl;
-            this.ItemForGovernorates_TBL.Location = new System.Drawing.Point(0, 96);
+            this.ItemForGovernorates_TBL.Location = new System.Drawing.Point(0, 72);
             this.ItemForGovernorates_TBL.Name = "ItemForGovernorates_TBL";
-            this.ItemForGovernorates_TBL.Size = new System.Drawing.Size(1004, 254);
+            this.ItemForGovernorates_TBL.Size = new System.Drawing.Size(1004, 253);
             this.ItemForGovernorates_TBL.StartNewLine = true;
             this.ItemForGovernorates_TBL.Text = "Governorates_TBL";
             this.ItemForGovernorates_TBL.TextSize = new System.Drawing.Size(0, 0);
@@ -293,9 +392,9 @@
             // ItemForStudents_TBL
             // 
             this.ItemForStudents_TBL.Control = this.Students_TBLGridControl;
-            this.ItemForStudents_TBL.Location = new System.Drawing.Point(0, 350);
+            this.ItemForStudents_TBL.Location = new System.Drawing.Point(0, 325);
             this.ItemForStudents_TBL.Name = "ItemForStudents_TBL";
-            this.ItemForStudents_TBL.Size = new System.Drawing.Size(1004, 255);
+            this.ItemForStudents_TBL.Size = new System.Drawing.Size(1004, 280);
             this.ItemForStudents_TBL.StartNewLine = true;
             this.ItemForStudents_TBL.Text = "Students_TBL";
             this.ItemForStudents_TBL.TextSize = new System.Drawing.Size(0, 0);
@@ -451,67 +550,9 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "الشكل واللون";
             // 
-            // army_DBDataSetForGrid
-            // 
-            this.army_DBDataSetForGrid.DataSetName = "Army_DBDataSetForGrid";
-            this.army_DBDataSetForGrid.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentsTBLBindingSource
-            // 
-            this.studentsTBLBindingSource.DataMember = "Students_TBL";
-            this.studentsTBLBindingSource.DataSource = this.army_DBDataSetForGrid;
-            // 
             // students_TBLTableAdapter
             // 
             this.students_TBLTableAdapter.ClearBeforeFill = true;
-            // 
-            // colGeneralNumber
-            // 
-            this.colGeneralNumber.Caption = "الرقم العام";
-            this.colGeneralNumber.FieldName = "GeneralNumber";
-            this.colGeneralNumber.Name = "colGeneralNumber";
-            this.colGeneralNumber.Visible = true;
-            this.colGeneralNumber.VisibleIndex = 0;
-            // 
-            // colCompany
-            // 
-            this.colCompany.Caption = "السرية";
-            this.colCompany.FieldName = "Company";
-            this.colCompany.Name = "colCompany";
-            this.colCompany.Visible = true;
-            this.colCompany.VisibleIndex = 1;
-            // 
-            // colName
-            // 
-            this.colName.Caption = "الأسم";
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 2;
-            // 
-            // colDegree
-            // 
-            this.colDegree.Caption = "المؤهل";
-            this.colDegree.FieldName = "Degree";
-            this.colDegree.Name = "colDegree";
-            this.colDegree.Visible = true;
-            this.colDegree.VisibleIndex = 3;
-            // 
-            // colRecruitingArea
-            // 
-            this.colRecruitingArea.Caption = "منطقة التجنيد";
-            this.colRecruitingArea.FieldName = "RecruitingArea";
-            this.colRecruitingArea.Name = "colRecruitingArea";
-            this.colRecruitingArea.Visible = true;
-            this.colRecruitingArea.VisibleIndex = 4;
-            // 
-            // colGovernorate
-            // 
-            this.colGovernorate.Caption = "المحافظة";
-            this.colGovernorate.FieldName = "Governorate";
-            this.colGovernorate.Name = "colGovernorate";
-            this.colGovernorate.Visible = true;
-            this.colGovernorate.VisibleIndex = 5;
             // 
             // ArrivalStations_TBLView
             // 
@@ -532,8 +573,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Transport_TBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Transport_TBLLookUpEditView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Governorates_TBLGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.governoratesTBLBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Students_TBLGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsTBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.army_DBDataSetForGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -545,8 +589,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemForStudents_TBL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.army_DBDataSetForGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsTBLBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -599,6 +641,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRecruitingArea;
         private DevExpress.XtraGrid.Columns.GridColumn colGovernorate;
         private Army_DBDataSetForGridTableAdapters.Students_TBLTableAdapter students_TBLTableAdapter;
+        private System.Windows.Forms.BindingSource governoratesTBLBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colGovName;
+        private DevExpress.XtraGrid.Columns.GridColumn colArrivalStations_Id;
+        private DevExpress.XtraGrid.Columns.GridColumn colStudents_TBL;
 		 
 	}
 }

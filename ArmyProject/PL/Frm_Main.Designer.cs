@@ -63,7 +63,7 @@
             this.accordionControlSeparator5 = new DevExpress.XtraBars.Navigation.AccordionControlSeparator();
             this.accordionControlElementArrival_Stations = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement19 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement20 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementArrivalStationsMange = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -76,7 +76,7 @@
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fluentDesignFormContainer1.Location = new System.Drawing.Point(279, 30);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(521, 417);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(521, 471);
             this.fluentDesignFormContainer1.TabIndex = 0;
             this.fluentDesignFormContainer1.Click += new System.EventHandler(this.fluentDesignFormContainer1_Click);
             // 
@@ -104,7 +104,7 @@
             this.accordionControl1.Location = new System.Drawing.Point(0, 30);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(279, 417);
+            this.accordionControl1.Size = new System.Drawing.Size(279, 471);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -184,7 +184,6 @@
             this.accordionControlElement_AddStudent,
             this.accordionControlElement_StudentManage,
             this.accordionControlElementFullStudentReports});
-            this.accordionControlElementStudents.Expanded = true;
             this.accordionControlElementStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementStudents.ImageOptions.SvgImage")));
             this.accordionControlElementStudents.Name = "accordionControlElementStudents";
             this.accordionControlElementStudents.Text = "الطلاب";
@@ -256,19 +255,20 @@
             this.accordionControlElementHoliday.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementHoliday.ImageOptions.SvgImage")));
             this.accordionControlElementHoliday.Name = "accordionControlElementHoliday";
             this.accordionControlElementHoliday.Text = "الأجازات";
+            this.accordionControlElementHoliday.Click += new System.EventHandler(this.accordionControlElementHoliday_Click);
             // 
             // accordionControlElementHoliday_Management
             // 
             this.accordionControlElementHoliday_Management.Name = "accordionControlElementHoliday_Management";
             this.accordionControlElementHoliday_Management.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementHoliday_Management.Text = "ادارة الاجازات";
+            this.accordionControlElementHoliday_Management.Text = "ادارة الاجازات محافظات";
             this.accordionControlElementHoliday_Management.Click += new System.EventHandler(this.accordionControlElementHoliday_Management_Click);
             // 
             // accordionControlElementHolidayFinalPart
             // 
             this.accordionControlElementHolidayFinalPart.Name = "accordionControlElementHolidayFinalPart";
             this.accordionControlElementHolidayFinalPart.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementHolidayFinalPart.Text = "كشف بالاجازات";
+            this.accordionControlElementHolidayFinalPart.Text = "كشف بالاجازات الوصول";
             this.accordionControlElementHolidayFinalPart.Click += new System.EventHandler(this.accordionControlElementHolidayFinalPart_Click);
             // 
             // accordionControlElementUsers
@@ -335,7 +335,8 @@
             // 
             this.accordionControlElementArrival_Stations.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement19,
-            this.accordionControlElement20});
+            this.accordionControlElementArrivalStationsMange});
+            this.accordionControlElementArrival_Stations.Expanded = true;
             this.accordionControlElementArrival_Stations.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementArrival_Stations.ImageOptions.SvgImage")));
             this.accordionControlElementArrival_Stations.Name = "accordionControlElementArrival_Stations";
             this.accordionControlElementArrival_Stations.Text = "محطات الوصول";
@@ -346,11 +347,12 @@
             this.accordionControlElement19.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement19.Text = "انشاء محطة وصول";
             // 
-            // accordionControlElement20
+            // accordionControlElementArrivalStationsMange
             // 
-            this.accordionControlElement20.Name = "accordionControlElement20";
-            this.accordionControlElement20.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement20.Text = "ادارة محطات الوصول";
+            this.accordionControlElementArrivalStationsMange.Name = "accordionControlElementArrivalStationsMange";
+            this.accordionControlElementArrivalStationsMange.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementArrivalStationsMange.Text = "ادارة محطات الوصول";
+            this.accordionControlElementArrivalStationsMange.Click += new System.EventHandler(this.accordionControlElementArrivalStationsMange_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -374,7 +376,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 447);
+            this.ClientSize = new System.Drawing.Size(800, 501);
             this.ControlContainer = this.fluentDesignFormContainer1;
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.accordionControl1);
@@ -417,7 +419,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement18;
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement19;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement20;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementArrivalStationsMange;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_AddStudent;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_StudentManage;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementFullStudentReports;

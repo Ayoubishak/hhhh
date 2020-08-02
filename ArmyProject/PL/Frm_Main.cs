@@ -119,5 +119,17 @@ namespace ArmyProject.PL
             fluentDesignFormContainer1.Controls.Add(new FRM_Holiday_Arrival_Full_Crud.Views.ArrivalStations_TBLCollectionView.ArrivalStations_TBLCollectionView() { Dock = DockStyle.Fill });
         
         }
+
+        private void accordionControlElementHoliday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Manage محطات الوصول arrival stations
+        private void accordionControlElementArrivalStationsMange_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            fluentDesignFormContainer1.Controls.Add(new FRM_Holiday_Arrival_Full_Crud.Views.ArrivalStations_TBLCollectionView.ArrivalStations_TBLCollectionView() { Dock = DockStyle.Fill });
+        }
     }
 }
