@@ -437,6 +437,9 @@
     <EmbeddedResource Include="PL\FRM_RecruitingAreaCrud\Views\RecruitingArea_TBL\RecruitingArea_TBLCollectionView.resx">
       <DependentUpon>RecruitingArea_TBLCollectionView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_RecruitingAreaCrud\Views\RecruitingArea_TBL\RecruitingArea_TBLView.resx">
+      <DependentUpon>RecruitingArea_TBLView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Settings\UserControlDeleteInfo.resx">
       <DependentUpon>UserControlDeleteInfo.cs</DependentUpon>
     </EmbeddedResource>
