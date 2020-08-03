@@ -156,6 +156,7 @@
             this.accordionControlElementGetBackup.Name = "accordionControlElementGetBackup";
             this.accordionControlElementGetBackup.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementGetBackup.Text = "استعادة النسخة المحفوظة";
+            this.accordionControlElementGetBackup.Click += new System.EventHandler(this.accordionControlElementGetBackup_Click);
             // 
             // accordionControlSeparator6
             // 

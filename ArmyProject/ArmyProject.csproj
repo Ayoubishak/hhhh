@@ -159,6 +159,18 @@
     <Compile Include="PL\FRM_Backup_Restore\BackupForm.Designer.cs">
       <DependentUpon>BackupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Backup_Restore\RestoreControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Backup_Restore\RestoreControl1.Designer.cs">
+      <DependentUpon>RestoreControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Backup_Restore\RestoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Backup_Restore\RestoreForm.Designer.cs">
+      <DependentUpon>RestoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Degree_Crud\Army_DBEntitiesDataModel\Army_DBEntitiesUnitOfWork.cs" />
     <Compile Include="PL\FRM_Degree_Crud\Army_DBEntitiesDataModel\IArmy_DBEntitiesUnitOfWork.cs" />
     <Compile Include="PL\FRM_Degree_Crud\Army_DBEntitiesDataModel\UnitOfWorkSource.cs" />
@@ -347,6 +359,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Backup_Restore\BackupForm.resx">
       <DependentUpon>BackupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Backup_Restore\RestoreControl1.resx">
+      <DependentUpon>RestoreControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Backup_Restore\RestoreForm.resx">
+      <DependentUpon>RestoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>

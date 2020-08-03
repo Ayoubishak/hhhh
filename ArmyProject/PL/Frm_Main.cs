@@ -46,7 +46,7 @@ namespace ArmyProject.PL
             this.accordionControlElementHistory.Enabled = false;
             this.accordionControlElementUsers.Enabled = false;
             this.accordionControlElementMakeBackup.Enabled = true;
-            this.accordionControlElementGetBackup.Enabled = false;
+            this.accordionControlElementGetBackup.Enabled =true;
 
         }
 
@@ -141,6 +141,12 @@ namespace ArmyProject.PL
         private void accordionControlElementMakeBackup_Click(object sender, EventArgs e)
         {
             FRM_Backup_Restore.BackupForm frm = new FRM_Backup_Restore.BackupForm();
+            frm.ShowDialog();
+        }
+
+        private void accordionControlElementGetBackup_Click(object sender, EventArgs e)
+        {
+            FRM_Backup_Restore.RestoreForm frm = new FRM_Backup_Restore.RestoreForm();
             frm.ShowDialog();
         }
     }
