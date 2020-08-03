@@ -310,6 +310,12 @@
     <Compile Include="PL\FRM_Student_Full_Crud\Views\Students_TBL\Students_TBLView.designer.cs">
       <DependentUpon>Students_TBLView.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\LoginUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\LoginUserControl.Designer.cs">
+      <DependentUpon>LoginUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecruitingArea_TBL.cs">
@@ -404,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Student_Full_Crud\Views\Students_TBL\Students_TBLView.resx">
       <DependentUpon>Students_TBLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\LoginUserControl.resx">
+      <DependentUpon>LoginUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

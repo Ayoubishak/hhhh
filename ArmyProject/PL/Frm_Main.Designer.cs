@@ -121,6 +121,7 @@
             this.accordionControlElementGetBackup,
             this.accordionControlSeparator6,
             this.accordionControlElement_Logout});
+            this.accordionControlElementFile.Expanded = true;
             this.accordionControlElementFile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementFile.ImageOptions.SvgImage")));
             this.accordionControlElementFile.Name = "accordionControlElementFile";
             this.accordionControlElementFile.Text = "الملف";
@@ -373,7 +374,6 @@
             this.accordionControlElementSettings.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementDeleteInfo,
             this.accordionControlElementAbout});
-            this.accordionControlElementSettings.Expanded = true;
             this.accordionControlElementSettings.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementSettings.ImageOptions.SvgImage")));
             this.accordionControlElementSettings.Name = "accordionControlElementSettings";
             this.accordionControlElementSettings.Text = "الأعدادات";
