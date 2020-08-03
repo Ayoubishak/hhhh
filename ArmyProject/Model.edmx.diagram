@@ -4,27 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="22051b0b44144a00a84c9b9deadde1ea" Name="Diagram1">
-        <EntityTypeShape EntityType="Army_DBModel.History_TBL" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="Army_DBModel.Student_Sanctions_TBL" Width="1.5" PointX="9.75" PointY="3.875" IsExpanded="true" />
+      <Diagram DiagramId="22051b0b44144a00a84c9b9deadde1ea" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="Army_DBModel.Student_Sanctions_TBL" Width="1.5" PointX="9.875" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Army_DBModel.Students_TBL" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Army_DBModel.sysdiagram" Width="1.5" PointX="9.75" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Army_DBModel.Users_TBL" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
-        <AssociationConnector Association="Army_DBModel.FK_History_TBL_Users_TBL" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Army_DBModel.sysdiagram" Width="1.5" PointX="15.875" PointY="7.5" IsExpanded="true" />
         <AssociationConnector Association="Army_DBModel.FK_Student_Sanctions_TBL_Students_TBL" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Army_DBModel.Degree_TBL" Width="1.5" PointX="5.25" PointY="7.375" />
-        <EntityTypeShape EntityType="Army_DBModel.Governorates_TBL" Width="1.5" PointX="5.25" PointY="4" />
-        <EntityTypeShape EntityType="Army_DBModel.RecruitingArea_TBL" Width="1.5" PointX="5.25" PointY="0.75" />
-        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Degree_TBL" />
-        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Governorates_TBL" />
-        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_RecruitingArea_TBL" />
-        <EntityTypeShape EntityType="Army_DBModel.ArrivalStations_TBL" Width="1.5" PointX="3" PointY="3.75" />
-        <EntityTypeShape EntityType="Army_DBModel.Sanctions_TBL" Width="1.5" PointX="7.5" PointY="10" />
-        <EntityTypeShape EntityType="Army_DBModel.Transport_TBL" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="Army_DBModel.Sanctions_TBL" Width="1.5" PointX="8.5" PointY="8.375" />
+        <AssociationConnector Association="Army_DBModel.FK_Student_Sanctions_TBL_Sanctions_TBL" />
+        <EntityTypeShape EntityType="Army_DBModel.ArrivalStations_TBL" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="Army_DBModel.Degree_TBL" Width="1.5" PointX="10.5" PointY="1.375" />
+        <EntityTypeShape EntityType="Army_DBModel.Governorates_TBL" Width="1.5" PointX="4.875" PointY="4" />
+        <EntityTypeShape EntityType="Army_DBModel.History_TBL" Width="1.5" PointX="14.125" PointY="3.5" />
+        <EntityTypeShape EntityType="Army_DBModel.RecruitingArea_TBL" Width="2" PointX="4.75" PointY="1.375" />
+        <EntityTypeShape EntityType="Army_DBModel.Transport_TBL" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="Army_DBModel.Users_TBL" Width="1.5" PointX="12.125" PointY="3.75" />
         <AssociationConnector Association="Army_DBModel.FK_ArrivalStations_TBL_Transport_TBL" />
         <AssociationConnector Association="Army_DBModel.FK_Governorates_TBL_ArrivalStations_TBL" />
         <AssociationConnector Association="Army_DBModel.FK_Students_TBL_ArrivalStations_TBL" />
-        <AssociationConnector Association="Army_DBModel.FK_Student_Sanctions_TBL_Sanctions_TBL" />
+        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Degree_TBL" />
+        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_Governorates_TBL" />
+        <AssociationConnector Association="Army_DBModel.FK_History_TBL_Users_TBL" />
+        <AssociationConnector Association="Army_DBModel.FK_Students_TBL_RecruitingArea_TBL" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Army_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="History_TBL">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Action" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Part" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="User_Id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Users_TBL" Relationship="Self.FK_History_TBL_Users_TBL" FromRole="History_TBL" ToRole="Users_TBL" />
-  </EntityType>
   <EntityType Name="Student_Sanctions_TBL">
     <Key>
       <PropertyRef Name="Id" />
@@ -45,10 +34,10 @@
     <Property Name="Weapon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Evaluation" Type="Int32" />
     <NavigationProperty Name="Student_Sanctions_TBL" Relationship="Self.FK_Student_Sanctions_TBL_Students_TBL" FromRole="Students_TBL" ToRole="Student_Sanctions_TBL" />
+    <NavigationProperty Name="ArrivalStations_TBL" Relationship="Army_DBModel.FK_Students_TBL_ArrivalStations_TBL" FromRole="Students_TBL" ToRole="ArrivalStations_TBL" />
     <NavigationProperty Name="Degree_TBL" Relationship="Army_DBModel.FK_Students_TBL_Degree_TBL" FromRole="Students_TBL" ToRole="Degree_TBL" />
     <NavigationProperty Name="Governorates_TBL" Relationship="Army_DBModel.FK_Students_TBL_Governorates_TBL" FromRole="Students_TBL" ToRole="Governorates_TBL" />
     <NavigationProperty Name="RecruitingArea_TBL" Relationship="Army_DBModel.FK_Students_TBL_RecruitingArea_TBL" FromRole="Students_TBL" ToRole="RecruitingArea_TBL" />
-    <NavigationProperty Name="ArrivalStations_TBL" Relationship="Army_DBModel.FK_Students_TBL_ArrivalStations_TBL" FromRole="Students_TBL" ToRole="ArrivalStations_TBL" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -60,31 +49,6 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="Users_TBL">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Type" Type="Byte" />
-    <NavigationProperty Name="History_TBL" Relationship="Self.FK_History_TBL_Users_TBL" FromRole="Users_TBL" ToRole="History_TBL" />
-  </EntityType>
-  <Association Name="FK_History_TBL_Users_TBL">
-    <End Role="Users_TBL" Type="Self.Users_TBL" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="History_TBL" Type="Self.History_TBL" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users_TBL">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="History_TBL">
-        <PropertyRef Name="User_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Student_Sanctions_TBL_Students_TBL">
     <End Role="Students_TBL" Type="Self.Students_TBL" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -100,15 +64,9 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Army_DBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="History_TBL" EntityType="Self.History_TBL" />
     <EntitySet Name="Student_Sanctions_TBL" EntityType="Self.Student_Sanctions_TBL" />
     <EntitySet Name="Students_TBL" EntityType="Self.Students_TBL" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="Users_TBL" EntityType="Self.Users_TBL" />
-    <AssociationSet Name="FK_History_TBL_Users_TBL" Association="Self.FK_History_TBL_Users_TBL">
-      <End Role="Users_TBL" EntitySet="Users_TBL" />
-      <End Role="History_TBL" EntitySet="History_TBL" />
-    </AssociationSet>
     <AssociationSet Name="FK_Student_Sanctions_TBL_Students_TBL" Association="Self.FK_Student_Sanctions_TBL_Students_TBL">
       <End Role="Students_TBL" EntitySet="Students_TBL" />
       <End Role="Student_Sanctions_TBL" EntitySet="Student_Sanctions_TBL" />
@@ -159,24 +117,18 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
-    <EntitySet Name="Degree_TBL" EntityType="Army_DBModel.Degree_TBL" />
-    <EntitySet Name="Governorates_TBL" EntityType="Army_DBModel.Governorates_TBL" />
-    <EntitySet Name="RecruitingArea_TBL" EntityType="Army_DBModel.RecruitingArea_TBL" />
-    <AssociationSet Name="FK_Students_TBL_Degree_TBL" Association="Army_DBModel.FK_Students_TBL_Degree_TBL">
-      <End Role="Degree_TBL" EntitySet="Degree_TBL" />
-      <End Role="Students_TBL" EntitySet="Students_TBL" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Students_TBL_Governorates_TBL" Association="Army_DBModel.FK_Students_TBL_Governorates_TBL">
-      <End Role="Governorates_TBL" EntitySet="Governorates_TBL" />
-      <End Role="Students_TBL" EntitySet="Students_TBL" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Students_TBL_RecruitingArea_TBL" Association="Army_DBModel.FK_Students_TBL_RecruitingArea_TBL">
-      <End Role="RecruitingArea_TBL" EntitySet="RecruitingArea_TBL" />
-      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    <EntitySet Name="Sanctions_TBL" EntityType="Army_DBModel.Sanctions_TBL" />
+    <AssociationSet Name="FK_Student_Sanctions_TBL_Sanctions_TBL" Association="Army_DBModel.FK_Student_Sanctions_TBL_Sanctions_TBL">
+      <End Role="Sanctions_TBL" EntitySet="Sanctions_TBL" />
+      <End Role="Student_Sanctions_TBL" EntitySet="Student_Sanctions_TBL" />
     </AssociationSet>
     <EntitySet Name="ArrivalStations_TBL" EntityType="Army_DBModel.ArrivalStations_TBL" />
-    <EntitySet Name="Sanctions_TBL" EntityType="Army_DBModel.Sanctions_TBL" />
+    <EntitySet Name="Degree_TBL" EntityType="Army_DBModel.Degree_TBL" />
+    <EntitySet Name="Governorates_TBL" EntityType="Army_DBModel.Governorates_TBL" />
+    <EntitySet Name="History_TBL" EntityType="Army_DBModel.History_TBL" />
+    <EntitySet Name="RecruitingArea_TBL" EntityType="Army_DBModel.RecruitingArea_TBL" />
     <EntitySet Name="Transport_TBL" EntityType="Army_DBModel.Transport_TBL" />
+    <EntitySet Name="Users_TBL" EntityType="Army_DBModel.Users_TBL" />
     <AssociationSet Name="FK_ArrivalStations_TBL_Transport_TBL" Association="Army_DBModel.FK_ArrivalStations_TBL_Transport_TBL">
       <End Role="Transport_TBL" EntitySet="Transport_TBL" />
       <End Role="ArrivalStations_TBL" EntitySet="ArrivalStations_TBL" />
@@ -189,10 +141,23 @@
       <End Role="ArrivalStations_TBL" EntitySet="ArrivalStations_TBL" />
       <End Role="Students_TBL" EntitySet="Students_TBL" />
     </AssociationSet>
-    <AssociationSet Name="FK_Student_Sanctions_TBL_Sanctions_TBL" Association="Army_DBModel.FK_Student_Sanctions_TBL_Sanctions_TBL">
-      <End Role="Sanctions_TBL" EntitySet="Sanctions_TBL" />
-      <End Role="Student_Sanctions_TBL" EntitySet="Student_Sanctions_TBL" />
+    <AssociationSet Name="FK_Students_TBL_Degree_TBL" Association="Army_DBModel.FK_Students_TBL_Degree_TBL">
+      <End Role="Degree_TBL" EntitySet="Degree_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
     </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_Governorates_TBL" Association="Army_DBModel.FK_Students_TBL_Governorates_TBL">
+      <End Role="Governorates_TBL" EntitySet="Governorates_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_History_TBL_Users_TBL" Association="Army_DBModel.FK_History_TBL_Users_TBL">
+      <End Role="Users_TBL" EntitySet="Users_TBL" />
+      <End Role="History_TBL" EntitySet="History_TBL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_TBL_RecruitingArea_TBL" Association="Army_DBModel.FK_Students_TBL_RecruitingArea_TBL">
+      <End Role="RecruitingArea_TBL" EntitySet="RecruitingArea_TBL" />
+      <End Role="Students_TBL" EntitySet="Students_TBL" />
+    </AssociationSet>
+    <FunctionImport Name="SP_UpdateArrivalIdInStudents" />
   </EntityContainer>
   <ComplexType Name="SP_GetAllDegrees_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
@@ -234,6 +199,42 @@
     <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
     <Property Type="Byte" Name="Type" Nullable="true" />
   </ComplexType>
+  <EntityType Name="Sanctions_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SancName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Grades" Type="Int32" />
+    <NavigationProperty Name="Student_Sanctions_TBL" Relationship="Army_DBModel.FK_Student_Sanctions_TBL_Sanctions_TBL" FromRole="Sanctions_TBL" ToRole="Student_Sanctions_TBL" />
+  </EntityType>
+  <Association Name="FK_Student_Sanctions_TBL_Sanctions_TBL">
+    <End Type="Army_DBModel.Sanctions_TBL" Role="Sanctions_TBL" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Army_DBModel.Student_Sanctions_TBL" Role="Student_Sanctions_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanctions_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student_Sanctions_TBL">
+        <PropertyRef Name="Sanctions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ArrivalStations_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArriName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Transport_Id" Type="Int32" />
+    <NavigationProperty Name="Transport_TBL" Relationship="Army_DBModel.FK_ArrivalStations_TBL_Transport_TBL" FromRole="ArrivalStations_TBL" ToRole="Transport_TBL" />
+    <NavigationProperty Name="Governorates_TBL" Relationship="Army_DBModel.FK_Governorates_TBL_ArrivalStations_TBL" FromRole="ArrivalStations_TBL" ToRole="Governorates_TBL" />
+    <NavigationProperty Name="Students_TBL" Relationship="Army_DBModel.FK_Students_TBL_ArrivalStations_TBL" FromRole="ArrivalStations_TBL" ToRole="Students_TBL" />
+  </EntityType>
   <EntityType Name="Degree_TBL">
     <Key>
       <PropertyRef Name="DegName" />
@@ -251,8 +252,19 @@
     <Property Name="GovName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ArrivalStations_Id" Type="Int32" />
-    <NavigationProperty Name="Students_TBL" Relationship="Army_DBModel.FK_Students_TBL_Governorates_TBL" FromRole="Governorates_TBL" ToRole="Students_TBL" />
     <NavigationProperty Name="ArrivalStations_TBL" Relationship="Army_DBModel.FK_Governorates_TBL_ArrivalStations_TBL" FromRole="Governorates_TBL" ToRole="ArrivalStations_TBL" />
+    <NavigationProperty Name="Students_TBL" Relationship="Army_DBModel.FK_Students_TBL_Governorates_TBL" FromRole="Governorates_TBL" ToRole="Students_TBL" />
+  </EntityType>
+  <EntityType Name="History_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Action" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Part" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Users_TBL" Relationship="Army_DBModel.FK_History_TBL_Users_TBL" FromRole="History_TBL" ToRole="Users_TBL" />
   </EntityType>
   <EntityType Name="RecruitingArea_TBL">
     <Key>
@@ -263,6 +275,63 @@
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Students_TBL" Relationship="Army_DBModel.FK_Students_TBL_RecruitingArea_TBL" FromRole="RecruitingArea_TBL" ToRole="Students_TBL" />
   </EntityType>
+  <EntityType Name="Transport_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="Int32" />
+    <NavigationProperty Name="ArrivalStations_TBL" Relationship="Army_DBModel.FK_ArrivalStations_TBL_Transport_TBL" FromRole="Transport_TBL" ToRole="ArrivalStations_TBL" />
+  </EntityType>
+  <EntityType Name="Users_TBL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Byte" />
+    <NavigationProperty Name="History_TBL" Relationship="Army_DBModel.FK_History_TBL_Users_TBL" FromRole="Users_TBL" ToRole="History_TBL" />
+  </EntityType>
+  <Association Name="FK_ArrivalStations_TBL_Transport_TBL">
+    <End Type="Army_DBModel.Transport_TBL" Role="Transport_TBL" Multiplicity="0..1" />
+    <End Type="Army_DBModel.ArrivalStations_TBL" Role="ArrivalStations_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transport_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArrivalStations_TBL">
+        <PropertyRef Name="Transport_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Governorates_TBL_ArrivalStations_TBL">
+    <End Type="Army_DBModel.ArrivalStations_TBL" Role="ArrivalStations_TBL" Multiplicity="0..1" />
+    <End Type="Army_DBModel.Governorates_TBL" Role="Governorates_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArrivalStations_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Governorates_TBL">
+        <PropertyRef Name="ArrivalStations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_TBL_ArrivalStations_TBL">
+    <End Type="Army_DBModel.ArrivalStations_TBL" Role="ArrivalStations_TBL" Multiplicity="0..1" />
+    <End Type="Army_DBModel.Students_TBL" Role="Students_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArrivalStations_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Students_TBL">
+        <PropertyRef Name="ArrivalStations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Students_TBL_Degree_TBL">
     <End Type="Army_DBModel.Degree_TBL" Role="Degree_TBL" Multiplicity="0..1" />
     <End Type="Army_DBModel.Students_TBL" Role="Students_TBL" Multiplicity="*" />
@@ -287,6 +356,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_History_TBL_Users_TBL">
+    <End Type="Army_DBModel.Users_TBL" Role="Users_TBL" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Army_DBModel.History_TBL" Role="History_TBL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_TBL">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="History_TBL">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Students_TBL_RecruitingArea_TBL">
     <End Type="Army_DBModel.RecruitingArea_TBL" Role="RecruitingArea_TBL" Multiplicity="0..1" />
     <End Type="Army_DBModel.Students_TBL" Role="Students_TBL" Multiplicity="*" />
@@ -296,92 +379,6 @@
       </Principal>
       <Dependent Role="Students_TBL">
         <PropertyRef Name="RecruitingArea" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="ArrivalStations_TBL">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ArriName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Transport_Id" Type="Int32" />
-    <NavigationProperty Name="Transport_TBL" Relationship="Army_DBModel.FK_ArrivalStations_TBL_Transport_TBL" FromRole="ArrivalStations_TBL" ToRole="Transport_TBL" />
-    <NavigationProperty Name="Governorates_TBL" Relationship="Army_DBModel.FK_Governorates_TBL_ArrivalStations_TBL" FromRole="ArrivalStations_TBL" ToRole="Governorates_TBL" />
-    <NavigationProperty Name="Students_TBL" Relationship="Army_DBModel.FK_Students_TBL_ArrivalStations_TBL" FromRole="ArrivalStations_TBL" ToRole="Students_TBL" />
-  </EntityType>
-  <EntityType Name="Sanctions_TBL">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SancName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Grades" Type="Int32" />
-    <NavigationProperty Name="Student_Sanctions_TBL" Relationship="Army_DBModel.FK_Student_Sanctions_TBL_Sanctions_TBL" FromRole="Sanctions_TBL" ToRole="Student_Sanctions_TBL" />
-  </EntityType>
-  <EntityType Name="Transport_TBL">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TransName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Number" Type="Int32" />
-    <NavigationProperty Name="ArrivalStations_TBL" Relationship="Army_DBModel.FK_ArrivalStations_TBL_Transport_TBL" FromRole="Transport_TBL" ToRole="ArrivalStations_TBL" />
-  </EntityType>
-  <Association Name="FK_ArrivalStations_TBL_Transport_TBL">
-    <End Type="Army_DBModel.Transport_TBL" Role="Transport_TBL" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="Army_DBModel.ArrivalStations_TBL" Role="ArrivalStations_TBL" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Transport_TBL">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ArrivalStations_TBL">
-        <PropertyRef Name="Transport_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Governorates_TBL_ArrivalStations_TBL">
-    <End Type="Army_DBModel.ArrivalStations_TBL" Role="ArrivalStations_TBL" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="Army_DBModel.Governorates_TBL" Role="Governorates_TBL" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ArrivalStations_TBL">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Governorates_TBL">
-        <PropertyRef Name="ArrivalStations_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Students_TBL_ArrivalStations_TBL">
-    <End Type="Army_DBModel.ArrivalStations_TBL" Role="ArrivalStations_TBL" Multiplicity="0..1" />
-    <End Type="Army_DBModel.Students_TBL" Role="Students_TBL" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ArrivalStations_TBL">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Students_TBL">
-        <PropertyRef Name="ArrivalStations_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Student_Sanctions_TBL_Sanctions_TBL">
-    <End Type="Army_DBModel.Sanctions_TBL" Role="Sanctions_TBL" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="Army_DBModel.Student_Sanctions_TBL" Role="Student_Sanctions_TBL" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Sanctions_TBL">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Student_Sanctions_TBL">
-        <PropertyRef Name="Sanctions_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

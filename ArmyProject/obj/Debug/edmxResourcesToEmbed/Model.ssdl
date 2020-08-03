@@ -100,7 +100,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TransName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TransName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
     <Property Name="Number" Type="int" />
   </EntityType>
@@ -115,9 +115,7 @@
     <Property Name="Type" Type="tinyint" />
   </EntityType>
   <Association Name="FK_ArrivalStations_TBL_Transport_TBL">
-    <End Role="Transport_TBL" Type="Self.Transport_TBL" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="Transport_TBL" Type="Self.Transport_TBL" Multiplicity="0..1" />
     <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Transport_TBL">
@@ -129,9 +127,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Governorates_TBL_ArrivalStations_TBL">
-    <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="ArrivalStations_TBL" Type="Self.ArrivalStations_TBL" Multiplicity="0..1" />
     <End Role="Governorates_TBL" Type="Self.Governorates_TBL" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ArrivalStations_TBL">
@@ -278,6 +274,7 @@
     <Parameter Name="owner_id" Type="int" Mode="In" />
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="SP_UpdateArrivalIdInStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="Army_DBModelStoreContainer">
     <EntitySet Name="ArrivalStations_TBL" EntityType="Self.ArrivalStations_TBL" Schema="dbo" store:Type="Tables" />

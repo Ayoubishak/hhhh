@@ -25,8 +25,8 @@ namespace ArmyProject
         public string Description { get; set; }
         public Nullable<int> ArrivalStations_Id { get; set; }
     
+        public virtual ArrivalStations_TBL ArrivalStations_TBL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Students_TBL> Students_TBL { get; set; }
-        public virtual ArrivalStations_TBL ArrivalStations_TBL { get; set; }
     }
 }
