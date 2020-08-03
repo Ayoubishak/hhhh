@@ -44,6 +44,7 @@ namespace ArmyProject.PL
                     frm.accordionControlElement_StudentManage.Enabled = true;
                     frm.accordionControlElementFullStudentReports.Enabled = true;
                     frm.accordionControlElementDegreeCrud.Enabled = true;
+                    frm.accordionControlElementSettings.Enabled = true;
                     Form tmp = this.FindForm();
                     tmp.Close();
                     tmp.Dispose();
