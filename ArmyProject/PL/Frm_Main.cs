@@ -137,6 +137,8 @@ namespace ArmyProject.PL
             fluentDesignFormContainer1.Controls.Add(new FRM_Holiday_Arrival_Full_Crud.Views.ArrivalStations_TBLCollectionView.ArrivalStations_TBLCollectionView() { Dock = DockStyle.Fill });
         }
 
+
+        // ادارة المؤهلات
         private void accordionControlElementDegreeCrud_Click(object sender, EventArgs e)
         {
             fluentDesignFormContainer1.Controls.Clear();
@@ -165,5 +167,6 @@ namespace ArmyProject.PL
             fluentDesignFormContainer1.Controls.Clear();
             fluentDesignFormContainer1.Controls.Add(new FRM_Settings.UserControlDeleteInfo { Dock = DockStyle.Fill });
         }
+
     }
 }
