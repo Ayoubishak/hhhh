@@ -65,6 +65,9 @@
             this.accordionControlElementArrival_Stations = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement19 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementArrivalStationsMange = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementSettings = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementDeleteInfo = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -101,7 +104,8 @@
             this.accordionControlSeparator4,
             this.accordionControlElementHistory,
             this.accordionControlSeparator5,
-            this.accordionControlElementArrival_Stations});
+            this.accordionControlElementArrival_Stations,
+            this.accordionControlElementSettings});
             this.accordionControl1.Location = new System.Drawing.Point(0, 30);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
@@ -117,7 +121,6 @@
             this.accordionControlElementGetBackup,
             this.accordionControlSeparator6,
             this.accordionControlElement_Logout});
-            this.accordionControlElementFile.Expanded = true;
             this.accordionControlElementFile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementFile.ImageOptions.SvgImage")));
             this.accordionControlElementFile.Name = "accordionControlElementFile";
             this.accordionControlElementFile.Text = "الملف";
@@ -189,7 +192,6 @@
             this.accordionControlElement_StudentManage,
             this.accordionControlElementFullStudentReports,
             this.accordionControlElementDegreeCrud});
-            this.accordionControlElementStudents.Expanded = true;
             this.accordionControlElementStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementStudents.ImageOptions.SvgImage")));
             this.accordionControlElementStudents.Name = "accordionControlElementStudents";
             this.accordionControlElementStudents.Text = "الطلاب";
@@ -231,6 +233,7 @@
             this.accordionControlElementSanctions.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementSanctions.ImageOptions.SvgImage")));
             this.accordionControlElementSanctions.Name = "accordionControlElementSanctions";
             this.accordionControlElementSanctions.Text = "الجزاءات";
+            this.accordionControlElementSanctions.Click += new System.EventHandler(this.accordionControlElementSanctions_Click);
             // 
             // accordionControlElement10
             // 
@@ -264,7 +267,6 @@
             this.accordionControlElementHoliday.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementHoliday_Management,
             this.accordionControlElementHolidayFinalPart});
-            this.accordionControlElementHoliday.Expanded = true;
             this.accordionControlElementHoliday.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementHoliday.ImageOptions.SvgImage")));
             this.accordionControlElementHoliday.Name = "accordionControlElementHoliday";
             this.accordionControlElementHoliday.Text = "الأجازات";
@@ -349,7 +351,6 @@
             this.accordionControlElementArrival_Stations.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement19,
             this.accordionControlElementArrivalStationsMange});
-            this.accordionControlElementArrival_Stations.Expanded = true;
             this.accordionControlElementArrival_Stations.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementArrival_Stations.ImageOptions.SvgImage")));
             this.accordionControlElementArrival_Stations.Name = "accordionControlElementArrival_Stations";
             this.accordionControlElementArrival_Stations.Text = "محطات الوصول";
@@ -366,6 +367,28 @@
             this.accordionControlElementArrivalStationsMange.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementArrivalStationsMange.Text = "ادارة محطات الوصول";
             this.accordionControlElementArrivalStationsMange.Click += new System.EventHandler(this.accordionControlElementArrivalStationsMange_Click);
+            // 
+            // accordionControlElementSettings
+            // 
+            this.accordionControlElementSettings.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElementDeleteInfo,
+            this.accordionControlElementAbout});
+            this.accordionControlElementSettings.Expanded = true;
+            this.accordionControlElementSettings.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementSettings.ImageOptions.SvgImage")));
+            this.accordionControlElementSettings.Name = "accordionControlElementSettings";
+            this.accordionControlElementSettings.Text = "الأعدادات";
+            // 
+            // accordionControlElementDeleteInfo
+            // 
+            this.accordionControlElementDeleteInfo.Name = "accordionControlElementDeleteInfo";
+            this.accordionControlElementDeleteInfo.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementDeleteInfo.Text = "مسح بيانات";
+            // 
+            // accordionControlElementAbout
+            // 
+            this.accordionControlElementAbout.Name = "accordionControlElementAbout";
+            this.accordionControlElementAbout.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementAbout.Text = "عن البرنامج";
             // 
             // fluentDesignFormControl1
             // 
@@ -433,9 +456,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlSeparator accordionControlSeparator5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement19;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementArrivalStationsMange;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_AddStudent;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_StudentManage;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementFullStudentReports;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementHoliday_Management;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementHolidayFinalPart;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
@@ -450,6 +470,12 @@
         public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementMakeBackup;
         public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementGetBackup;
         public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_Logout;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementDegreeCrud;
+        public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_AddStudent;
+        public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement_StudentManage;
+        public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementFullStudentReports;
+        public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementDegreeCrud;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementDeleteInfo;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementAbout;
+        public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementSettings;
     }
 }

@@ -42,7 +42,7 @@ namespace ArmyProject.PL
                 dt = log.Login(txtUsername.Text, txtPassword.Text);
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("تم تسجيل الدخول بنجاح !", "عملية الدخول", MessageBoxButtons.OK);
+                    MessageBox.Show("تم تسجيل الدخول بنجاح !", "عملية الدخول", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     Frm_Main frm = Frm_Main.getMainForm;
                     frm.accordionControlElementLogin.Enabled = false;
                     frm.accordionControlElementStudents.Enabled = true;
@@ -53,6 +53,16 @@ namespace ArmyProject.PL
                     frm.accordionControlElementUsers.Enabled = true;
                     frm.accordionControlElementMakeBackup.Enabled = true;
                     frm.accordionControlElementGetBackup.Enabled = true;
+                    frm.accordionControlElementArrival_Stations.Enabled = true;
+                    frm.accordionControlElementSettings.Enabled = true;
+                    frm.accordionControlElementMakeBackup.Enabled = true;
+                    frm.accordionControlElementGetBackup.Enabled = true;
+                    frm.accordionControlElement_AddStudent.Enabled = true;
+                    frm.accordionControlElement_StudentManage.Enabled = true;
+                    frm.accordionControlElementFullStudentReports.Enabled = true;
+                    frm.accordionControlElementDegreeCrud.Enabled = true;
+
+
                     this.Close();
                 }
                 else

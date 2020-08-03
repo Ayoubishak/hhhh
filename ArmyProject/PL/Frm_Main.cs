@@ -45,8 +45,13 @@ namespace ArmyProject.PL
             this.accordionControlElementSanctions.Enabled = false;
             this.accordionControlElementHistory.Enabled = false;
             this.accordionControlElementUsers.Enabled = false;
-            this.accordionControlElementMakeBackup.Enabled = true;
-            this.accordionControlElementGetBackup.Enabled =true;
+            this.accordionControlElementMakeBackup.Enabled = false;
+            this.accordionControlElementGetBackup.Enabled =false;
+            this.accordionControlElement_AddStudent.Enabled = false;
+            this.accordionControlElement_StudentManage.Enabled = false;
+            this.accordionControlElementFullStudentReports.Enabled = false;
+            this.accordionControlElementDegreeCrud.Enabled = false;
+            this.accordionControlElementSettings.Enabled = false;
 
         }
 
@@ -148,6 +153,11 @@ namespace ArmyProject.PL
         {
             FRM_Backup_Restore.RestoreForm frm = new FRM_Backup_Restore.RestoreForm();
             frm.ShowDialog();
+        }
+
+        private void accordionControlElementSanctions_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
