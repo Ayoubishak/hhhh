@@ -190,7 +190,6 @@
             this.accordionControlElementFullStudentReports,
             this.accordionControlElementDegreeCrud,
             this.accordionControlElementRecruitingAreaMange});
-            this.accordionControlElementStudents.Expanded = true;
             this.accordionControlElementStudents.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementStudents.ImageOptions.SvgImage")));
             this.accordionControlElementStudents.Name = "accordionControlElementStudents";
             this.accordionControlElementStudents.Text = "الطلاب";
@@ -357,9 +356,11 @@
             this.accordionControlElementSettings.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementDeleteInfo,
             this.accordionControlElementAbout});
+            this.accordionControlElementSettings.Expanded = true;
             this.accordionControlElementSettings.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementSettings.ImageOptions.SvgImage")));
             this.accordionControlElementSettings.Name = "accordionControlElementSettings";
             this.accordionControlElementSettings.Text = "الأعدادات";
+            this.accordionControlElementSettings.Click += new System.EventHandler(this.accordionControlElementSettings_Click);
             // 
             // accordionControlElementDeleteInfo
             // 
@@ -373,6 +374,7 @@
             this.accordionControlElementAbout.Name = "accordionControlElementAbout";
             this.accordionControlElementAbout.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementAbout.Text = "عن البرنامج";
+            this.accordionControlElementAbout.Click += new System.EventHandler(this.accordionControlElementAbout_Click);
             // 
             // fluentDesignFormControl1
             // 

@@ -61,9 +61,8 @@
             this.bbiCustomize = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroupLayout = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.students_TBLTableAdapter = new ArmyProject.Army_DBDataSetForGridTableAdapters.Students_TBLTableAdapter();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.students_TBLTableAdapter = new ArmyProject.Army_DBDataSetForGridTableAdapters.Students_TBLTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IdTextEdit.Properties)).BeginInit();
@@ -109,14 +108,14 @@
             // 
             this.IdTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.governorates_TBLViewBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.IdTextEdit.Enabled = false;
-            this.IdTextEdit.Location = new System.Drawing.Point(14, 13);
+            this.IdTextEdit.Location = new System.Drawing.Point(12, 12);
             this.IdTextEdit.Name = "IdTextEdit";
             this.IdTextEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.IdTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.IdTextEdit.Properties.Mask.EditMask = "N0";
             this.IdTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.IdTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.IdTextEdit.Size = new System.Drawing.Size(1097, 20);
+            this.IdTextEdit.Size = new System.Drawing.Size(1101, 20);
             this.IdTextEdit.StyleController = this.dataLayoutControl1;
             this.IdTextEdit.TabIndex = 4;
             // 
@@ -127,9 +126,9 @@
             // GovNameTextEdit
             // 
             this.GovNameTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.governorates_TBLViewBindingSource, "GovName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.GovNameTextEdit.Location = new System.Drawing.Point(14, 37);
+            this.GovNameTextEdit.Location = new System.Drawing.Point(12, 36);
             this.GovNameTextEdit.Name = "GovNameTextEdit";
-            this.GovNameTextEdit.Size = new System.Drawing.Size(1097, 20);
+            this.GovNameTextEdit.Size = new System.Drawing.Size(1101, 20);
             this.GovNameTextEdit.StyleController = this.dataLayoutControl1;
             this.GovNameTextEdit.TabIndex = 5;
             // 
@@ -137,16 +136,16 @@
             // 
             this.DescriptionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.governorates_TBLViewBindingSource, "Description", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DescriptionTextEdit.Enabled = false;
-            this.DescriptionTextEdit.Location = new System.Drawing.Point(14, 61);
+            this.DescriptionTextEdit.Location = new System.Drawing.Point(12, 60);
             this.DescriptionTextEdit.Name = "DescriptionTextEdit";
-            this.DescriptionTextEdit.Size = new System.Drawing.Size(1097, 20);
+            this.DescriptionTextEdit.Size = new System.Drawing.Size(1101, 20);
             this.DescriptionTextEdit.StyleController = this.dataLayoutControl1;
             this.DescriptionTextEdit.TabIndex = 6;
             // 
             // ArrivalStations_TBLLookUpEdit
             // 
             this.ArrivalStations_TBLLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.governorates_TBLViewBindingSource, "ArrivalStations_Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ArrivalStations_TBLLookUpEdit.Location = new System.Drawing.Point(14, 85);
+            this.ArrivalStations_TBLLookUpEdit.Location = new System.Drawing.Point(12, 84);
             this.ArrivalStations_TBLLookUpEdit.Name = "ArrivalStations_TBLLookUpEdit";
             this.ArrivalStations_TBLLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -154,7 +153,7 @@
             this.ArrivalStations_TBLLookUpEdit.Properties.DisplayMember = "ArriName";
             this.ArrivalStations_TBLLookUpEdit.Properties.PopupView = this.ArrivalStations_TBLLookUpEditView;
             this.ArrivalStations_TBLLookUpEdit.Properties.ValueMember = "Id";
-            this.ArrivalStations_TBLLookUpEdit.Size = new System.Drawing.Size(1097, 20);
+            this.ArrivalStations_TBLLookUpEdit.Size = new System.Drawing.Size(1101, 20);
             this.ArrivalStations_TBLLookUpEdit.StyleController = this.dataLayoutControl1;
             this.ArrivalStations_TBLLookUpEdit.TabIndex = 7;
             this.ArrivalStations_TBLLookUpEdit.EditValueChanged += new System.EventHandler(this.ArrivalStations_TBLLookUpEdit_EditValueChanged);
@@ -175,11 +174,11 @@
             // 
             this.Students_TBLGridControl.DataBindings.Add(new System.Windows.Forms.Binding("DataSource", this.governorates_TBLViewBindingSource, "Students_TBL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Students_TBLGridControl.DataSource = this.studentsTBLBindingSource;
-            this.Students_TBLGridControl.Location = new System.Drawing.Point(14, 109);
+            this.Students_TBLGridControl.Location = new System.Drawing.Point(12, 108);
             this.Students_TBLGridControl.MainView = this.gridView1;
             this.Students_TBLGridControl.Name = "Students_TBLGridControl";
             this.Students_TBLGridControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Students_TBLGridControl.Size = new System.Drawing.Size(1167, 570);
+            this.Students_TBLGridControl.Size = new System.Drawing.Size(1171, 572);
             this.Students_TBLGridControl.TabIndex = 8;
             this.Students_TBLGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -278,7 +277,7 @@
             this.ItemForStudents_TBL});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1171, 670);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1175, 672);
             // 
             // ItemForId
             // 
@@ -286,7 +285,7 @@
             this.ItemForId.Enabled = false;
             this.ItemForId.Location = new System.Drawing.Point(0, 0);
             this.ItemForId.Name = "ItemForId";
-            this.ItemForId.Size = new System.Drawing.Size(1171, 24);
+            this.ItemForId.Size = new System.Drawing.Size(1175, 24);
             this.ItemForId.Text = "المعرف";
             this.ItemForId.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -295,7 +294,7 @@
             this.ItemForGovName.Control = this.GovNameTextEdit;
             this.ItemForGovName.Location = new System.Drawing.Point(0, 24);
             this.ItemForGovName.Name = "ItemForGovName";
-            this.ItemForGovName.Size = new System.Drawing.Size(1171, 24);
+            this.ItemForGovName.Size = new System.Drawing.Size(1175, 24);
             this.ItemForGovName.Text = "اسم المحافظة";
             this.ItemForGovName.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -305,7 +304,7 @@
             this.ItemForDescription.Enabled = false;
             this.ItemForDescription.Location = new System.Drawing.Point(0, 48);
             this.ItemForDescription.Name = "ItemForDescription";
-            this.ItemForDescription.Size = new System.Drawing.Size(1171, 24);
+            this.ItemForDescription.Size = new System.Drawing.Size(1175, 24);
             this.ItemForDescription.Text = "الوصف";
             this.ItemForDescription.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -314,7 +313,7 @@
             this.ItemForArrivalStations_Id.Control = this.ArrivalStations_TBLLookUpEdit;
             this.ItemForArrivalStations_Id.Location = new System.Drawing.Point(0, 72);
             this.ItemForArrivalStations_Id.Name = "ItemForArrivalStations_Id";
-            this.ItemForArrivalStations_Id.Size = new System.Drawing.Size(1171, 24);
+            this.ItemForArrivalStations_Id.Size = new System.Drawing.Size(1175, 24);
             this.ItemForArrivalStations_Id.Text = "محطة الوصول";
             this.ItemForArrivalStations_Id.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -323,7 +322,7 @@
             this.ItemForStudents_TBL.Control = this.Students_TBLGridControl;
             this.ItemForStudents_TBL.Location = new System.Drawing.Point(0, 96);
             this.ItemForStudents_TBL.Name = "ItemForStudents_TBL";
-            this.ItemForStudents_TBL.Size = new System.Drawing.Size(1171, 574);
+            this.ItemForStudents_TBL.Size = new System.Drawing.Size(1175, 576);
             this.ItemForStudents_TBL.StartNewLine = true;
             this.ItemForStudents_TBL.Text = "Students_TBL";
             this.ItemForStudents_TBL.TextSize = new System.Drawing.Size(0, 0);
@@ -439,7 +438,6 @@
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.mainRibbonPageGroup,
-            this.ribbonPageGroupLayout,
             this.ribbonPageGroup1});
             this.mainRibbonPage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("mainRibbonPage.ImageOptions.Image")));
             this.mainRibbonPage.MergeOrder = 0;
@@ -458,24 +456,15 @@
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.Text = "خيارات التعديل على المحافظات";
             // 
-            // ribbonPageGroupLayout
-            // 
-            this.ribbonPageGroupLayout.AllowTextClipping = false;
-            this.ribbonPageGroupLayout.ItemLinks.Add(this.bbiCustomize);
-            this.ribbonPageGroupLayout.ItemLinks.Add(this.bbiSaveLayout);
-            this.ribbonPageGroupLayout.ItemLinks.Add(this.bbiResetLayout);
-            this.ribbonPageGroupLayout.Name = "ribbonPageGroupLayout";
-            this.ribbonPageGroupLayout.Text = "النافذة";
-            // 
-            // students_TBLTableAdapter
-            // 
-            this.students_TBLTableAdapter.ClearBeforeFill = true;
-            // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiClose);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "غلق النافذة";
+            // 
+            // students_TBLTableAdapter
+            // 
+            this.students_TBLTableAdapter.ClearBeforeFill = true;
             // 
             // Governorates_TBLView
             // 
@@ -523,8 +512,7 @@
         private DevExpress.Utils.MVVM.MVVMContext mvvmContext;
 		private DevExpress.XtraBars.Ribbon.RibbonPage mainRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup mainRibbonPageGroup;
-		private DevExpress.XtraBars.BarButtonItem bbiCustomize;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupLayout;
+        private DevExpress.XtraBars.BarButtonItem bbiCustomize;
 		private System.Windows.Forms.BindingSource governorates_TBLViewBindingSource;
 						private DevExpress.XtraEditors.GridLookUpEdit ArrivalStations_TBLLookUpEdit;
 		private System.Windows.Forms.BindingSource ArrivalStations_TBLBindingSource;

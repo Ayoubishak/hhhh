@@ -488,6 +488,7 @@
             // 
             this.ItemForId.Control = this.IdTextEdit;
             this.ItemForId.CustomizationFormText = "المعرف";
+            this.ItemForId.Enabled = false;
             this.ItemForId.Location = new System.Drawing.Point(0, 0);
             this.ItemForId.Name = "ItemForId";
             this.ItemForId.Size = new System.Drawing.Size(1175, 24);

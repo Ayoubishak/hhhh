@@ -284,6 +284,12 @@
     <Compile Include="PL\FRM_RecruitingAreaCrud\Views\RecruitingArea_TBL\RecruitingArea_TBLView.designer.cs">
       <DependentUpon>RecruitingArea_TBLView.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Settings\UserControlAboutUs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Settings\UserControlAboutUs.Designer.cs">
+      <DependentUpon>UserControlAboutUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Settings\UserControlDeleteInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -439,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_RecruitingAreaCrud\Views\RecruitingArea_TBL\RecruitingArea_TBLView.resx">
       <DependentUpon>RecruitingArea_TBLView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Settings\UserControlAboutUs.resx">
+      <DependentUpon>UserControlAboutUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Settings\UserControlDeleteInfo.resx">
       <DependentUpon>UserControlDeleteInfo.cs</DependentUpon>

@@ -56,10 +56,10 @@ namespace ArmyProject.PL
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-            fluentDesignFormContainer1.Controls.Add(new Views.Students_TBLCollectionView.Students_TBLCollectionView() { Dock = DockStyle.Fill });
+            //fluentDesignFormContainer1.Controls.Add(new Views.Students_TBLCollectionView.Students_TBLCollectionView() { Dock = DockStyle.Fill });
 
             //fluentDesignFormContainer1.Controls.Add(new Frm_StudentGrid() { Dock = DockStyle.Fill});
-            //fluentDesignFormContainer1.Controls.Add(new Frm_Dashboard() { Dock = DockStyle.Fill });
+            fluentDesignFormContainer1.Controls.Add(new Frm_Dashboard() { Dock = DockStyle.Fill });
         }
 
         private void accordionControlElement5_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace ArmyProject.PL
 
         }
 
-        //Manage محطات الوصول arrival stations
+        //Manage مناطق التجنيد
         private void accordionControlElementRecruitingAreaMange_Click(object sender, EventArgs e)
         {
             fluentDesignFormContainer1.Controls.Clear();
@@ -165,6 +165,17 @@ namespace ArmyProject.PL
         {
             fluentDesignFormContainer1.Controls.Clear();
             fluentDesignFormContainer1.Controls.Add(new FRM_Settings.UserControlDeleteInfo { Dock = DockStyle.Fill });
+        }
+
+        private void accordionControlElementSettings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElementAbout_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            fluentDesignFormContainer1.Controls.Add(new FRM_Settings.UserControlAboutUs { Dock = DockStyle.Fill });
         }
 
     }

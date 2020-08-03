@@ -198,6 +198,7 @@
             this.Name = "UserControlDeleteInfo";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(907, 555);
+            this.Load += new System.EventHandler(this.UserControlDeleteInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -47,5 +47,10 @@ namespace ArmyProject.PL.FRM_Backup_Restore
             con.Close();
             MessageBox.Show("تم انشاء نسخة احتياطية بنجاح ", "انشاء نسخة احتياطية", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void BackupControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

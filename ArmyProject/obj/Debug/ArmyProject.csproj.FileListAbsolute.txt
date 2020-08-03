@@ -30,7 +30,7 @@ C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.P
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Backup_Restore.RestoreControl1.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Backup_Restore.RestoreForm.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.LoginUserControl.resources
-C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.csprojResolveAssemblyReference.cache
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Settings.UserControlDeleteInfo.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_RecruitingAreaCrud.Views.RecruitingArea_TBLCollectionView.RecruitingArea_TBLCollectionView.resources
 C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_RecruitingAreaCrud.Views.RecruitingArea_TBLView.RecruitingArea_TBLView.resources
+C:\Users\ortega\Documents\GitHub\ArmyProject\ArmyProject\obj\Debug\ArmyProject.PL.FRM_Settings.UserControlAboutUs.resources

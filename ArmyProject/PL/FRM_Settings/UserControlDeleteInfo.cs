@@ -87,6 +87,11 @@ namespace ArmyProject.PL.FRM_Settings
             }
         }
 
+        private void UserControlDeleteInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
