@@ -45,7 +45,7 @@ namespace ArmyProject.PL
             this.accordionControlElementSanctions.Enabled = false;
             this.accordionControlElementHistory.Enabled = false;
             this.accordionControlElementUsers.Enabled = false;
-            this.accordionControlElementMakeBackup.Enabled = false;
+            this.accordionControlElementMakeBackup.Enabled = true;
             this.accordionControlElementGetBackup.Enabled = false;
 
         }
@@ -136,6 +136,12 @@ namespace ArmyProject.PL
         {
             fluentDesignFormContainer1.Controls.Clear();
             fluentDesignFormContainer1.Controls.Add(new FRM_Degree_Crud.Views.Degree_TBLCollectionView.Degree_TBLCollectionView() { Dock = DockStyle.Fill });
+        }
+
+        private void accordionControlElementMakeBackup_Click(object sender, EventArgs e)
+        {
+            FRM_Backup_Restore.BackupForm frm = new FRM_Backup_Restore.BackupForm();
+            frm.ShowDialog();
         }
     }
 }

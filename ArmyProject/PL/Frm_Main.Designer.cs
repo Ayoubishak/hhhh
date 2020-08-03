@@ -45,6 +45,7 @@
             this.accordionControlElement_AddStudent = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement_StudentManage = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementFullStudentReports = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementDegreeCrud = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementSanctions = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -66,7 +67,6 @@
             this.accordionControlElementArrivalStationsMange = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.accordionControlElementDegreeCrud = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
@@ -117,6 +117,7 @@
             this.accordionControlElementGetBackup,
             this.accordionControlSeparator6,
             this.accordionControlElement_Logout});
+            this.accordionControlElementFile.Expanded = true;
             this.accordionControlElementFile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementFile.ImageOptions.SvgImage")));
             this.accordionControlElementFile.Name = "accordionControlElementFile";
             this.accordionControlElementFile.Text = "الملف";
@@ -143,6 +144,7 @@
             this.accordionControlElementMakeBackup.Name = "accordionControlElementMakeBackup";
             this.accordionControlElementMakeBackup.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementMakeBackup.Text = "انشاء نسخة احتياطية";
+            this.accordionControlElementMakeBackup.Click += new System.EventHandler(this.accordionControlElementMakeBackup_Click);
             // 
             // accordionControlElementGetBackup
             // 
@@ -211,6 +213,13 @@
             this.accordionControlElementFullStudentReports.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementFullStudentReports.Text = "التقرير الشامل";
             this.accordionControlElementFullStudentReports.Click += new System.EventHandler(this.accordionControlElementFullStudentsReport_Click);
+            // 
+            // accordionControlElementDegreeCrud
+            // 
+            this.accordionControlElementDegreeCrud.Name = "accordionControlElementDegreeCrud";
+            this.accordionControlElementDegreeCrud.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementDegreeCrud.Text = "ادارة المؤهل";
+            this.accordionControlElementDegreeCrud.Click += new System.EventHandler(this.accordionControlElementDegreeCrud_Click);
             // 
             // accordionControlElementSanctions
             // 
@@ -374,13 +383,6 @@
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "simpleButton1";
-            // 
-            // accordionControlElementDegreeCrud
-            // 
-            this.accordionControlElementDegreeCrud.Name = "accordionControlElementDegreeCrud";
-            this.accordionControlElementDegreeCrud.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementDegreeCrud.Text = "ادارة المؤهل";
-            this.accordionControlElementDegreeCrud.Click += new System.EventHandler(this.accordionControlElementDegreeCrud_Click);
             // 
             // Frm_Main
             // 
