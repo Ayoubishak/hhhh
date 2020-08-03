@@ -68,6 +68,7 @@
             this.accordionControlElementAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.accordionControlElementDashboard = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
@@ -355,6 +356,7 @@
             // 
             this.accordionControlElementSettings.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementDeleteInfo,
+            this.accordionControlElementDashboard,
             this.accordionControlElementAbout});
             this.accordionControlElementSettings.Expanded = true;
             this.accordionControlElementSettings.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementSettings.ImageOptions.SvgImage")));
@@ -393,6 +395,13 @@
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "simpleButton1";
+            // 
+            // accordionControlElementDashboard
+            // 
+            this.accordionControlElementDashboard.Name = "accordionControlElementDashboard";
+            this.accordionControlElementDashboard.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementDashboard.Text = "لوحة التحكم كاملة";
+            this.accordionControlElementDashboard.Click += new System.EventHandler(this.accordionControlElementDashboard_Click);
             // 
             // Frm_Main
             // 
@@ -461,5 +470,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementDeleteInfo;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementAbout;
         public DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementSettings;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementDashboard;
     }
 }

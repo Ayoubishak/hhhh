@@ -296,6 +296,12 @@
     <Compile Include="PL\FRM_Settings\UserControlDeleteInfo.Designer.cs">
       <DependentUpon>UserControlDeleteInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Settings\UserControlMainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Settings\UserControlMainView.Designer.cs">
+      <DependentUpon>UserControlMainView.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Student_Full_Crud\Common\CollectionViewModel.cs" />
     <Compile Include="PL\FRM_Student_Full_Crud\Common\EntitiesViewModel.cs" />
     <Compile Include="PL\FRM_Student_Full_Crud\Common\ReadOnlyCollectionViewModel.cs" />
@@ -451,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Settings\UserControlDeleteInfo.resx">
       <DependentUpon>UserControlDeleteInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Settings\UserControlMainView.resx">
+      <DependentUpon>UserControlMainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_StudentAdd.resx">
       <DependentUpon>Frm_StudentAdd.cs</DependentUpon>
