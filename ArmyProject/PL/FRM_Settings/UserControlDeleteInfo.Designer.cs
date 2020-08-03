@@ -34,7 +34,7 @@
             this.buttonDeleteAllDegrees = new System.Windows.Forms.Button();
             this.buttonDeleteAllRecurting = new System.Windows.Forms.Button();
             this.buttonDeleteAllTransports = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonDeleteAllUsers = new System.Windows.Forms.Button();
             this.buttonDeleteAllSanctions = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -53,6 +53,7 @@
             this.buttonDeleteAllStudents.TabIndex = 12;
             this.buttonDeleteAllStudents.Text = "مسح الطلاب";
             this.buttonDeleteAllStudents.UseVisualStyleBackColor = false;
+            this.buttonDeleteAllStudents.Click += new System.EventHandler(this.buttonDeleteAllStudents_Click);
             // 
             // buttonDeleteAllGovernorates
             // 
@@ -68,6 +69,7 @@
             this.buttonDeleteAllGovernorates.TabIndex = 13;
             this.buttonDeleteAllGovernorates.Text = "مسح المحافظات";
             this.buttonDeleteAllGovernorates.UseVisualStyleBackColor = false;
+            this.buttonDeleteAllGovernorates.Click += new System.EventHandler(this.buttonDeleteAllGovernorates_Click);
             // 
             // buttonDeleteAllArrivals
             // 
@@ -83,6 +85,7 @@
             this.buttonDeleteAllArrivals.TabIndex = 14;
             this.buttonDeleteAllArrivals.Text = "مسح محطات الوصول";
             this.buttonDeleteAllArrivals.UseVisualStyleBackColor = false;
+            this.buttonDeleteAllArrivals.Click += new System.EventHandler(this.buttonDeleteAllArrivals_Click);
             // 
             // buttonDeleteAllDegrees
             // 
@@ -98,6 +101,7 @@
             this.buttonDeleteAllDegrees.TabIndex = 16;
             this.buttonDeleteAllDegrees.Text = "مسح المؤهلات";
             this.buttonDeleteAllDegrees.UseVisualStyleBackColor = false;
+            this.buttonDeleteAllDegrees.Click += new System.EventHandler(this.buttonDeleteAllDegrees_Click);
             // 
             // buttonDeleteAllRecurting
             // 
@@ -113,6 +117,7 @@
             this.buttonDeleteAllRecurting.TabIndex = 17;
             this.buttonDeleteAllRecurting.Text = "مسح مناطق التجنيد";
             this.buttonDeleteAllRecurting.UseVisualStyleBackColor = false;
+            this.buttonDeleteAllRecurting.Click += new System.EventHandler(this.buttonDeleteAllRecurting_Click);
             // 
             // buttonDeleteAllTransports
             // 
@@ -128,21 +133,23 @@
             this.buttonDeleteAllTransports.TabIndex = 18;
             this.buttonDeleteAllTransports.Text = "مسح طرق النقل";
             this.buttonDeleteAllTransports.UseVisualStyleBackColor = false;
+            this.buttonDeleteAllTransports.Click += new System.EventHandler(this.buttonDeleteAllTransports_Click);
             // 
-            // button3
+            // buttonDeleteAllUsers
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(510, 440);
-            this.button3.Margin = new System.Windows.Forms.Padding(6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(240, 55);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "مسح المستخدمين";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonDeleteAllUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.buttonDeleteAllUsers.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonDeleteAllUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeleteAllUsers.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeleteAllUsers.ForeColor = System.Drawing.Color.White;
+            this.buttonDeleteAllUsers.Location = new System.Drawing.Point(510, 440);
+            this.buttonDeleteAllUsers.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonDeleteAllUsers.Name = "buttonDeleteAllUsers";
+            this.buttonDeleteAllUsers.Size = new System.Drawing.Size(240, 55);
+            this.buttonDeleteAllUsers.TabIndex = 19;
+            this.buttonDeleteAllUsers.Text = "مسح المستخدمين";
+            this.buttonDeleteAllUsers.UseVisualStyleBackColor = false;
+            this.buttonDeleteAllUsers.Click += new System.EventHandler(this.buttonDeleteAllUsers_Click);
             // 
             // buttonDeleteAllSanctions
             // 
@@ -180,7 +187,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDeleteAllSanctions);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonDeleteAllUsers);
             this.Controls.Add(this.buttonDeleteAllTransports);
             this.Controls.Add(this.buttonDeleteAllRecurting);
             this.Controls.Add(this.buttonDeleteAllDegrees);
@@ -204,7 +211,7 @@
         private System.Windows.Forms.Button buttonDeleteAllDegrees;
         private System.Windows.Forms.Button buttonDeleteAllRecurting;
         private System.Windows.Forms.Button buttonDeleteAllTransports;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonDeleteAllUsers;
         private System.Windows.Forms.Button buttonDeleteAllSanctions;
         private System.Windows.Forms.Label label1;
     }
