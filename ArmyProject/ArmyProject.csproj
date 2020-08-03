@@ -256,6 +256,34 @@
     <Compile Include="PL\FRM_Holiday_FULL_Crud\Views\Governorates_TBL\Governorates_TBLView.designer.cs">
       <DependentUpon>Governorates_TBLView.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Army_DBEntitiesDataModel\Army_DBEntitiesUnitOfWork.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Army_DBEntitiesDataModel\IArmy_DBEntitiesUnitOfWork.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Army_DBEntitiesDataModel\UnitOfWorkSource.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Common\CollectionViewModel.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Common\EntitiesViewModel.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Common\ReadOnlyCollectionViewModel.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Common\SingleObjectViewModel.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\ViewModels\Army_DBEntitiesViewModel.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\ViewModels\RecruitingArea_TBL\RecruitingArea_TBLCollectionViewModel.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\ViewModels\RecruitingArea_TBL\RecruitingArea_TBLViewModel.cs" />
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Views\Army_DBEntitiesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Views\Army_DBEntitiesView.designer.cs">
+      <DependentUpon>Army_DBEntitiesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Views\RecruitingArea_TBL\RecruitingArea_TBLCollectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Views\RecruitingArea_TBL\RecruitingArea_TBLCollectionView.designer.cs">
+      <DependentUpon>RecruitingArea_TBLCollectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Views\RecruitingArea_TBL\RecruitingArea_TBLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_RecruitingAreaCrud\Views\RecruitingArea_TBL\RecruitingArea_TBLView.designer.cs">
+      <DependentUpon>RecruitingArea_TBLView.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Settings\UserControlDeleteInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -405,6 +433,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_RecruitingAreaCrud\Views\RecruitingArea_TBL\RecruitingArea_TBLCollectionView.resx">
+      <DependentUpon>RecruitingArea_TBLCollectionView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Settings\UserControlDeleteInfo.resx">
       <DependentUpon>UserControlDeleteInfo.cs</DependentUpon>

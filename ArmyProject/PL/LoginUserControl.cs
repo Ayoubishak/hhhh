@@ -32,13 +32,11 @@ namespace ArmyProject.PL
                     frm.accordionControlElementLogin.Enabled = false;
                     frm.accordionControlElementStudents.Enabled = true;
                     frm.accordionControlElementHoliday.Enabled = true;
-                    frm.accordionControlElementArrival_Stations.Enabled = true;
                     frm.accordionControlElementSanctions.Enabled = true;
                     frm.accordionControlElementHistory.Enabled = true;
                     frm.accordionControlElementUsers.Enabled = true;
                     frm.accordionControlElementMakeBackup.Enabled = true;
                     frm.accordionControlElementGetBackup.Enabled = true;
-                    frm.accordionControlElementArrival_Stations.Enabled = true;
                     frm.accordionControlElementSettings.Enabled = true;
                     frm.accordionControlElementMakeBackup.Enabled = true;
                     frm.accordionControlElementGetBackup.Enabled = true;

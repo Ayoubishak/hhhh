@@ -41,7 +41,6 @@ namespace ArmyProject.PL
             }
             this.accordionControlElementStudents.Enabled = false;
             this.accordionControlElementHoliday.Enabled = false;
-            this.accordionControlElementArrival_Stations.Enabled = false;
             this.accordionControlElementSanctions.Enabled = false;
             this.accordionControlElementHistory.Enabled = false;
             this.accordionControlElementUsers.Enabled = false;
@@ -131,10 +130,10 @@ namespace ArmyProject.PL
         }
 
         //Manage محطات الوصول arrival stations
-        private void accordionControlElementArrivalStationsMange_Click(object sender, EventArgs e)
+        private void accordionControlElementRecruitingAreaMange_Click(object sender, EventArgs e)
         {
             fluentDesignFormContainer1.Controls.Clear();
-            fluentDesignFormContainer1.Controls.Add(new FRM_Holiday_Arrival_Full_Crud.Views.ArrivalStations_TBLCollectionView.ArrivalStations_TBLCollectionView() { Dock = DockStyle.Fill });
+            fluentDesignFormContainer1.Controls.Add(new FRM_RecruitingAreaCrud.Views.RecruitingArea_TBLCollectionView.RecruitingArea_TBLCollectionView() { Dock = DockStyle.Fill });
         }
 
 

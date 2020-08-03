@@ -228,7 +228,7 @@
             this.accordionControlElementRecruitingAreaMange.Name = "accordionControlElementRecruitingAreaMange";
             this.accordionControlElementRecruitingAreaMange.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementRecruitingAreaMange.Text = "ادارة مناطق التجنيد";
-            this.accordionControlElementRecruitingAreaMange.Click += new System.EventHandler(this.accordionControlElementArrivalStationsMange_Click);
+            this.accordionControlElementRecruitingAreaMange.Click += new System.EventHandler(this.accordionControlElementRecruitingAreaMange_Click);
             // 
             // accordionControlSeparator3
             // 
