@@ -102,9 +102,9 @@
             this.accordionControlElementHoliday,
             this.accordionControlElementUsers,
             this.accordionControlSeparator4,
-            this.accordionControlElementHistory,
             this.accordionControlSeparator5,
             this.accordionControlElementArrival_Stations,
+            this.accordionControlElementHistory,
             this.accordionControlElementSettings});
             this.accordionControl1.Location = new System.Drawing.Point(0, 30);
             this.accordionControl1.Name = "accordionControl1";
@@ -119,9 +119,8 @@
             this.accordionControlElementLogin,
             this.accordionControlElementMakeBackup,
             this.accordionControlElementGetBackup,
-            this.accordionControlSeparator6,
-            this.accordionControlElement_Logout});
-            this.accordionControlElementFile.Expanded = true;
+            this.accordionControlElement_Logout,
+            this.accordionControlSeparator6});
             this.accordionControlElementFile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementFile.ImageOptions.SvgImage")));
             this.accordionControlElementFile.Name = "accordionControlElementFile";
             this.accordionControlElementFile.Text = "الملف";
@@ -374,6 +373,7 @@
             this.accordionControlElementSettings.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementDeleteInfo,
             this.accordionControlElementAbout});
+            this.accordionControlElementSettings.Expanded = true;
             this.accordionControlElementSettings.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElementSettings.ImageOptions.SvgImage")));
             this.accordionControlElementSettings.Name = "accordionControlElementSettings";
             this.accordionControlElementSettings.Text = "الأعدادات";
@@ -383,6 +383,7 @@
             this.accordionControlElementDeleteInfo.Name = "accordionControlElementDeleteInfo";
             this.accordionControlElementDeleteInfo.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementDeleteInfo.Text = "مسح بيانات";
+            this.accordionControlElementDeleteInfo.Click += new System.EventHandler(this.accordionControlElementDeleteInfo_Click);
             // 
             // accordionControlElementAbout
             // 

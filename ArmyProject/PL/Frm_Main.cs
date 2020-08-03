@@ -159,5 +159,11 @@ namespace ArmyProject.PL
         {
 
         }
+
+        private void accordionControlElementDeleteInfo_Click(object sender, EventArgs e)
+        {
+            fluentDesignFormContainer1.Controls.Clear();
+            fluentDesignFormContainer1.Controls.Add(new FRM_Settings.UserControlDeleteInfo { Dock = DockStyle.Fill });
+        }
     }
 }

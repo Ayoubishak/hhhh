@@ -255,6 +255,12 @@
     <Compile Include="PL\FRM_Holiday_FULL_Crud\Views\Governorates_TBL\Governorates_TBLView.designer.cs">
       <DependentUpon>Governorates_TBLView.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Settings\UserControlDeleteInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Settings\UserControlDeleteInfo.Designer.cs">
+      <DependentUpon>UserControlDeleteInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Student_Full_Crud\Common\CollectionViewModel.cs" />
     <Compile Include="PL\FRM_Student_Full_Crud\Common\EntitiesViewModel.cs" />
     <Compile Include="PL\FRM_Student_Full_Crud\Common\ReadOnlyCollectionViewModel.cs" />
@@ -398,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Settings\UserControlDeleteInfo.resx">
+      <DependentUpon>UserControlDeleteInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Frm_StudentAdd.resx">
       <DependentUpon>Frm_StudentAdd.cs</DependentUpon>
